@@ -3,12 +3,13 @@ local theme = {}
 
 local highlight = function(group)
   for item, color_opts in pairs(group) do
-    hl(0,item,color_opts)
+    hl(0, item, color_opts)
   end
 end
 
 theme.set_highlights = function(opts)
   local c = require('vscode.colors').get_colors()
+  local vs = require('visualstudio.colors')
   c = vim.tbl_extend('force', c, opts['color_overrides'])
   local isDark = vim.o.background == 'dark'
 
@@ -57,36 +58,35 @@ theme.set_highlights = function(opts)
   }
 
   local syntax = {
-    Comment         =   { fg = c.vsComment, bg = 'NONE', italic = opts.italic_comments },
-    Constant        =   { fg = c.vsMacro, bg = 'NONE' },
+    Comment         =   { fg = vs.Comment, bg = 'NONE', italic = opts.italic_comments },
+    Constant        =   { fg = "None", bg = 'NONE' },
     String          =   { fg = c.vscOrange, bg = 'NONE' },
     Character       =   { fg = c.vscOrange, bg = 'NONE' },
     Number          =   { fg = c.vscLightGreen, bg = 'NONE' },
     Boolean         =   { fg = c.vscBlue, bg = 'NONE' },
     Float           =   { fg = c.vscLightGreen, bg = 'NONE' },
-    Identifier      =   { fg = c.vscLightBlue,  bg = 'NONE' },
+    Identifier      =   { fg = vs.Normal,  bg = 'NONE' },
     Function        =   { fg = c.vscYellow, bg = 'NONE' },
-    Statement       =   { fg = c.vscPink, bg = 'NONE' },
-    Conditional     =   { fg = c.vscPink, bg = 'NONE' },
-    Repeat          =   { fg = c.vscPink, bg = 'NONE' },
-    Label           =   { fg = c.vscPink, bg = 'NONE' },
+    Statement       =   { fg = vs.Preprocessor, bg = 'NONE' },
+    Conditional     =   { fg = vs.Preprocessor, bg = 'NONE' },
+    Repeat          =   { fg = vs.ControlFlow, bg = 'NONE' },
+    Label           =   { fg = vs.ControlFlow, bg = 'NONE' },
     Operator        =   { fg = c.vscFront, bg = 'NONE' },
-    Keyword         =   { fg = c.vscBlue, bg = 'NONE' },
-    Exception       =   { fg = c.vscPink, bg = 'NONE' },
-    PreProc         =   { fg = c.vsGrey, bg = 'NONE' },
-    Include         =   { fg = c.vsGrey, bg = 'NONE' },
-    pragma          =   { fg = c.vsGrey, bg = 'NONE' },
-    Define          =   { fg = c.vsGrey, bg = 'NONE' },
-    Macro           =   { fg = c.vsGrey, bg = 'NONE' },
-    Type            =   { fg = c.vsType, bg = 'NONE' },
-    StorageClass    =   { fg = c.vsType, bg = 'NONE' },
-    Structure       =   { fg = c.vsType, bg = 'NONE' },
-    Typedef         =   { fg = c.vsType, bg = 'NONE' },
+    Keyword         =   { fg = vs.Keyword, bg = 'NONE' },
+    Exception       =   { fg = vs.Preprocessor, bg = 'NONE' },
+    PreProc         =   { fg = vs.Preprocessor, bg = 'NONE' },
+    Include         =   { fg = vs.Preprocessor, bg = 'NONE' },
+    Define          =   { fg = vs.Preprocessor, bg = 'NONE' },
+    Macro           =   { fg = vs.Preprocessor, bg = 'NONE' },
+    Type            =   { fg = vs.Type, bg = 'NONE' },
+    StorageClass    =   { fg = vs.Type, bg = 'NONE' },
+    Structure       =   { fg = vs.Type, bg = 'NONE' },
+    Typedef         =   { fg = vs.Type, bg = 'NONE' },
     Special         =   { fg = c.vscYellowOrange, bg = 'NONE' },
     SpecialChar     =   { fg = c.vscFront, bg = 'NONE' },
     Tag             =   { fg = c.vscFront, bg = 'NONE' },
     Delimiter       =   { fg = c.vscFront, bg = 'NONE' },
-    SpecialComment  =   { fg = c.vsComment, bg = 'NONE' },
+    SpecialComment  =   { fg = vs.Comment, bg = 'NONE' },
     Debug           =   { fg = c.vscFront, bg = 'NONE' },
     Underlined      =   { fg = c.vscNone, bg = 'NONE', underline = true },
     Conceal         =   { fg = c.vscFront, bg = c.vscBack },
@@ -104,10 +104,10 @@ theme.set_highlights = function(opts)
   ['@error']= { fg = c.vscRed, bg = 'NONE' },
   ['@punctuation.bracket']= { fg = c.vscFront, bg = 'NONE' },
   ['@punctuation.special']= { fg = c.vscFront, bg = 'NONE' },
-  ['@comment']= { fg = c.vsComment, bg = 'NONE', italic = opts.italic_comments },
+  ['@comment']= { fg = vs.Comment, bg = 'NONE', italic = opts.italic_comments },
   ['@constant']= { fg = c.vscYellow, bg = 'NONE' },
   ['@constant.builtin']= { fg = c.vscBlue, bg = 'NONE' },
-  ['@constant.macro']= { fg = c.vscBlueGreen, bg = 'NONE' },
+  ['@constant.macro']= { fg = vs.Macro, bg = 'NONE' },
   ['@string.regex']= { fg = c.vscOrange, bg = 'NONE' },
   ['@string']= { fg = c.vscOrange, bg = 'NONE' },
   ['@character']= { fg = c.vscOrange, bg = 'NONE' },
@@ -116,26 +116,26 @@ theme.set_highlights = function(opts)
   ['@float']= { fg = c.vscLightGreen, bg = 'NONE' },
   ['@annotation']= { fg = c.vscYellow, bg = 'NONE' },
   ['@attribute']= { fg = c.vscBlueGreen, bg = 'NONE' },
-  ['@function.builtin']= { fg = c.vscYellow, bg = 'NONE' },
+  ['@function.builtin']= { fg = c.vscYellowOrange, bg = 'NONE' },
   ['@function']= { fg = c.vscYellow, bg = 'NONE' },
-  ['@function.macro']= { fg = c.vscYellow, bg = 'NONE' },
-  ['@parameter']= { fg = c.vscLightBlue, bg = 'NONE' },
-  ['@parameter.reference']= { fg = c.vscLightBlue, bg = 'NONE' },
+  ['@function.macro']= { fg = vs.MacroFunction, bg = 'NONE' },
+  ['@parameter']= { fg = vs.Parameter, bg = 'NONE' },
+  ['@parameter.reference']= { fg = vs.Parameter, bg = 'NONE' },
   ['@method']= { fg = c.vscYellow, bg = 'NONE' },
-  ['@field']= { fg = c.vscLightBlue, bg = 'NONE' },
+  ['@field']= { fg = vs.Normal, bg = 'NONE' },
   ['@property']= { fg = c.vscLightBlue, bg = 'NONE' },
   ['@constructor']= { fg = c.vscBlueGreen, bg = 'NONE' },
-  ['@conditional']= { fg = c.vscPink, bg = 'NONE' },
-  ['@repeat']= { fg = c.vscPink, bg = 'NONE' },
+  ['@conditional']= { fg = vs.ControlFlow, bg = 'NONE' },
+  ['@repeat']= { fg = vs.Preprocessor, bg = 'NONE' },
   ['@label']= { fg = c.vscLightBlue, bg = 'NONE' },
-  ['@keyword']= { fg = c.vscPink, bg = 'NONE' },
+  ['@keyword']= { fg = vs.Keyword, bg = 'NONE' },
   ['@keyword.function']= { fg = c.vscBlue, bg = 'NONE' },
   ['@keyword.operator']= { fg = c.vscBlue, bg = 'NONE' },
   ['@operator']= { fg = c.vscFront, bg = 'NONE' },
-  ['@exception']= { fg = c.vscPink, bg = 'NONE' },
-  ['@type']= { fg = c.vsType, bg = 'NONE' },
-  ['@type.builtin']= { fg = c.vsType, bg = 'NONE' },
-  ['@type.qualifier']= { fg = c.vsType, bg = 'NONE' },
+  ['@exception']= { fg = vs.Preprocessor, bg = 'NONE' },
+  ['@type']= { fg = vs.Type, bg = 'NONE' },
+  ['@type.builtin']= { fg = vs.Type, bg = 'NONE' },
+  ['@type.qualifier']= { fg = vs.Type, bg = 'NONE' },
   ['@storageClass']= { fg = c.vsDebug, bg = 'NONE' },
   ['@structure']= { fg = c.vscLightBlue, bg = 'NONE' },
   ['@include']= { fg = c.vsDebug , bg = 'NONE' },
@@ -156,12 +156,12 @@ theme.set_highlights = function(opts)
   ['@textReference']= { fg = isDark and c.vscOrange or c.vscYellowOrange },
   ['@punctuation.delimiter']= { fg = c.vscFront, bg = 'NONE' },
   ['@stringEscape']= { fg = isDark and c.vscOrange or c.vscYellowOrange, bold = true },
-  ['@namespace'] = { fg = "#FFF00", bg = 'NONE' },
+  ['@namespace'] = { fg = vs.Namespace, bg = 'NONE' },
   ['@text.note']= { fg = c.vscBlueGreen, bg = 'NONE', bold = true },
   ['@text.warning']= { fg = c.vscYellowOrange, bg = 'NONE', bold = true },
   ['@text.danger']= { fg = c.vscRed, bg = 'NONE', bold = true },
 }
-  highlight(syntax)
+  highlight(editor)
   highlight(syntax)
   highlight(treesitter)
   -- Markdown
@@ -194,14 +194,14 @@ theme.set_highlights = function(opts)
   hl(0, 'phpMethod', { fg = c.vscYellow, bg = 'NONE' })
   hl(0, 'phpClass', { fg = c.vsTypeGreen, bg = 'NONE' })
   hl(0, 'phpFunction', { fg = c.vscYellow, bg = 'NONE' })
-  hl(0, 'phpInclude', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'phpInclude', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'phpUseClass', { fg = c.vsTypeGreen, bg = 'NONE' })
   hl(0, 'phpRegion', { fg = c.vsTypeGreen, bg = 'NONE' })
   hl(0, 'phpMethodsVar', { fg = c.vscLightBlue, bg = 'NONE' })
 
   -- CSS
   hl(0, 'cssBraces', { fg = c.vscFront, bg = 'NONE' })
-  hl(0, 'cssInclude', { fg = c.vscPink, bg = 'NONE' })
+  hl(0, 'cssInclude', { fg = vs.Preprocessor, bg = 'NONE' })
   hl(0, 'cssTagName', { fg = c.vscYellowOrange, bg = 'NONE' })
   hl(0, 'cssClassName', { fg = c.vscYellowOrange, bg = 'NONE' })
   hl(0, 'cssPseudoClass', { fg = c.vscYellowOrange, bg = 'NONE' })
@@ -220,23 +220,23 @@ theme.set_highlights = function(opts)
   hl(0, 'cssValueLength', { fg = c.vscOrange, bg = 'NONE' })
   hl(0, 'cssUnitDecorators', { fg = c.vscOrange, bg = 'NONE' })
   hl(0, 'cssStyle', { fg = c.vscLightBlue, bg = 'NONE' })
-  hl(0, 'cssImportant', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'cssImportant', { fg = vs.Type, bg = 'NONE' })
 
   -- JavaScript
   hl(0, 'jsVariableDef', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'jsFuncArgs', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'jsFuncBlock', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'jsRegexpString', { fg = c.vscLightRed, bg = 'NONE' })
-  hl(0, 'jsThis', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'jsOperatorKeyword', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'jsThis', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'jsOperatorKeyword', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'jsDestructuringBlock', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'jsObjectKey', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'jsGlobalObjects', { fg = c.vsTypeGreen, bg = 'NONE' })
   hl(0, 'jsModuleKeyword', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'jsClassDefinition', { fg = c.vsTypeGreen, bg = 'NONE' })
-  hl(0, 'jsClassKeyword', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'jsExtendsKeyword', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'jsExportDefault', { fg = c.vscPink, bg = 'NONE' })
+  hl(0, 'jsClassKeyword', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'jsExtendsKeyword', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'jsExportDefault', { fg = vs.Preprocessor, bg = 'NONE' })
   hl(0, 'jsFuncCall', { fg = c.vscYellow, bg = 'NONE' })
   hl(0, 'jsObjectValue', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'jsParen', { fg = c.vscLightBlue, bg = 'NONE' })
@@ -252,21 +252,21 @@ theme.set_highlights = function(opts)
   hl(0, 'typescriptBraces', { fg = c.vscFront, bg = 'NONE' })
   hl(0, 'typescriptEndColons', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'typescriptParens', { fg = c.vscFront, bg = 'NONE' })
-  hl(0, 'typescriptDocTags', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'typescriptDocTags', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'typescriptDocComment', { fg = c.vsTypeGreen, bg = 'NONE' })
   hl(0, 'typescriptLogicSymbols', { fg = c.vscLightBlue, bg = 'NONE' })
-  hl(0, 'typescriptImport', { fg = c.vscPink, bg = 'NONE' })
+  hl(0, 'typescriptImport', { fg = vs.Preprocessor, bg = 'NONE' })
   hl(0, 'typescriptBOM', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'typescriptVariableDeclaration', { fg = c.vscLightBlue, bg = 'NONE' })
-  hl(0, 'typescriptVariable', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'typescriptExport', { fg = c.vscPink, bg = 'NONE' })
+  hl(0, 'typescriptVariable', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'typescriptExport', { fg = vs.Preprocessor, bg = 'NONE' })
   hl(0, 'typescriptAliasDeclaration', { fg = c.vsTypeGreen, bg = 'NONE' })
-  hl(0, 'typescriptAliasKeyword', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'typescriptAliasKeyword', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'typescriptClassName', { fg = c.vsTypeGreen, bg = 'NONE' })
-  hl(0, 'typescriptAccessibilityModifier', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'typescriptOperator', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'typescriptArrowFunc', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'typescriptMethodAccessor', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'typescriptAccessibilityModifier', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'typescriptOperator', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'typescriptArrowFunc', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'typescriptMethodAccessor', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'typescriptMember', { fg = c.vscYellow, bg = 'NONE' })
   hl(0, 'typescriptTypeReference', { fg = c.vsTypeGreen, bg = 'NONE' })
   hl(0, 'typescriptTemplateSB', { fg = c.vscYellowOrange, bg = 'NONE' })
@@ -274,15 +274,15 @@ theme.set_highlights = function(opts)
   hl(0, 'typescriptParamImpl', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'typescriptFuncComma', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'typescriptCastKeyword', { fg = c.vscLightBlue, bg = 'NONE' })
-  hl(0, 'typescriptCall', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'typescriptCall', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'typescriptCase', { fg = c.vscLightBlue, bg = 'NONE' })
-  hl(0, 'typescriptReserved', { fg = c.vscPink, bg = 'NONE' })
+  hl(0, 'typescriptReserved', { fg = vs.Preprocessor, bg = 'NONE' })
   hl(0, 'typescriptDefault', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'typescriptDecorator', { fg = c.vscYellow, bg = 'NONE' })
   hl(0, 'typescriptPredefinedType', { fg = c.vsTypeGreen, bg = 'NONE' })
   hl(0, 'typescriptClassHeritage', { fg = c.vsTypeGreen, bg = 'NONE' })
-  hl(0, 'typescriptClassExtends', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'typescriptClassKeyword', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'typescriptClassExtends', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'typescriptClassKeyword', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'typescriptBlock', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'typescriptDOMDocProp', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'typescriptTemplateSubstitution', { fg = c.vscLightBlue, bg = 'NONE' })
@@ -294,27 +294,27 @@ theme.set_highlights = function(opts)
   hl(0, 'typescriptES6SetProp', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'typescriptObjectLiteral', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'typescriptTypeParameter', { fg = c.vsTypeGreen, bg = 'NONE' })
-  hl(0, 'typescriptEnumKeyword', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'typescriptEnumKeyword', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'typescriptEnum', { fg = c.vsTypeGreen, bg = 'NONE' })
   hl(0, 'typescriptLoopParen', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'typescriptParenExp', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'typescriptModule', { fg = c.vscLightBlue, bg = 'NONE' })
-  hl(0, 'typescriptAmbientDeclaration', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'typescriptFuncTypeArrow', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'typescriptAmbientDeclaration', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'typescriptFuncTypeArrow', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'typescriptInterfaceHeritage', { fg = c.vsTypeGreen, bg = 'NONE' })
   hl(0, 'typescriptInterfaceName', { fg = c.vsTypeGreen, bg = 'NONE' })
-  hl(0, 'typescriptInterfaceKeyword', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'typescriptInterfaceExtends', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'typescriptInterfaceKeyword', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'typescriptInterfaceExtends', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'typescriptGlobal', { fg = c.vsTypeGreen, bg = 'NONE' })
-  hl(0, 'typescriptAsyncFuncKeyword', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'typescriptFuncKeyword', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'typescriptAsyncFuncKeyword', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'typescriptFuncKeyword', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'typescriptGlobalMethod', { fg = c.vscYellow, bg = 'NONE' })
   hl(0, 'typescriptPromiseMethod', { fg = c.vscYellow, bg = 'NONE' })
 
   -- XML
-  hl(0, 'xmlTag', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'xmlTagName', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'xmlEndTag', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'xmlTag', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'xmlTagName', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'xmlEndTag', { fg = vs.Type, bg = 'NONE' })
 
   -- Ruby
   hl(0, 'rubyClassNameTag', { fg = c.vsTypeGreen, bg = 'NONE' })
@@ -323,23 +323,23 @@ theme.set_highlights = function(opts)
   hl(0, 'rubyConstant', { fg = c.vsTypeGreen, bg = 'NONE' })
 
   -- Golang
-  hl(0, 'goPackage', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'goImport', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'goVar', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'goConst', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'goStatement', { fg = c.vscPink, bg = 'NONE' })
+  hl(0, 'goPackage', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'goImport', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'goVar', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'goConst', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'goStatement', { fg = vs.Preprocessor, bg = 'NONE' })
   hl(0, 'goType', { fg = c.vsTypeGreen, bg = 'NONE' })
   hl(0, 'goSignedInts', { fg = c.vsTypeGreen, bg = 'NONE' })
   hl(0, 'goUnsignedInts', { fg = c.vsTypeGreen, bg = 'NONE' })
   hl(0, 'goFloats', { fg = c.vsTypeGreen, bg = 'NONE' })
   hl(0, 'goComplexes', { fg = c.vsTypeGreen, bg = 'NONE' })
   hl(0, 'goBuiltins', { fg = c.vscYellow, bg = 'NONE' })
-  hl(0, 'goBoolean', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'goPredefinedIdentifiers', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'goBoolean', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'goPredefinedIdentifiers', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'goTodo', { fg = c.vscGreen, bg = 'NONE' })
-  hl(0, 'goDeclaration', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'goDeclType', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'goTypeDecl', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'goDeclaration', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'goDeclType', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'goTypeDecl', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'goTypeName', { fg = c.vsTypeGreen, bg = 'NONE' })
   hl(0, 'goVarAssign', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'goVarDefs', { fg = c.vscLightBlue, bg = 'NONE' })
@@ -350,59 +350,59 @@ theme.set_highlights = function(opts)
   hl(0, 'goSingleDecl', { fg = c.vscLightBlue, bg = 'NONE' })
 
   -- Python
-  hl(0, 'pythonStatement', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'pythonOperator', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'pythonException', { fg = c.vscPink, bg = 'NONE' })
+  hl(0, 'pythonStatement', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'pythonOperator', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'pythonException', { fg = vs.Preprocessor, bg = 'NONE' })
   hl(0, 'pythonExClass', { fg = c.vsTypeGreen, bg = 'NONE' })
   hl(0, 'pythonBuiltinObj', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'pythonBuiltinType', { fg = c.vsTypeGreen, bg = 'NONE' })
-  hl(0, 'pythonBoolean', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'pythonNone', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'pythonTodo', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'pythonClassVar', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'pythonBoolean', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'pythonNone', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'pythonTodo', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'pythonClassVar', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'pythonClassDef', { fg = c.vsTypeGreen, bg = 'NONE' })
 
   -- TeX
-  hl(0, 'texStatement', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'texStatement', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'texBeginEnd', { fg = c.vscYellow, bg = 'NONE' })
   hl(0, 'texBeginEndName', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'texOption', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'texBeginEndModifier', { fg = c.vscLightBlue, bg = 'NONE' })
-  hl(0, 'texDocType', { fg = c.vscPink, bg = 'NONE' })
+  hl(0, 'texDocType', { fg = vs.Preprocessor, bg = 'NONE' })
   hl(0, 'texDocTypeArgs', { fg = c.vscLightBlue, bg = 'NONE' })
 
   -- Git
   hl(0, 'gitcommitHeader', { fg = c.vscGray, bg = 'NONE' })
   hl(0, 'gitcommitOnBranch', { fg = c.vscGray, bg = 'NONE' })
-  hl(0, 'gitcommitBranch', { fg = c.vscPink, bg = 'NONE' })
+  hl(0, 'gitcommitBranch', { fg = vs.Preprocessor, bg = 'NONE' })
   hl(0, 'gitcommitComment', { fg = c.vscGray, bg = 'NONE' })
   hl(0, 'gitcommitSelectedType', { fg = c.vscGreen, bg = 'NONE' })
   hl(0, 'gitcommitSelectedFile', { fg = c.vscGreen, bg = 'NONE' })
   hl(0, 'gitcommitDiscardedType', { fg = c.vscRed, bg = 'NONE' })
   hl(0, 'gitcommitDiscardedFile', { fg = c.vscRed, bg = 'NONE' })
   hl(0, 'gitcommitOverflow', { fg = c.vscRed, bg = 'NONE' })
-  hl(0, 'gitcommitSummary', { fg = c.vscPink, bg = 'NONE' })
-  hl(0, 'gitcommitBlank', { fg = c.vscPink, bg = 'NONE' })
+  hl(0, 'gitcommitSummary', { fg = vs.Preprocessor, bg = 'NONE' })
+  hl(0, 'gitcommitBlank', { fg = vs.Preprocessor, bg = 'NONE' })
 
   -- Lua
   hl(0, 'luaFuncCall', { fg = c.vscYellow, bg = 'NONE' })
   hl(0, 'luaFuncArgName', { fg = c.vscLightBlue, bg = 'NONE' })
-  hl(0, 'luaFuncKeyword', { fg = c.vscPink, bg = 'NONE' })
-  hl(0, 'luaLocal', { fg = c.vscPink, bg = 'NONE' })
-  hl(0, 'luaBuiltIn', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'luaFuncKeyword', { fg = vs.Preprocessor, bg = 'NONE' })
+  hl(0, 'luaLocal', { fg = vs.Preprocessor, bg = 'NONE' })
+  hl(0, 'luaBuiltIn', { fg = vs.Type, bg = 'NONE' })
 
   -- SH
   hl(0, 'shDeref', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'shVariable', { fg = c.vscLightBlue, bg = 'NONE' })
 
   -- SQL
-  hl(0, 'sqlKeyword', { fg = c.vscPink, bg = 'NONE' })
+  hl(0, 'sqlKeyword', { fg = vs.Preprocessor, bg = 'NONE' })
   hl(0, 'sqlFunction', { fg = c.vscYellowOrange, bg = 'NONE' })
-  hl(0, 'sqlOperator', { fg = c.vscPink, bg = 'NONE' })
+  hl(0, 'sqlOperator', { fg = vs.Preprocessor, bg = 'NONE' })
 
   -- YAML
-  hl(0, 'yamlKey', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'yamlConstant', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'yamlKey', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'yamlConstant', { fg = vs.Type, bg = 'NONE' })
 
   -- Gitgutter
   hl(0, 'GitGutterAdd', { fg = c.vscGreen, bg = 'NONE' })
@@ -424,7 +424,7 @@ theme.set_highlights = function(opts)
   hl(0, 'NvimTreeImageFile', { fg = c.vscViolet, bg = 'NONE' })
   hl(0, 'NvimTreeEmptyFolderName', { fg = c.vscGray, bg = 'NONE' })
   hl(0, 'NvimTreeFolderName', { fg = c.vscFront, bg = 'NONE' })
-  hl(0, 'NvimTreeSpecialFile', { fg = c.vscPink, bg = 'NONE', underline = true })
+  hl(0, 'NvimTreeSpecialFile', { fg = vs.Preprocessor, bg = 'NONE', underline = true })
   hl(0, 'NvimTreeNormal', { fg = c.vscFront, bg = opts.disable_nvimtree_bg and c.vscBack or c.vscLeftDark })
   hl(0, 'NvimTreeCursorLine', { fg = 'NONE', bg = opts.disable_nvimtree_bg and c.vscCursorDarkDark or c.vscLeftMid })
   hl(0, 'NvimTreeVertSplit', { fg = opts.disable_nvimtree_bg and c.vscSplitDark or c.vscBack, bg = c.vscBack })
@@ -471,8 +471,8 @@ theme.set_highlights = function(opts)
   -- LSP
   hl(0, 'DiagnosticError', { fg = c.vscRed, bg = 'NONE' })
   hl(0, 'DiagnosticWarn', { fg = c.vscYellow, bg = 'NONE' })
-  hl(0, 'DiagnosticInfo', { fg = c.vsType, bg = 'NONE' })
-  hl(0, 'DiagnosticHint', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'DiagnosticInfo', { fg = vs.Type, bg = 'NONE' })
+  hl(0, 'DiagnosticHint', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'DiagnosticUnderlineError', { fg = 'NONE', bg = 'NONE', undercurl = true, sp = c.vscRed })
   hl(0, 'DiagnosticUnderlineWarn', { fg = 'NONE', bg = 'NONE', undercurl = true, sp = c.vscYellow })
   hl(0, 'DiagnosticUnderlineInfo', { fg = 'NONE', bg = 'NONE', undercurl = true, sp = c.vsType })
@@ -485,8 +485,8 @@ theme.set_highlights = function(opts)
   hl(0, 'CmpItemKindVariable', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'CmpItemKindInterface', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, 'CmpItemKindText', { fg = c.vscLightBlue, bg = 'NONE' })
-  hl(0, 'CmpItemKindFunction', { fg = c.vscPink, bg = 'NONE' })
-  hl(0, 'CmpItemKindMethod', { fg = c.vscPink, bg = 'NONE' })
+  hl(0, 'CmpItemKindFunction', { fg = vs.Preprocessor, bg = 'NONE' })
+  hl(0, 'CmpItemKindMethod', { fg = vs.Preprocessor, bg = 'NONE' })
   hl(0, 'CmpItemKindKeyword', { fg = c.vscFront, bg = 'NONE' })
   hl(0, 'CmpItemKindProperty', { fg = c.vscFront, bg = 'NONE' })
   hl(0, 'CmpItemKindUnit', { fg = c.vscFront, bg = 'NONE' })
@@ -498,14 +498,14 @@ theme.set_highlights = function(opts)
   hl(0, 'CmpItemAbbrMatchFuzzy', { fg = isDark and c.vscMediumBlue or c.vscDarkBlue, bg = 'NONE', bold = true })
 
   -- Dashboard
-  hl(0, 'DashboardHeader', { fg = c.vsType, bg = 'NONE' })
+  hl(0, 'DashboardHeader', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'DashboardCenter', { fg = c.vscYellowOrange, bg = 'NONE' })
   hl(0, 'DashboardCenterIcon', { fg = c.vscYellowOrange, bg = 'NONE' })
-  hl(0, 'DashboardShortCut', { fg = c.vscPink, bg = 'NONE' })
-  hl(0, 'DashboardFooter', { fg = c.vsType, bg = 'NONE', italic = true })
+  hl(0, 'DashboardShortCut', { fg = vs.Preprocessor, bg = 'NONE' })
+  hl(0, 'DashboardFooter', { fg = vs.Type, bg = 'NONE', italic = true })
 
   if isDark then
-    hl(0, 'NvimTreeFolderIcon', { fg = c.vsType, bg = 'NONE' })
+    hl(0, 'NvimTreeFolderIcon', { fg = vs.Type, bg = 'NONE' })
     hl(0, 'NvimTreeIndentMarker', { fg = c.vscLineNumber, bg = 'NONE' })
 
     hl(0, 'LspFloatWinNormal', { fg = c.vscFront, bg = 'NONE' })

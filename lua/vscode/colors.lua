@@ -1,8 +1,8 @@
 local colors = {}
 colors.get_colors = function()
-  local mycolors = {} ---@type table<string,string>
+  local internal_colors = {} ---@type table<string,string>
   if vim.o.background == 'dark' then
-    mycolors = {
+    internal_colors = {
       -- VS Code
       vscNone     = 'NONE',
       vscFront    = '#D4D4D4',
@@ -73,7 +73,7 @@ colors.get_colors = function()
       vscPink = '#C586C0',
     }
   else
-    mycolors = {
+    internal_colors = {
       vscNone = 'NONE',
       vscFront = '#343434',
       vscBack = '#FFFFFF',
@@ -144,11 +144,11 @@ colors.get_colors = function()
     end
 
     -- Other ui specific colors
-    mycolors.vscUiBlue = '#084671'
-    mycolors.vscUiOrange = '#f28b25'
-    mycolors.vscPopupHighlightLightBlue = '#d7eafe'
+    internal_colors.vscUiBlue = '#084671'
+    internal_colors.vscUiOrange = '#f28b25'
+    internal_colors.vscPopupHighlightLightBlue = '#d7eafe'
 
-    return mycolors
+    return internal_colors
 end
 
 return colors
