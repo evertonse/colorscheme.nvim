@@ -5,13 +5,13 @@ colors.get_colors = function()
   if vim.o.background == 'dark' then
   mycolors = {
     -- Visual Studio Colors:
-    vsGrey      = '#9b9b9b',
-    vsComment   = '#435f37',
-    vsType      = '#4EC9B0', 
-    vsNamespace = '#FFFFFF', 
-    vsMacro = '#CAC4FF',
-    vsProperty = '#dadada',
-    vsNormal = '#dadada',
+    vsGrey      = '#9b9b9b',--.
+    vsComment   = '#435f37',--.
+    vsType      = '#4EC9B0',--.
+    vsNamespace = '#FFFFFF',--x 
+    vsMacro     = '#CAC4FF',--.
+    vsProperty  = '#dadada',
+    vsNormal    = '#dadada',
     -- VS Code
     vscNone = 'NONE',
     vscFront = '#D4D4D4',
