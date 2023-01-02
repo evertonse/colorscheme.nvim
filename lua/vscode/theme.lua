@@ -6,6 +6,89 @@ theme.set_highlights = function(opts)
   c = vim.tbl_extend('force', c, opts['color_overrides'])
 local isDark = vim.o.background == 'dark'
 
+local base = {
+  Normal          =   { fg = c.vscFront, bg = c.vscBack },
+  ColorColumn     =   { fg = 'NONE', bg = c.vscCursorDarkDark },
+  Cursor          =   { fg = c.vscCursorDark, bg = c.vscCursorLight },
+  CursorLine      =   { bg = c.vscCursorDarkDark },
+  CursorColumn    =   { fg = 'NONE', bg = c.vscCursorDarkDark },
+  Directory       =   { fg = c.vscYellowOrange, bg = c.vscBack },
+  DiffAdd         =   { fg = 'NONE', bg = c.vscDiffGreenLight },
+  DiffChange      =   { fg = 'NONE', bg = c.vscDiffRedDark },
+  DiffDelete      =   { fg = 'NONE', bg = c.vscDiffRedLight },
+  DiffText        =   { fg = 'NONE', bg = c.vscDiffRedLight },
+  EndOfBuffer     =   { fg = c.vscBack, bg = 'NONE' },
+  ErrorMsg        =   { fg = c.vscRed, bg = c.vscBack },
+  VertSplit       =   { fg = c.vscSplitDark, bg = c.vscBack },
+  Folded          =   { fg = 'NONE', bg = c.vscFoldBackground },
+  FoldColumn      =   { fg = c.vscLineNumber, bg = c.vscBack },
+  SignColumn      =   { fg = 'NONE', bg = c.vscBack },
+  IncSearch       =   { fg = c.vscNone, bg = c.vscSearchCurrent },
+  LineNr          =   { fg = c.vscLineNumber, bg = c.vscBack },
+  CursorLineNr    =   { fg = c.vscPopupFront, bg = c.vscBack },
+  MatchParen      =   { fg = c.vscNone, bg = c.vscCursorDark },
+  ModeMsg         =   { fg = c.vscFront, bg = c.vscLeftDark },
+  MoreMsg         =   { fg = c.vscFront, bg = c.vscLeftDark },
+  NonText         =   { fg = (isDark and c.vscLineNumber or c.vscTabOther), bg = c.vscNone },
+  Pmenu           =   { fg = c.vscPopupFront, bg = c.vscPopupBack },
+  PmenuSel        =   { fg = isDark and c.vscPopupFront or c.vscBack, bg = c.vscPopupHighlightBlue },
+  PmenuSbar       =   { fg = 'NONE', bg = c.vscPopupHighlightGray },
+  PmenuThumb      =   { fg = 'NONE', bg = c.vscPopupFront },
+  Question        =   { fg = c.vscBlue, bg = c.vscBack },
+  Search          =   { fg = c.vscNone, bg = c.vscSearch },
+  SpecialKey      =   { fg = c.vscBlue, bg = c.vscNone },
+  StatusLine      =   { fg = c.vscFront, bg = c.vscLeftMid },
+  StatusLineNC    =   { fg = c.vscFront, bg = c.vscLeftDark },
+  Todo            =   { fg = c.vscYellowOrange, bg = c.vscBack, bold = true },
+  TabLine         =   { fg = c.vscFront, bg = c.vscTabOther },
+  TabLineFill     =   { fg = c.vscFront, bg = c.vscTabOutside },
+  TabLineSel      =   { fg = c.vscFront, bg = c.vscTabCurrent },
+  Title           =   { fg = c.vscNone, bg = c.vscNone, bold = true },
+  Visual          =   { fg = c.vscNone, bg = c.vscSelection },
+  VisualNOS       =   { fg = c.vscNone, bg = c.vscSelection },
+  WarningMsg      =   { fg = c.vscRed, bg = c.vscBack, bold = true },
+  WildMenu        =   { fg = c.vscNone, bg = c.vscSelection },
+  Comment         =   { fg = c.vsComment, bg = 'NONE', italic = opts.italic_comments },
+  Constant        =   { fg = c.vsMacro, bg = 'NONE' },
+  String          =   { fg = c.vscOrange, bg = 'NONE' },
+  Character       =   { fg = c.vscOrange, bg = 'NONE' },
+  Number          =   { fg = c.vscLightGreen, bg = 'NONE' },
+  Boolean         =   { fg = c.vscBlue, bg = 'NONE' },
+  Float           =   { fg = c.vscLightGreen, bg = 'NONE' },
+  Identifier      =   { fg = c.vscLightBlue,  bg = 'NONE' },
+  Function        =   { fg = c.vscYellow, bg = 'NONE' },
+  Statement       =   { fg = c.vscPink, bg = 'NONE' },
+  Conditional     =   { fg = c.vscPink, bg = 'NONE' },
+  Repeat          =   { fg = c.vscPink, bg = 'NONE' },
+  Label           =   { fg = c.vscPink, bg = 'NONE' },
+  Operator        =   { fg = c.vscFront, bg = 'NONE' },
+  Keyword         =   { fg = c.vscBlue, bg = 'NONE' },
+  Exception       =   { fg = c.vscPink, bg = 'NONE' },
+  PreProc         =   { fg = c.vsGrey, bg = 'NONE' },
+  Include         =   { fg = c.vsGrey, bg = 'NONE' },
+  pragma          =   { fg = c.vsGrey, bg = 'NONE' },
+  Define          =   { fg = c.vsGrey, bg = 'NONE' },
+  Macro           =   { fg = c.vsGrey, bg = 'NONE' },
+  Type            =   { fg = c.vsType, bg = 'NONE' },
+  StorageClass    =   { fg = c.vsType, bg = 'NONE' },
+  Structure       =   { fg = c.vsType, bg = 'NONE' },
+  Typedef         =   { fg = c.vsType, bg = 'NONE' },
+  Special         =   { fg = c.vscYellowOrange, bg = 'NONE' },
+  SpecialChar     =   { fg = c.vscFront, bg = 'NONE' },
+  Tag             =   { fg = c.vscFront, bg = 'NONE' },
+  Delimiter       =   { fg = c.vscFront, bg = 'NONE' },
+  SpecialComment  =   { fg = c.vsComment, bg = 'NONE' },
+  Debug           =   { fg = c.vscFront, bg = 'NONE' },
+  Underlined      =   { fg = c.vscNone, bg = 'NONE', underline = true },
+  Conceal         =   { fg = c.vscFront, bg = c.vscBack },
+  Ignore          =   { fg = c.vscFront, bg = 'NONE' },
+  Error           =   { fg = c.vscRed, bg = c.vscBack, undercurl = true, sp = c.vscRed },
+  SpellBad        =   { fg = c.vscRed, bg = c.vscBack, undercurl = true, sp = c.vscRed },
+  SpellCap        =   { fg = c.vscRed, bg = c.vscBack, undercurl = true, sp = c.vscRed },
+  SpellRare       =   { fg = c.vscRed, bg = c.vscBack, undercurl = true, sp = c.vscRed },
+  SpellLocal      =   { fg = c.vscRed, bg = c.vscBack, undercurl = true, sp = c.vscRed },
+  Whitespace      =   { fg = isDark and c.vscLineNumber or c.vscTabOther },
+}
 
   hl(0, 'Normal',        { fg = c.vscFront, bg = c.vscBack })
   hl(0, 'ColorColumn',   { fg = 'NONE', bg = c.vscCursorDarkDark })
@@ -126,7 +209,7 @@ local isDark = vim.o.background == 'dark'
   hl(0, '@type', { fg = c.vsType, bg = 'NONE' })
   hl(0, '@type.builtin', { fg = c.vsType, bg = 'NONE' })
   hl(0, '@type.qualifier', { fg = c.vsType, bg = 'NONE' })
-  hl(0, '@storageClass', { fg = c.vsType, bg = 'NONE' })
+  hl(0, '@storageClass', { fg = c.vsDebug, bg = 'NONE' })
   hl(0, '@structure', { fg = c.vscLightBlue, bg = 'NONE' })
   hl(0, '@include', { fg = c.vsDebug , bg = 'NONE' })
   hl(0, '@variable', { fg = c.vsDebug, bg = 'NONE' })
@@ -147,7 +230,7 @@ local isDark = vim.o.background == 'dark'
   hl(0, '@punctuation.delimiter', { fg = c.vscFront, bg = 'NONE' })
   hl(0, '@stringEscape', { fg = isDark and c.vscOrange or c.vscYellowOrange, bold = true })
 
-  hl(0, '@namespace', { fg = "#FFFF00", bg = 'NONE' })
+  hl(0, '@namespace', { fg = "#FFF00", bg = 'NONE' })
   hl(0, '@text.note', { fg = c.vscBlueGreen, bg = 'NONE', bold = true })
   hl(0, '@text.warning', { fg = c.vscYellowOrange, bg = 'NONE', bold = true })
   hl(0, '@text.danger', { fg = c.vscRed, bg = 'NONE', bold = true })
