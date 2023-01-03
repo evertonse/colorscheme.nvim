@@ -9,7 +9,7 @@ end
 
 theme.set_highlights = function(opts)
   local c = require('vscode.colors').get_colors()
-  local vs = require('visualstudio.colors')
+  local vs = require('vs.colors')
   c = vim.tbl_extend('force', c, opts['color_overrides'])
   local isDark = vim.o.background == 'dark'
 
