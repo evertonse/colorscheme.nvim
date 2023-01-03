@@ -58,7 +58,7 @@ theme.set_highlights = function(opts)
   }
 
   local syntax = {
-    Comment         =   { fg = vs.Comment, bg = 'NONE', italic = opts.italic_comments },
+  Comment         =   { fg = vs.Comment, bg = 'NONE', italic = opts.italic_comments },
     Constant        =   { fg = "None", bg = 'NONE' },
     String          =   { fg = c.vscOrange, bg = 'NONE' },
     Character       =   { fg = c.vscOrange, bg = 'NONE' },
@@ -71,7 +71,7 @@ theme.set_highlights = function(opts)
     Conditional     =   { fg = vs.Preprocessor, bg = 'NONE' },
     Repeat          =   { fg = vs.ControlFlow, bg = 'NONE' },
     Label           =   { fg = vs.ControlFlow, bg = 'NONE' },
-    Operator        =   { fg = c.vscFront, bg = 'NONE' },
+    Operator        =   { fg = vs.Keyword, bg = 'NONE' },
     Keyword         =   { fg = vs.Keyword, bg = 'NONE' },
     Exception       =   { fg = vs.Preprocessor, bg = 'NONE' },
     PreProc         =   { fg = vs.Preprocessor, bg = 'NONE' },
@@ -79,7 +79,7 @@ theme.set_highlights = function(opts)
     Define          =   { fg = vs.Preprocessor, bg = 'NONE' },
     Macro           =   { fg = vs.Preprocessor, bg = 'NONE' },
     Type            =   { fg = vs.Type, bg = 'NONE' },
-    StorageClass    =   { fg = vs.Type, bg = 'NONE' },
+    StorageClass    =   { fg = vs.Keyword, bg = 'NONE' },
     Structure       =   { fg = vs.Type, bg = 'NONE' },
     Typedef         =   { fg = vs.Type, bg = 'NONE' },
     Special         =   { fg = c.vscYellowOrange, bg = 'NONE' },
@@ -97,57 +97,81 @@ theme.set_highlights = function(opts)
     SpellRare       =   { fg = c.vscRed, bg = c.vscBack, undercurl = true, sp = c.vscRed },
     SpellLocal      =   { fg = c.vscRed, bg = c.vscBack, undercurl = true, sp = c.vscRed },
     Whitespace      =   { fg = isDark and c.vscLineNumber or c.vscTabOther },
+    TODO            =   { fg = c.vscRed }
+   --[[   --]]
   }
 
   -- Treesitter
   local treesitter = {
-  ['@error']= { fg = c.vscRed, bg = 'NONE' },
-  ['@punctuation.bracket']= { fg = c.vscFront, bg = 'NONE' },
-  ['@punctuation.special']= { fg = c.vscFront, bg = 'NONE' },
   ['@comment']= { fg = vs.Comment, bg = 'NONE', italic = opts.italic_comments },
-  ['@constant']= { fg = c.vscYellow, bg = 'NONE' },
-  ['@constant.builtin']= { fg = c.vscBlue, bg = 'NONE' },
-  ['@constant.macro']= { fg = vs.Macro, bg = 'NONE' },
+  ['@keyword']= { fg = vs.Keyword, bg = 'NONE' },
+  ['@keyword.return']= { fg = vs.ControlFlow, bg = 'NONE' }, -- return,
+  ['@function']= { fg = c.vscYellow, bg = 'NONE' },
+ ---Literals 
   ['@string.regex']= { fg = c.vscOrange, bg = 'NONE' },
   ['@string']= { fg = c.vscOrange, bg = 'NONE' },
   ['@character']= { fg = c.vscOrange, bg = 'NONE' },
   ['@number']= { fg = c.vscLightGreen, bg = 'NONE' },
   ['@boolean']= { fg = c.vscBlue, bg = 'NONE' },
   ['@float']= { fg = c.vscLightGreen, bg = 'NONE' },
+
+  ['@variable']= { fg = vs.Variable, bg = 'NONE' },
+  ['@field']= { fg = vs.Normal, bg = 'NONE' },
+  ['@property']= { fg = vs.Normal, bg = 'NONE' },
+  ['@reference']= { fg = vs.Normal, bg = 'NONE' },
+
+  ['@preproc']= { fg = vs.Preprocessor, bg = 'NONE' },
+  ['@define']= { fg = vs.Preprocessor, bg = 'NONE' },
+  ['@include']= { fg = vs.Preprocessor, bg = 'NONE' },
+
+
+  ['@parameter']= { fg = vs.Parameter, bg = 'NONE' },
+  ['@parameter.reference']= { fg = vs.Parameter, bg = 'NONE' },
+
+  ['@type'] = { fg = vs.Type, bg = 'NONE' }, -- Type
+  ['@type.qualifier'] = { fg = vs.Keyword, bg = 'NONE' }, -- Type
+
+
+  ['@tag.delimiter']= { fg = c.vscGray, bg = 'NONE' },
+  ['@tag.attribute']= { fg = c.Keyword, bg = 'NONE' },
+
+  ['@text.title']= { fg = isDark and c.vscBlue or c.vscYellowOrange, bold = true },
+  ['@text.literal']= { fg = c.vscFront, bg = 'NONE' },
+
+  ['@namespace'] = { fg = vs.Namespace, bg = 'NONE' },
+  
+  ['@definition.macro']= { fg = vs.Macro, bg = 'NONE' },
+  ['@definition.var']= { fg = vs.Normal, bg = 'NONE' },
+  ['@function.macro']= { fg = vs.MacroFunction, bg = 'NONE' },
+  ['@macro.cpp']= { fg = vs.Macro, bg = 'NONE' },
+  ['@constant.macro.cpp']= { fg = vs.Macro, bg = 'NONE' },
+  ['@error']= { fg = c.vscRed, bg = 'NONE' },
+  ['@punctuation.bracket']= { fg = c.vscFront, bg = 'NONE' },
+  ['@punctuation.special']= { fg = c.vscFront, bg = 'NONE' },
+  ['@constant']= { fg = c.vscYellow, bg = 'NONE' },
+  ['@constant.builtin']= { fg = c.Macro, bg = 'NONE' },
+  TSFuncMacro = {fg = vs.Macro}, 
   ['@annotation']= { fg = c.vscYellow, bg = 'NONE' },
   ['@attribute']= { fg = c.vscBlueGreen, bg = 'NONE' },
   ['@function.builtin']= { fg = c.vscYellowOrange, bg = 'NONE' },
-  ['@function']= { fg = c.vscYellow, bg = 'NONE' },
-  ['@function.macro']= { fg = vs.MacroFunction, bg = 'NONE' },
-  ['@parameter']= { fg = vs.Parameter, bg = 'NONE' },
-  ['@parameter.reference']= { fg = vs.Parameter, bg = 'NONE' },
+  --['@function.call']= { fg = vs.None, bg = 'NONE' },
   ['@method']= { fg = c.vscYellow, bg = 'NONE' },
-  ['@field']= { fg = vs.Normal, bg = 'NONE' },
-  ['@property']= { fg = c.vscLightBlue, bg = 'NONE' },
-  ['@constructor']= { fg = c.vscBlueGreen, bg = 'NONE' },
+  ['@constructor']= { fg = c.vscYellowOrange, bg = 'NONE' },
   ['@conditional']= { fg = vs.ControlFlow, bg = 'NONE' },
-  ['@repeat']= { fg = vs.Preprocessor, bg = 'NONE' },
-  ['@label']= { fg = c.vscLightBlue, bg = 'NONE' },
-  ['@keyword']= { fg = vs.Keyword, bg = 'NONE' },
+  ['@repeat']= { fg = vs.ControlFlow, bg = 'NONE' },
+  ['@label']= { fg = vs.Debug, bg = 'NONE' },
   ['@keyword.function']= { fg = c.vscBlue, bg = 'NONE' },
   ['@keyword.operator']= { fg = c.vscBlue, bg = 'NONE' },
   ['@operator']= { fg = c.vscFront, bg = 'NONE' },
-  ['@exception']= { fg = vs.Preprocessor, bg = 'NONE' },
-  ['@type']= { fg = vs.Type, bg = 'NONE' },
-  ['@type.builtin']= { fg = vs.Type, bg = 'NONE' },
-  ['@type.qualifier']= { fg = vs.Type, bg = 'NONE' },
-  ['@storageClass']= { fg = c.vsDebug, bg = 'NONE' },
-  ['@structure']= { fg = c.vscLightBlue, bg = 'NONE' },
-  ['@include']= { fg = c.vsDebug , bg = 'NONE' },
-  ['@variable']= { fg = c.vsDebug, bg = 'NONE' },
-  ['@variable.builtin']= { fg = c.vscLightBlue, bg = 'NONE' },
+  ['@exception']= { fg = vs.ControlFlow, bg = 'NONE' },
+  ['@type.definition']= { fg = vs.Keyword, bg = 'NONE' },
+  ['@type.builtin']= { fg = vs.Keyword, bg = 'NONE' },
+  ['@storageClass']= { fg = vs.Keyword, bg = 'NONE' },
+  ['@structure']= { fg = vs.Type, bg = 'NONE' },
+  ['@variable.builtin']= { fg = vs.VariableBuiltin, bg = 'NONE' },
   ['@text']= { fg = c.vscFront, bg = 'NONE' },
   ['@text.underline']= { fg = c.vscYellowOrange, bg = 'NONE' },
-  ['@tag']= { fg = c.vscBlue, bg = 'NONE' },
-  ['@tag.delimiter']= { fg = c.vscGray, bg = 'NONE' },
-  ['@tag.attribute']= { fg = c.vscLightBlue, bg = 'NONE' },
-  ['@text.title']= { fg = isDark and c.vscBlue or c.vscYellowOrange, bold = true },
-  ['@text.literal']= { fg = c.vscFront, bg = 'NONE' },
+  ['@tag']= { fg = vs.Normal, bg = 'NONE' },
   ['markdown@text.literal']= { fg = c.vscOrange, bg = 'NONE' },
   ['markdown_inline@text.literal']= { fg = c.vscOrange, bg = 'NONE' },
   ['@text.emphasis']= { fg = c.vscFront, bg = 'NONE', italic = true },
@@ -156,14 +180,18 @@ theme.set_highlights = function(opts)
   ['@textReference']= { fg = isDark and c.vscOrange or c.vscYellowOrange },
   ['@punctuation.delimiter']= { fg = c.vscFront, bg = 'NONE' },
   ['@stringEscape']= { fg = isDark and c.vscOrange or c.vscYellowOrange, bold = true },
-  ['@namespace'] = { fg = vs.Namespace, bg = 'NONE' },
   ['@text.note']= { fg = c.vscBlueGreen, bg = 'NONE', bold = true },
   ['@text.warning']= { fg = c.vscYellowOrange, bg = 'NONE', bold = true },
   ['@text.danger']= { fg = c.vscRed, bg = 'NONE', bold = true },
-}
+  ['@keyword.override']= { fg = c.vscRed, bg = 'NONE', bold = true },
+  ['@scope']= { fg = c.vscRed, bg = 'NONE', bold = true },
+  --[[
+--]]
+  }
   highlight(editor)
   highlight(syntax)
   highlight(treesitter)
+
   -- Markdown
   hl(0, 'markdownBold', { fg = isDark and c.vscBlue or c.vscYellowOrange, bold = true })
   hl(0, 'markdownCode', { fg = c.vscOrange, bg = 'NONE' })
