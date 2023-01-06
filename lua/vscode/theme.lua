@@ -106,6 +106,8 @@ theme.set_highlights = function(opts)
   ['@comment']= { fg = vs.Comment, bg = 'NONE', italic = opts.italic_comments },
   ['@keyword']= { fg = vs.Keyword, bg = 'NONE' },
   ['@keyword.return']= { fg = vs.ControlFlow, bg = 'NONE' }, -- return,
+  ['@keyword.function']= { fg = vs.Keyword, bg = 'NONE' },
+  ['@keyword.operator']= { fg = vs.Keyword, bg = 'NONE' },
   ['@function']= { fg = c.vscYellow, bg = 'NONE' },
  ---Literals 
   ['@string.regex']= { fg = c.vscOrange, bg = 'NONE' },
@@ -141,14 +143,14 @@ theme.set_highlights = function(opts)
   ['@namespace'] = { fg = vs.Namespace, bg = 'NONE' },
   
   ['@definition.macro']= { fg = vs.Macro, bg = 'NONE' },
-  ['@definition.var']= { fg = vs.Normal, bg = 'NONE' },
+  ['@definition.var']= { fg = vs.Macro, bg = 'NONE' },
   ['@function.macro']= { fg = vs.MacroFunction, bg = 'NONE' },
   ['@macro.cpp']= { fg = vs.Macro, bg = 'NONE' },
   ['@constant.macro.cpp']= { fg = vs.Macro, bg = 'NONE' },
   ['@error']= { fg = c.vscRed, bg = 'NONE' },
   ['@punctuation.bracket']= { fg = c.vscFront, bg = 'NONE' },
   ['@punctuation.special']= { fg = c.vscFront, bg = 'NONE' },
-  ['@constant']= { fg = c.vscYellow, bg = 'NONE' },
+  ['@constant']= { fg = c.Macro, bg = 'NONE' },
   ['@constant.builtin']= { fg = c.Macro, bg = 'NONE' },
   TSFuncMacro = {fg = vs.Macro}, 
   ['@annotation']= { fg = c.vscYellow, bg = 'NONE' },
@@ -160,8 +162,6 @@ theme.set_highlights = function(opts)
   ['@conditional']= { fg = vs.ControlFlow, bg = 'NONE' },
   ['@repeat']= { fg = vs.ControlFlow, bg = 'NONE' },
   ['@label']= { fg = vs.Debug, bg = 'NONE' },
-  ['@keyword.function']= { fg = c.vscBlue, bg = 'NONE' },
-  ['@keyword.operator']= { fg = c.vscBlue, bg = 'NONE' },
   ['@operator']= { fg = c.vscFront, bg = 'NONE' },
   ['@exception']= { fg = vs.ControlFlow, bg = 'NONE' },
   ['@type.definition']= { fg = vs.Keyword, bg = 'NONE' },
@@ -183,7 +183,7 @@ theme.set_highlights = function(opts)
   ['@text.note']= { fg = c.vscBlueGreen, bg = 'NONE', bold = true },
   ['@text.warning']= { fg = c.vscYellowOrange, bg = 'NONE', bold = true },
   ['@text.danger']= { fg = c.vscRed, bg = 'NONE', bold = true },
-  ['@keyword.override']= { fg = c.vscRed, bg = 'NONE', bold = true },
+  ['@keyword.override']= { fg = vs.Keyword, bg = 'NONE', bold = true },
   ['@scope']= { fg = c.vscRed, bg = 'NONE', bold = true },
   --[[
 --]]

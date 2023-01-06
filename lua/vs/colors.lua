@@ -13,11 +13,11 @@ return {
   Invalid           = "#f44747",
   Macro             = "#cac4ff",
   MacroFunction     = "#cac4ff",
-  Normal            = "#343434",
+  Normal            = "#DADADA",
   Preprocessor      = "#9b9b9b",
   Keyword           = "#569CD6",
   VariableLocal     = "#9CDCFE",
-  Variable          = "#343434",
+  Variable          = "#DADADA",
   VariableBuiltin   = "#3d739f",
   ControlFlow       = "#C586C0",
 }
