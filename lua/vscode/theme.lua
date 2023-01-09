@@ -101,15 +101,19 @@ theme.set_highlights = function(opts)
    --[[   --]]
   }
 
-  -- Treesitter
+  -->> Treesitter
   local treesitter = {
   ['@comment']= { fg = vs.Comment, bg = 'NONE', italic = opts.italic_comments },
   ['@keyword']= { fg = vs.Keyword, bg = 'NONE' },
   ['@keyword.return']= { fg = vs.ControlFlow, bg = 'NONE' }, -- return,
   ['@keyword.function']= { fg = vs.Keyword, bg = 'NONE' },
   ['@keyword.operator']= { fg = vs.Keyword, bg = 'NONE' },
+  -- Fucntions
   ['@function']= { fg = c.vscYellow, bg = 'NONE' },
- ---Literals 
+  ['@function.builtin']= { fg = c.vscYellowOrange, bg = 'NONE' },
+  ['@function.macro']= { fg = vs.MacroFunction, bg = 'NONE' },
+  ['@function.call']= { fg = vs.None, bg = 'NONE' },
+  --Literals 
   ['@string.regex']= { fg = c.vscOrange, bg = 'NONE' },
   ['@string']= { fg = c.vscOrange, bg = 'NONE' },
   ['@character']= { fg = c.vscOrange, bg = 'NONE' },
@@ -144,7 +148,6 @@ theme.set_highlights = function(opts)
   
   ['@definition.macro']= { fg = vs.Macro, bg = 'NONE' },
   ['@definition.var']= { fg = vs.Macro, bg = 'NONE' },
-  ['@function.macro']= { fg = vs.MacroFunction, bg = 'NONE' },
   ['@macro.cpp']= { fg = vs.Macro, bg = 'NONE' },
   ['@constant.macro.cpp']= { fg = vs.Macro, bg = 'NONE' },
   ['@error']= { fg = c.vscRed, bg = 'NONE' },
@@ -155,8 +158,6 @@ theme.set_highlights = function(opts)
   TSFuncMacro = {fg = vs.Macro}, 
   ['@annotation']= { fg = c.vscYellow, bg = 'NONE' },
   ['@attribute']= { fg = c.vscBlueGreen, bg = 'NONE' },
-  ['@function.builtin']= { fg = c.vscYellowOrange, bg = 'NONE' },
-  --['@function.call']= { fg = vs.None, bg = 'NONE' },
   ['@method']= { fg = c.vscYellow, bg = 'NONE' },
   ['@constructor']= { fg = c.vscYellowOrange, bg = 'NONE' },
   ['@conditional']= { fg = vs.ControlFlow, bg = 'NONE' },
@@ -183,7 +184,6 @@ theme.set_highlights = function(opts)
   ['@text.note']= { fg = c.vscBlueGreen, bg = 'NONE', bold = true },
   ['@text.warning']= { fg = c.vscYellowOrange, bg = 'NONE', bold = true },
   ['@text.danger']= { fg = c.vscRed, bg = 'NONE', bold = true },
-  ['@keyword.override']= { fg = vs.Keyword, bg = 'NONE', bold = true },
   ['@scope']= { fg = c.vscRed, bg = 'NONE', bold = true },
   --[[
 --]]
