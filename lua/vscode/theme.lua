@@ -58,7 +58,7 @@ theme.set_highlights = function(opts)
   }
 
   local syntax = {
-  Comment         =   { fg = vs.Comment, bg = 'NONE', italic = opts.italic_comments },
+  Comment           =   { fg = vs.Comment, bg = 'NONE', italic = opts.italic_comments },
     Constant        =   { fg = "None", bg = 'NONE' },
     String          =   { fg = c.vscOrange, bg = 'NONE' },
     Character       =   { fg = c.vscOrange, bg = 'NONE' },
@@ -71,7 +71,7 @@ theme.set_highlights = function(opts)
     Conditional     =   { fg = vs.ControlFlow, bg = 'NONE' },
     Repeat          =   { fg = vs.ControlFlow, bg = 'NONE' },
     Label           =   { fg = vs.ControlFlow, bg = 'NONE' },
-    Operator        =   { fg = vs.Keyword, bg = 'NONE' },
+    Operator        =   { fg = vs.Normal, bg = 'NONE' },
     Keyword         =   { fg = vs.Keyword, bg = 'NONE' },
     Exception       =   { fg = vs.ControlFlow, bg = 'NONE' },
     PreProc         =   { fg = vs.Preprocessor, bg = 'NONE' },
@@ -80,7 +80,7 @@ theme.set_highlights = function(opts)
     Macro           =   { fg = vs.Macro, bg = 'NONE' },
     Type            =   { fg = vs.Type, bg = 'NONE' },
     StorageClass    =   { fg = vs.Keyword, bg = 'NONE' },
-    Structure       =   { fg = vs.Type, bg = 'NONE' },
+    Structure       =   { fg = vs.Keyword, bg = 'NONE' },
     Typedef         =   { fg = vs.Type, bg = 'NONE' },
     Special         =   { fg = c.vscYellowOrange, bg = 'NONE' },
     SpecialChar     =   { fg = c.vscFront, bg = 'NONE' },
@@ -112,7 +112,7 @@ theme.set_highlights = function(opts)
   ['@function']= { fg = c.vscYellow, bg = 'NONE' },
   ['@function.builtin']= { fg = c.vscYellowOrange, bg = 'NONE' },
   ['@function.macro']= { fg = vs.MacroFunction, bg = 'NONE' },
-  ['@function.call']= { fg = vs.None, bg = 'NONE' },
+  --['@function.call']= { fg = vs.None, bg = 'NONE' },
   --Literals 
   ['@string.regex']= { fg = c.vscOrange, bg = 'NONE' },
   ['@string']= { fg = c.vscOrange, bg = 'NONE' },
@@ -185,13 +185,17 @@ theme.set_highlights = function(opts)
   ['@text.warning']= { fg = c.vscYellowOrange, bg = 'NONE', bold = true },
   ['@text.danger']= { fg = c.vscRed, bg = 'NONE', bold = true },
   ['@scope']= { fg = c.vscRed, bg = 'NONE', bold = true },
-  --[[
---]]
   }
+
+  local lsp_semantic = {
+    LspGlobal = {fg = vs.Global, bg = 'None', bold = true},
+    LspGlobalScope = {fg = vs.Global, bg = 'None', bold = true}
+  } 
+    
   highlight(editor)
   highlight(syntax)
   highlight(treesitter)
-
+  highlight(lsp_semantic)
   -- Markdown
   hl(0, 'markdownBold', { fg = isDark and c.vscBlue or c.vscYellowOrange, bold = true })
   hl(0, 'markdownCode', { fg = c.vscOrange, bg = 'NONE' })

@@ -17,7 +17,7 @@ return {
   Preprocessor      = "#9b9b9b",
   Keyword           = "#569CD6",
   VariableLocal     = "#9CDCFE",
-  Variable          = "#DADADA",
+  Variable          = "#9CDCFE",
   VariableBuiltin   = "#3d739f",
   ControlFlow       = "#C586C0",
 }
