@@ -59,6 +59,7 @@ theme.set_highlights = function(opts)
 
   local syntax = {
     Comment           =   { fg = vs.Comment, bg = 'NONE', italic = opts.italic_comments },
+    Variable          = { fg = vs.Variable, bg = 'None'},
     --Constant        =   { fg = "None", bg = 'NONE' },
     String          =   { fg = c.vscOrange, bg = 'NONE' },
     Character       =   { fg = c.vscOrange, bg = 'NONE' },
@@ -154,7 +155,7 @@ theme.set_highlights = function(opts)
   ['@text.title']= { fg = isDark and c.vscBlue or c.vscYellowOrange, bold = true },
   ['@text.literal']= { fg = c.vscFront, bg = 'NONE' },
 
-  --['@namespace'] = { fg = vs.Namespace, bg = 'NONE' },
+  ['@namespace'] = { fg = vs.Namespace, bg = 'NONE' },
   
   --['@definition.macro']= { fg = vs.Macro, bg = 'NONE' },
   --['@definition.var']= { fg = vs.Macro, bg = 'NONE' },
@@ -171,7 +172,7 @@ theme.set_highlights = function(opts)
   --['@annotation']= { fg = c.vscYellow, bg = 'NONE' },
   --['@attribute']= { fg = c.vscBlueGreen, bg = 'NONE' },
   
-  ['@constructor']= { fg = c.vscYellowOrange, bg = 'NONE' },
+  ['@constructor']= { fg = vs.Construtor, bold = true, italic = true },
   ['@conditional']= { fg = vs.ControlFlow, bg = 'NONE' },
   ['@repeat']= { fg = vs.ControlFlow, bg = 'NONE' },
   ['@label']= { fg = vs.Debug, bg = 'NONE' },
@@ -196,17 +197,19 @@ theme.set_highlights = function(opts)
   -- ['@scope']= { fg = c.vscRed, bg = 'NONE', bold = true },
   }
 
-  local lsp_semantic = {
-    LspGlobal       = {fg = vs.Global, bg = 'None', bold = true},
-    LspGlobalScope  = {fg = vs.Global, bg = 'None', bold = true},
-    LspNamespace    = {fg = vs.Global, bg = 'None', bold = true},
-    namespace       = {fg = vs.Global, bg = 'None', bold = true},
-  } 
+  local lsp_semantic  = {
+    LspGlobal         = {fg = vs.Global, bg = 'None', bold = true},
+    GlobalScope       = {fg = vs.Global, bg = 'None', bold = true},
+    Global            = {fg = vs.Global, bg = 'None', bold = true},
+    LspGlobalScope    = {fg = vs.Global, bg = 'None', bold = true},
+    LspNamespace      = {fg = vs.Global, bg = 'None', bold = true},
+    namespace         = {fg = vs.Global, bg = 'None', bold = true},
+  }
     
   highlight(editor)
   highlight(syntax)
-  highlight(treesitter)
   highlight(lsp_semantic)
+  highlight(treesitter)
   -- Markdown
   hl(0, 'markdownBold', { fg = isDark and c.vscBlue or c.vscYellowOrange, bold = true })
   hl(0, 'markdownCode', { fg = c.vscOrange, bg = 'NONE' })
