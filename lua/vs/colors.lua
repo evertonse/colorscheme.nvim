@@ -5,7 +5,7 @@ return {
   Comment           = "#405c37",
   Parameter         = "#9a9a9a",
   Type              = "#4EC9B0",
-  Construtor        = "#4EC9BA",
+  Construtor        = "#4EC9B0",
   Namespace         = "#cffae4",
   Global            = "#F8D1EF",
   Property          = "#DADADA",
