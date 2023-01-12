@@ -19,7 +19,7 @@ theme.set_highlights = function(opts)
     Cursor          =   { fg = c.vscCursorDark, bg = c.vscCursorLight },
     CursorLine      =   { bg = c.vscCursorDarkDark },
     CursorColumn    =   { fg = 'NONE', bg = c.vscCursorDarkDark },
-    Directory       =   { fg = c.vscYellowOrange, bg = c.vscBack },
+    Directory       =   { fg = vs.Method, bg = c.vscBack },
     DiffAdd         =   { fg = 'NONE', bg = c.vscDiffGreenLight },
     DiffChange      =   { fg = 'NONE', bg = c.vscDiffRedDark },
     DiffDelete      =   { fg = 'NONE', bg = c.vscDiffRedLight },
@@ -411,7 +411,7 @@ theme.set_highlights = function(opts)
   hl(0, 'pythonNone', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'pythonTodo', { fg = vs.Type, bg = 'NONE' })
   hl(0, 'pythonClassVar', { fg = vs.Type, bg = 'NONE' })
-  hl(0, 'pythonClassDef', { fg = c.vsTypeGreen, bg = 'NONE' })
+  hl(0, 'pythonClassDef', { fg = vs.Debug, bg = 'NONE' })
 
   -- TeX
   hl(0, 'texStatement', { fg = vs.Type, bg = 'NONE' })
@@ -488,6 +488,7 @@ theme.set_highlights = function(opts)
   hl(0, 'NvimTreeGitMerge', { fg = c.vscGitUntracked, bg = 'NONE' })
   hl(0, 'NvimTreeGitDirty', { fg = c.vscGitModified, bg = 'NONE' })
   hl(0, 'NvimTreeGitNew', { fg = c.vscGitAdded, bg = 'NONE' })
+  hl(0, 'NvimTreeFolderIcon', { fg = vs.Method, bg = 'NONE' })
 
   -- Bufferline
   hl(0, 'BufferLineIndicatorSelected', { fg = c.vscLeftDark, bg = 'NONE' })

@@ -12,13 +12,14 @@ return {
   SelfParameter     = "#CAC4FF",
   Numeric           = "#b5cea8",
   Invalid           = "#f44747",
-  Macro             = "#cac4ff",
   MacroFunction     = "#cac4ff",
+  Macro             = "#bbafff",
   Normal            = "#DADADA",
   Preprocessor      = "#9b9b9b",
   Keyword           = "#569CD6",
   VariableLocal     = "#9CDCFE",
   Variable          = "#9CDCFE",
-  VariableBuiltin   = "#458bc5",
+  VariableBuiltin   = "#2369a2",
   ControlFlow       = "#C586C0",
+  Method            = "#DCDCAA"
 }
