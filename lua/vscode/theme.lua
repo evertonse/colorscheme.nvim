@@ -129,6 +129,7 @@ theme.set_highlights = function(opts)
   
     -- Variables
   ['@variable']= { fg = vs.Variable, bg = 'NONE' },
+  ['@variable.builtin']= { fg = vs.VariableBuiltin, bg = 'NONE' },
   ['@field']= { fg = vs.Normal, bg = 'NONE' },
   ['@property']= { fg = vs.Normal, bg = 'NONE' },
   ['@reference']= { fg = vs.Normal, bg = 'NONE' },

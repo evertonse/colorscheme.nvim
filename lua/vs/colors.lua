@@ -19,6 +19,6 @@ return {
   Keyword           = "#569CD6",
   VariableLocal     = "#9CDCFE",
   Variable          = "#9CDCFE",
-  VariableBuiltin   = "#3d739f",
+  VariableBuiltin   = "#458bc5",
   ControlFlow       = "#C586C0",
 }
