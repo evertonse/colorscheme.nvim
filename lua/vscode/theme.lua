@@ -208,13 +208,22 @@ theme.set_highlights = function(opts)
     Global            = { fg = vs.Global, bg = 'None', bold = true},
     LspGlobalScope    = { fg = vs.Global, bg = 'None', bold = true},
     LspNamespace      = { fg = vs.Global, bg = 'None', bold = true},
-    namespace         = { fg = vs.Global, bg = 'None', bold = true},
+    namespace         = { fg = vs.Global, bg = 'None'},
+    ['@class']        = { fg = vs.Type,   bold = false, italic = false},
+    ['@macro']        = { fg = vs.Macro,  bold = false, italic = false},
+    ['@namespace']    = { fg = vs.Namespace,  bold = false, italic = false},
+    ['@globalScope']  = { italic = true,  bold = true},
   }
-    
+    --- @Remember you can use :Inspect to see all captures and hl groups on a token 
+  local lsp_semantic_with_treesitter  = {
+    --['@variable.global']  = { fg = vs.Global, bg = 'None', italic=true ,bold = true},
+  }
+
   highlight(editor)
   highlight(syntax)
   highlight(treesitter)
   highlight(lsp_semantic)
+  highlight(lsp_semantic_with_treesitter)
   -- Markdown
   hl(0, 'markdownBold', { fg = isDark and c.vscBlue or c.vscYellowOrange, bold = true })
   hl(0, 'markdownCode', { fg = c.vscOrange, bg = 'NONE' })
