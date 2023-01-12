@@ -178,7 +178,7 @@ theme.set_highlights = function(opts)
   ['@constructor.cpp']  = { fg = vs.Construtor, bold = true},
   ['@constructor.py']   = { fg = vs.Construtor, bold = true},
   
-    ['@conditional']= { fg = vs.ControlFlow, bg = 'NONE' },
+  ['@conditional']= { fg = vs.ControlFlow, bg = 'NONE' },
   ['@repeat']= { fg = vs.ControlFlow, bg = 'NONE' },
   ['@label']= { fg = vs.Debug, bg = 'NONE' },
   ['@operator']= { fg = c.vscFront, bg = 'NONE' },
@@ -205,7 +205,7 @@ theme.set_highlights = function(opts)
   local lsp_semantic  = {
     LspGlobal         = { fg = vs.Global, bg = 'None', bold = true},
     GlobalScope       = { fg = vs.Global, bg = 'None', bold = true},
-    Global            = { fg = vs.Global, bg = 'None', bold = true},
+    ['@global']            = { fg = vs.Global, bg = 'None', bold = true},
     LspGlobalScope    = { fg = vs.Global, bg = 'None', bold = true},
     LspNamespace      = { fg = vs.Global, bg = 'None', bold = true},
     namespace         = { fg = vs.Global, bg = 'None'},
@@ -213,6 +213,7 @@ theme.set_highlights = function(opts)
     ['@macro']        = { fg = vs.Macro,  bold = false, italic = false},
     ['@namespace']    = { fg = vs.Namespace,  bold = false, italic = false},
     ['@globalScope']  = { italic = true,  bold = true},
+    ['@defaultLibrary']  = { fg = vs.Native},
   }
     --- @Remember you can use :Inspect to see all captures and hl groups on a token 
   local lsp_semantic_with_treesitter  = {
