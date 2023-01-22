@@ -147,6 +147,8 @@ theme.set_highlights = function(opts)
   ['@type.qualifier'] = { fg = vs.Keyword, bg = 'NONE' },
   ['@type.definition']= { fg = vs.Keyword, bg = 'NONE' },
   ['@type.builtin']= { fg = vs.Keyword, bg = 'NONE' },
+  ['@type.builtin.py']= { fg = vs.Type, bg = 'NONE' },
+  ['@type.builtin.python']= { fg = vs.Type, bg = 'NONE' },
   --['@storageClass']= { fg = vs.Keyword, bg = 'NONE' },
   --['@structure']= { fg = vs.Type, bg = 'NONE' },
   
