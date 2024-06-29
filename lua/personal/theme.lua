@@ -3,12 +3,7 @@ local M = {}
 
 M.set_highlights = function(opts)
     local vscode = require('colors.vscode_colors')
-    local isDark = vim.o.background == 'dark'
-    local highlights = require('personal.highlight')
-
-    for hl_group, hl_opts in pairs(highlights) do
-        hl(0, hl_group, hl_opts)
-    end
+    local is_dark = true
 
     hl(0, 'Normal', { fg = vscode.vscFront, bg = vscode.vscBack })
     hl(0, 'ColorColumn', { fg = 'NONE', bg = vscode.vscCursorDarkDark })
@@ -33,9 +28,9 @@ M.set_highlights = function(opts)
     hl(0, 'MatchParen', { fg = vscode.vscNone, bg = vscode.vscDimHighlight })
     hl(0, 'ModeMsg', { fg = vscode.vscFront, bg = vscode.vscLeftDark })
     hl(0, 'MoreMsg', { fg = vscode.vscFront, bg = vscode.vscLeftDark })
-    hl(0, 'NonText', { fg = (isDark and vscode.vscLineNumber or vscode.vscTabOther), bg = vscode.vscNone })
+    hl(0, 'NonText', { fg = (is_dark and vscode.vscLineNumber or vscode.vscTabOther), bg = vscode.vscNone })
     hl(0, 'Pmenu', { fg = vscode.vscPopupFront, bg = vscode.vscPopupBack })
-    hl(0, 'PmenuSel', { fg = isDark and vscode.vscPopupFront or vscode.vscBack, bg = vscode.vscPopupHighlightBlue })
+    hl(0, 'PmenuSel', { fg = is_dark and vscode.vscPopupFront or vscode.vscBack, bg = vscode.vscPopupHighlightBlue })
     hl(0, 'PmenuSbar', { fg = 'NONE', bg = vscode.vscPopupHighlightGray })
     hl(0, 'PmenuThumb', { fg = 'NONE', bg = vscode.vscPopupFront })
     hl(0, 'Question', { fg = vscode.vscBlue, bg = vscode.vscBack })
@@ -90,7 +85,7 @@ M.set_highlights = function(opts)
     hl(0, 'SpellCap', { fg = 'NONE', undercurl = true, sp = vscode.vscYellow })
     hl(0, 'SpellRare', { fg = 'NONE', undercurl = true, sp = vscode.vscViolet })
     hl(0, 'SpellLocal', { fg = 'NONE', undercurl = true, sp = vscode.vscBlue })
-    hl(0, 'Whitespace', { fg = isDark and vscode.vscLineNumber or vscode.vscTabOther })
+    hl(0, 'Whitespace', { fg = is_dark and vscode.vscLineNumber or vscode.vscTabOther })
     hl(0, 'NormalFloat', { bg = vscode.vscPopupBack })
     hl(0, 'WinBar', { fg = vscode.vscFront, bg = vscode.vscBack, bold = true })
     hl(0, 'WinBarNc', { fg = vscode.vscFront, bg = vscode.vscBack })
@@ -146,11 +141,11 @@ M.set_highlights = function(opts)
     hl(0, '@tag.attribute', { fg = vscode.vscLightBlue, bg = 'NONE' })
 
     hl(0, '@text', { fg = vscode.vscFront, bg = 'NONE' }) -- Legacy
-    hl(0, '@markup.strong', { fg = isDark and vscode.vscBlue or vscode.vscViolet, bold = true })
+    hl(0, '@markup.strong', { fg = is_dark and vscode.vscBlue or vscode.vscViolet, bold = true })
     hl(0, '@markup.italic', { fg = vscode.vscFront, bg = 'NONE', italic = true })
     hl(0, '@markup.underline', { fg = vscode.vscYellowOrange, bg = 'NONE', underline = true })
     hl(0, '@markup.strikethrough', { fg = vscode.vscFront, bg = 'NONE', strikethrough = true })
-    hl(0, '@markup.heading', { fg = isDark and vscode.vscBlue or vscode.vscYellowOrange, bold = true })
+    hl(0, '@markup.heading', { fg = is_dark and vscode.vscBlue or vscode.vscYellowOrange, bold = true })
     hl(0, '@markup.raw', { fg = vscode.vscFront, bg = 'NONE' })
     hl(0, '@markup.raw.markdown', { fg = vscode.vscOrange, bg = 'NONE' })
     hl(0, '@markup.raw.markdown_inline', { fg = vscode.vscOrange, bg = 'NONE' })
@@ -158,8 +153,8 @@ M.set_highlights = function(opts)
     hl(0, '@markup.link.url', { fg = vscode.vscFront, bg = 'NONE', underline = opts.underline_links })
     hl(0, '@markup.list.checked', { link = 'Todo' })
     hl(0, '@markup.list.unchecked', { link = 'Todo' })
-    hl(0, '@textReference', { fg = isDark and vscode.vscOrange or vscode.vscYellowOrange })
-    hl(0, '@stringEscape', { fg = isDark and vscode.vscOrange or vscode.vscYellowOrange, bold = true })
+    hl(0, '@textReference', { fg = is_dark and vscode.vscOrange or vscode.vscYellowOrange })
+    hl(0, '@stringEscape', { fg = is_dark and vscode.vscOrange or vscode.vscYellowOrange, bold = true })
 
     hl(0, '@diff.plus', { link = 'DiffAdd' })
     hl(0, '@diff.minus', { link = 'DiffDelete' })
@@ -187,16 +182,16 @@ M.set_highlights = function(opts)
     hl(0, '@decorator', { link = 'Identifier' })
 
     -- Markdown
-    hl(0, 'markdownBold', { fg = isDark and vscode.vscBlue or vscode.vscYellowOrange, bold = true })
+    hl(0, 'markdownBold', { fg = is_dark and vscode.vscBlue or vscode.vscYellowOrange, bold = true })
     hl(0, 'markdownCode', { fg = vscode.vscOrange, bg = 'NONE' })
-    hl(0, 'markdownRule', { fg = isDark and vscode.vscBlue or vscode.vscYellowOrange, bold = true })
+    hl(0, 'markdownRule', { fg = is_dark and vscode.vscBlue or vscode.vscYellowOrange, bold = true })
     hl(0, 'markdownCodeDelimiter', { fg = vscode.vscFront, bg = 'NONE' })
-    hl(0, 'markdownHeadingDelimiter', { fg = isDark and vscode.vscBlue or vscode.vscYellowOrange, bg = 'NONE' })
-    hl(0, 'markdownFootnote', { fg = isDark and vscode.vscOrange or vscode.vscYellowOrange, bg = 'NONE' })
-    hl(0, 'markdownFootnoteDefinition', { fg = isDark and vscode.vscOrange or vscode.vscYellowOrange })
+    hl(0, 'markdownHeadingDelimiter', { fg = is_dark and vscode.vscBlue or vscode.vscYellowOrange, bg = 'NONE' })
+    hl(0, 'markdownFootnote', { fg = is_dark and vscode.vscOrange or vscode.vscYellowOrange, bg = 'NONE' })
+    hl(0, 'markdownFootnoteDefinition', { fg = is_dark and vscode.vscOrange or vscode.vscYellowOrange })
     hl(0, 'markdownUrl', { fg = vscode.vscFront, bg = 'NONE', underline = true })
-    hl(0, 'markdownLinkText', { fg = isDark and vscode.vscOrange or vscode.vscYellowOrange })
-    hl(0, 'markdownEscape', { fg = isDark and vscode.vscOrange or vscode.vscYellowOrange })
+    hl(0, 'markdownLinkText', { fg = is_dark and vscode.vscOrange or vscode.vscYellowOrange })
+    hl(0, 'markdownEscape', { fg = is_dark and vscode.vscOrange or vscode.vscYellowOrange })
 
     -- Asciidoc
     hl(0, 'asciidocAttributeEntry', { fg = vscode.vscYellowOrange })
@@ -566,17 +561,17 @@ M.set_highlights = function(opts)
     hl(
         0,
         'LspReferenceText',
-        { fg = 'NONE', bg = isDark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue }
+        { fg = 'NONE', bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue }
     )
     hl(
         0,
         'LspReferenceRead',
-        { fg = 'NONE', bg = isDark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue }
+        { fg = 'NONE', bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue }
     )
     hl(
         0,
         'LspReferenceWrite',
-        { fg = 'NONE', bg = isDark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue }
+        { fg = 'NONE', bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue }
     )
 
     -- Trouble
@@ -587,17 +582,17 @@ M.set_highlights = function(opts)
     hl(
         0,
         'CocHighlightText',
-        { fg = 'NONE', bg = isDark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue }
+        { fg = 'NONE', bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue }
     )
     hl(
         0,
         'CocHighlightRead',
-        { fg = 'NONE', bg = isDark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue }
+        { fg = 'NONE', bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue }
     )
     hl(
         0,
         'CocHighlightWrite',
-        { fg = 'NONE', bg = isDark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue }
+        { fg = 'NONE', bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue }
     )
 
     -- Nvim compe
@@ -613,11 +608,11 @@ M.set_highlights = function(opts)
     hl(0, 'CmpItemMenu', { fg = vscode.vscPopupFront, bg = 'NONE' })
     hl(0, 'CmpItemAbbr', { fg = vscode.vscFront, bg = 'NONE' })
     hl(0, 'CmpItemAbbrDeprecated', { fg = vscode.vscCursorDark, bg = vscode.vscPopupBack, strikethrough = true })
-    hl(0, 'CmpItemAbbrMatch', { fg = isDark and vscode.vscMediumBlue or vscode.vscDarkBlue, bg = 'NONE', bold = true })
+    hl(0, 'CmpItemAbbrMatch', { fg = is_dark and vscode.vscMediumBlue or vscode.vscDarkBlue, bg = 'NONE', bold = true })
     hl(
         0,
         'CmpItemAbbrMatchFuzzy',
-        { fg = isDark and vscode.vscMediumBlue or vscode.vscDarkBlue, bg = 'NONE', bold = true }
+        { fg = is_dark and vscode.vscMediumBlue or vscode.vscDarkBlue, bg = 'NONE', bold = true }
     )
 
     -- HiPhish/rainbow-delimiters.nvim
@@ -676,11 +671,15 @@ M.set_highlights = function(opts)
     hl(0, 'DashboardFooter', { fg = vscode.vscBlue, bg = 'NONE', italic = true })
 
     -- Illuminate
-    hl(0, 'illuminatedWord', { bg = isDark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue })
-    hl(0, 'illuminatedCurWord', { bg = isDark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue })
-    hl(0, 'IlluminatedWordText', { bg = isDark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue })
-    hl(0, 'IlluminatedWordRead', { bg = isDark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue })
-    hl(0, 'IlluminatedWordWrite', { bg = isDark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue })
+    hl(0, 'illuminatedWord', { bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue })
+    hl(0, 'illuminatedCurWord', { bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue })
+    hl(0, 'IlluminatedWordText', { bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue })
+    hl(0, 'IlluminatedWordRead', { bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue })
+    hl(
+        0,
+        'IlluminatedWordWrite',
+        { bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue }
+    )
 
     -- mini.statusline
     hl(0, 'MiniStatuslineModeNormal', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
@@ -695,7 +694,7 @@ M.set_highlights = function(opts)
     hl(0, 'MiniStatuslineInactive', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
 
     -- NeogitOrg/neogit
-    if isDark then
+    if is_dark then
         hl(0, 'NeogitDiffAdd', { fg = vscode.vscGitAdded, bg = vscode.vscDiffGreenDark })
         hl(0, 'NeogitDiffAddHighlight', { fg = vscode.vscGitAdded, bg = vscode.vscDiffGreenLight })
         hl(0, 'NeogitDiffContext', { fg = vscode.vscPopupFront, bg = vscode.vscLeftDark })
@@ -719,7 +718,7 @@ M.set_highlights = function(opts)
         hl(0, 'NeogitHunkHeaderHighlight', { fg = vscode.vscGitModified, bg = vscode.vscLeftDark })
     end
 
-    if isDark then
+    if is_dark then
         hl(0, 'NvimTreeFolderIcon', { fg = vscode.vscBlue, bg = 'NONE' })
         hl(0, 'NvimTreeIndentMarker', { fg = vscode.vscLineNumber, bg = 'NONE' })
 
@@ -862,6 +861,11 @@ M.link_highlights = function()
     hl(0, 'CmpItemKindConstant', { link = '@constant' })
     hl(0, 'CmpItemKindStruct', { link = '@structure' })
     hl(0, 'CmpItemKindTypeParameter', { link = '@variable.parameter' })
+
+    local highlights = require('personal.highlight')
+    for hl_group, hl_opts in pairs(highlights) do
+        hl(0, hl_group, hl_opts)
+    end
 end
 
 return M
