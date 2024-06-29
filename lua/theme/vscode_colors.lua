@@ -1,5 +1,5 @@
-local colors = {}
-colors.get_colors = function()
+local M = {}
+M.get_colors = function()
     local mycolors = {} ---@type table<string,string>
 
     if vim.o.background == 'dark' then
@@ -166,4 +166,4 @@ colors.get_colors = function()
     return mycolors
 end
 
-return colors
+return M
