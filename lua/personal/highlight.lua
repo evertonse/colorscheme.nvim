@@ -414,6 +414,30 @@ local M = {
         bold = true,
     },
 
+    -- TELESCOPE THINGY
+    TelescopeBorder = {
+        fg = c.editor.Front, --[[ bg = c.editor.Back ]]
+    },
+
+    -- TelescopePromptPrefix
+    -- TelescopeNormal
+    -- TelescopePreviewTitle
+    -- TelescopePromptTitle
+    -- TelescopeSelection
+    -- TelescopeResultsDiffAdd
+    -- TelescopeResultsDiffChange
+    -- TelescopeResultsDiffDelete
+    -- TelescopeMatching
+    -- TelescopePromptBorder
+    -- TelescopePromptNormal
+    -- TelescopeResultsTitle
+    -- TelescopePromptPrefix
+    -- TelescopeResultsTitle
+    -- TelescopePreviewTitle
+    -- TelescopePromptPrefix
+    -- TelescopeNormal
+    -- TelescopePromptNormal
+
     -- @Tags
     DiffAdd = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffGreenLight },
     DiffChange = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffRedDark },
