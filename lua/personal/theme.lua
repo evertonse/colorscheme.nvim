@@ -2,9 +2,9 @@ local hl = vim.api.nvim_set_hl
 local M = {}
 
 M.set_highlights = function(opts)
-    local vscode = require('theme.vscode_colors')
+    local vscode = require('colors.vscode_colors')
     local isDark = vim.o.background == 'dark'
-    local highlights = require('theme.highlight')
+    local highlights = require('personal.highlight')
 
     for hl_group, hl_opts in pairs(highlights) do
         hl(0, hl_group, hl_opts)
@@ -812,7 +812,7 @@ M.set_highlights = function(opts)
     end
 end
 
-M.link_highlight = function()
+M.link_highlights = function()
     -- Legacy groups for official git.vim and diff.vim syntax
     hl(0, 'diffAdded', { link = 'DiffAdd' })
     hl(0, 'diffChanged', { link = 'DiffChange' })

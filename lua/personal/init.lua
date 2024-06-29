@@ -1,6 +1,6 @@
-local config = require('theme.config')
-local theme = require('theme.theme')
-local utils = require('theme.utils')
+local config = require('personal.config')
+local theme = require('personal.theme')
+local utils = require('personal.utils')
 
 -- Pass setup to config module
 theme.setup = config.setup
@@ -14,9 +14,9 @@ theme.load = function(style)
     end
 
     vim.o.termguicolors = true
-    vim.g.colors_name = 'theme'
+    vim.g.colors_name = 'personal'
     if config.opts.terminal_colors then
-        utils.terminal(require('theme.colors').get_colors())
+        utils.terminal(require('personal.colors').get_colors())
     end
 
     local background = style or config.opts.style
@@ -25,7 +25,7 @@ theme.load = function(style)
     end
 
     theme.set_highlights(config.opts)
-    theme.link_highlight()
+    theme.link_highlights()
 
     if config.opts.group_overrides then
         for group, val in pairs(config.opts['group_overrides']) do
