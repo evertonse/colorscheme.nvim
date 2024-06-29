@@ -808,11 +808,10 @@ M.set_highlights = function(opts)
         -- white fg and lualine blue bg
         hl(0, 'FocusedSymbol', { fg = vscode.vscBack, bg = '#AF00DB' })
         hl(0, 'SymbolsOutlineConnector', { fg = vscode.vscTabOther, bg = 'NONE' })
-
-        local highlights = require('personal.highlight')
-        for hl_group, hl_opts in pairs(highlights) do
-            hl(0, hl_group, hl_opts)
-        end
+    end
+    local highlights = require('personal.highlight')
+    for hl_group, hl_opts in pairs(highlights) do
+        hl(0, hl_group, hl_opts)
     end
 end
 
