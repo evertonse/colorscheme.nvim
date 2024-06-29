@@ -95,6 +95,7 @@ local M = {
     WildMenu = { fg = c.editor.None, bg = c.editor.Selection },
     ['@spell'] = { fg = c.code.Normal, bg = c.code.None, italic = true },
     ['@spell.markdown'] = { fg = c.code.Normal, bg = c.code.None, italic = true, bold = true },
+    ['@spell.python'] = { fg = c.code.Comment, bg = c.code.None, italic = true, bold = true },
     -------------------------------------------------------------------------
 
     --------------------------BASIC-----------------
@@ -209,6 +210,7 @@ local M = {
 
     -- Fucntions
     ['@function'] = { fg = c.code.Function, bg = 'NONE' },
+    ['@function.method'] = { fg = c.code.Function, bg = 'NONE' },
     ['@function.builtin'] = { fg = c.editor.YellowOrange, bg = 'NONE' },
     ['@function.macro'] = { fg = c.code.MacroFunction, bg = 'NONE' },
     ['@function.call'] = { fg = c.code.FunctionCall, bg = 'NONE' },
