@@ -93,7 +93,7 @@ local M = {
     VisualNOS = { fg = c.editor.None, bg = c.editor.Selection },
     WarningMsg = { fg = c.editor.Red, bg = c.editor.Back, bold = true },
     WildMenu = { fg = c.editor.None, bg = c.editor.Selection },
-    ['@spell'] = { fg = c.code.Normal, bg = c.code.None, italic = true },
+    ['@spell'] = { fg = c.code.Comment, bg = c.code.None, italic = true },
     ['@spell.markdown'] = { fg = c.code.Normal, bg = c.code.None, italic = true, bold = true },
     ['@spell.python'] = { fg = c.code.Comment, bg = c.code.None, italic = true, bold = true },
     -------------------------------------------------------------------------
