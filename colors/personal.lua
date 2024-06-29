@@ -1,2 +1,2 @@
-local personal = require('colorscheme')
+local personal = require('personal')
 personal.load()
