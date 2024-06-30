@@ -432,6 +432,11 @@ local M = {
     TelescopeResultsTitle = { fg = c.text.LightDim },
     TelescopePreviewTitle = { fg = c.text.LightDim },
 
+    IblIndent = { fg = c.text.LightDim },
+    -- IblScopeChar = { fg = colors.grey },
+    -- ['@ibl.scope.underline.1'] = { bg = colors.black2 },
+    IblChar = { link = 'IblIndent' },
+
     -- TelescopeResultsTitle = { fg = ss.bg.floating, bg = ss.bg.floating, bold = true },
     -- TelescopePreviewNormal = { bg = ss.bg.floating },
     -- TelescopeResultsNormal = { bg = ss.bg.floating },
