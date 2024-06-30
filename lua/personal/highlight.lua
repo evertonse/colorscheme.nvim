@@ -5,6 +5,7 @@
 -- @important highlights https://github.com/folke/tokyonight.nvim/blob/284667adfff02b9a0adc65968c553c6096b543b6/lua/tokyonight/theme.lua#L182
 -- @important lsp tutorial on nvim https://gist.github.com/swarn/fb37d9eefe1bc616c2a7e476c0bc0316
 -- @example vim.api.nvim_set_hl(0, '@lsp.type.parameter', { fg='Purple' })
+-- NOTE: Best for plugins highlight info: https://github.com/NvChad/base46/tree/v2.5/lua/base46/integrations
 local is_transparent = vim.g.user.transparent
 local c = require('colors.pastel')
 
@@ -434,8 +435,11 @@ local M = {
 
     IblIndent = { fg = c.text.LightDim },
     IblWhitespace = { fg = c.text.LightDim },
-    -- IblScopeChar = { fg = colors.grey },
-    -- ['@ibl.scope.underline.1'] = { bg = colors.black2 },
+    IblScope = { fg = c.text.LightDim },
+    ['@ibl.scope.underline.1'] = { fg = c.text.LightDim },
+    ['@ibl.scope.underline'] = { fg = c.text.LightDim },
+
+    IblScopeChar = { link = 'IblScope' },
     IblChar = { link = 'IblIndent' },
 
     -- TelescopeResultsTitle = { fg = ss.bg.floating, bg = ss.bg.floating, bold = true },
