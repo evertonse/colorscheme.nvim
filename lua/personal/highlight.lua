@@ -440,7 +440,7 @@ local M = {
     -- TelescopePromptNormal
 
     --Highlight depending on mode (second output from |MiniStatusline.section_mode|):
-    MiniStatuslineModeNormal = { bg = c.editor.Orange, fg = c.text.Bright },
+    MiniStatuslineModeNormal = { fg = c.text.Dark, bg = c.editor.LightOrange },
     MiniStatuslineModeInsert = { fg = c.text.Dark, bg = c.editor.LightGreen },
     MiniStatuslineModeVisual = { bg = c.editor.Selection },
 

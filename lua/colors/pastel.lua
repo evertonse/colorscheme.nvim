@@ -227,9 +227,10 @@ M.editor = {
     LightGreen = '#B5CEA8',
     Red = '#F44747',
     Orange = '#CE9178',
+    LightOrange = '"#E9BBB5"',
+    Yellow = '#DCDCAA',
     LightRed = '#D16969',
     YellowOrange = '#D7BA7D',
-    Yellow = '#DCDCAA',
     Pink = '#C586C0',
 }
 
