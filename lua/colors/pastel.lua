@@ -22,7 +22,7 @@ local pastel = {
     c14 = '#222222',
     c15 = '#2D2D2D',
     c16 = '#2e2e2e',
-    c17 = '#3e3e3e',
+    c17 = '#323232',
     c18 = '#FFDCA1',
 }
 
@@ -102,7 +102,8 @@ M.code = {
     FileScope = '#e8D1d1',
     -- DefaultLibrary = '#e8DCA1',
     -- DefaultLibrary = '#e8D1b9',
-    DefaultLibrary = '#ffc187',
+    -- DefaultLibrary = '#ffc187',
+    DefaultLibrary = '#f7c08d',
 
     Invalid = '#F47E7E', -- Pastel red
 
