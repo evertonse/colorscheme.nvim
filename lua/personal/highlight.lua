@@ -204,6 +204,7 @@ local M = {
     ['@keyword.enum'] = { fg = c.code.Keyword, bold = false, bg = 'NONE' },
     ['@keyword.function'] = { fg = c.code.Keyword, bold = false, bg = 'NONE' },
     ['@keyword.operator'] = { fg = c.code.Keyword, bold = false, bg = 'NONE' },
+    ['@keyword.import'] = { fg = c.code.Keyword, bold = false, bg = 'NONE' },
 
     ['@keyword.return'] = { fg = c.code.ControlFlow, bold = true, bg = 'NONE' }, -- return,
 
@@ -296,6 +297,7 @@ local M = {
     ['@lsp.typemod.variable.global'] = { fg = c.code.Global },
     ['@lsp.typemod.variable.globalScope'] = { fg = c.code.Global },
     ['@lsp.typemod.variable.fileScope'] = { fg = c.code.FileScope },
+    ['@lsp.typemod.variable.defaultLibrary'] = { fg = c.code.DefaultLibrary },
     ['@lsp.mod.constructorOrDestructor'] = { fg = c.code.ConstrutorOnClass },
     ['@lsp.type.comment.c'] = { fg = c.code.DeadCode },
     ['@lsp.type.comment.cpp'] = { fg = c.code.DeadCode },

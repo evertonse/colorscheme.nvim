@@ -22,6 +22,9 @@ local pastel = {
     c14 = '#222222',
     c15 = '#2D2D2D',
     c16 = '#2e2e2e',
+    c17 = '#3e3e3e',
+    c18 = '#FFDCA1',
+    c19 = '#FFDCA1',
 }
 
 local blow = {
@@ -42,6 +45,10 @@ local blow = {
     c11 = '#b9c2Fe',
     c12 = '#85897e',
     c13 = '#b2bfc3',
+    c14 = '#222222',
+    c15 = '#2D2D2D',
+    c16 = '#2e2e2e',
+    c17 = '#3e3e3e',
     c30 = '#9B9B9B',
     -- c14    = "#c1ccd0",
 }
@@ -93,7 +100,8 @@ M.code = {
 
     Namespace = '#cffffe',
     Global = '#F8D1EF',
-    FileScope = '#e8D7D7',
+    FileScope = '#e8D1d1',
+    DefaultLibrary = '#e8DCA1',
 
     Invalid = '#F47E7E', -- Pastel red
 
@@ -175,7 +183,7 @@ M.editor = {
     Back = pastel.c14,
     --Back = '#1F1F1F',
 
-    TabCurrent = pastel.c16,
+    TabCurrent = pastel.c17,
     TabVisible = pastel.c14,
     TabHidden = pastel.c14,
     TabOutside = '#252526',
