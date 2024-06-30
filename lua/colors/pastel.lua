@@ -162,9 +162,9 @@ M.text = {
     Info = '#DCDCAA',
     Hint = '#bBbBAA',
     Dark = '#1E1E1E',
-    LightDim = '#a0a0a0',
+    LightDim = '#999999',
     Light = '#D4D4D4',
-    Bright = '#F4F4F4',
+    Bright = '#f9f9f9',
 }
 
 M.editor = {
