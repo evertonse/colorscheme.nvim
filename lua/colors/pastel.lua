@@ -102,7 +102,7 @@ M.code = {
     FileScope = '#e8D1d1',
     -- DefaultLibrary = '#e8DCA1',
     -- DefaultLibrary = '#e8D1b9',
-    DefaultLibrary = '#ad6d4b',
+    DefaultLibrary = '#fcb979',
 
     Invalid = '#F47E7E', -- Pastel red
 
