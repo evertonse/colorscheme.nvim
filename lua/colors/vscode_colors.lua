@@ -6,7 +6,8 @@ M.get_colors = function()
         mycolors = {
             vscNone = 'NONE',
             vscFront = '#D4D4D4',
-            vscBack = '#1F1F1F',
+            vscBack = '#ff3',
+            --vscBack = '#1F1F1F',
 
             vscTabCurrent = '#1F1F1F',
             vscTabOther = '#2D2D2D',
