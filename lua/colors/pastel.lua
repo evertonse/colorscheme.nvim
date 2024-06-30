@@ -168,9 +168,10 @@ M.editor = {
     Front = '#D4D4D4',
     Back = '#1E1E1E',
 
-    TabCurrent = '#1E1E1E',
-    TabOther = '#2D2D2D',
+    TabVisible = '#1E1E1E',
+    TabCurrent = '#2D2D2D',
     TabOutside = '#252526',
+    TabHidden = '#252526',
 
     LeftDark = '#252526',
     LeftMid = '#373737',

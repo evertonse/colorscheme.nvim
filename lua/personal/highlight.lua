@@ -82,9 +82,6 @@ local M = {
         bg = c.text.Todo,
         bold = true,
     },
-    TabLine = { fg = c.editor.Front, bg = c.editor.TabOther },
-    TabLineFill = { fg = c.editor.Front, bg = c.editor.TabOutside },
-    TabLineSel = { fg = c.editor.Front, bg = c.editor.TabCurrent },
     Title = {
         --[[ fg = c.editor.None, bg = c.editor.None, ]]
         bold = true,
@@ -446,14 +443,23 @@ local M = {
 
     --
     -- mini.tabline
-    -- * `MiniTablineCurrent` - buffer is current (has cursor in it).
-    -- * `MiniTablineVisible` - buffer is visible (displayed in some window).
-    -- * `MiniTablineHidden` - buffer is hidden (not displayed).
+    MiniTablineCurrent = { fg = c.editor.Front, bg = c.editor.TabCurrent },
+    MiniTablineVisible = { fg = c.editor.Front, bg = c.editor.TabVisible },
+    MiniTablineHidden = { fg = c.editor.Front, bg = c.editor.TabHidden },
+
+    MiniTablineModifiedCurrent = { fg = c.text.Warn, bg = c.editor.TabCurrent },
+    MiniTablineModifiedVisible = { fg = c.text.Warn, bg = c.editor.TabVisible },
+    MiniTablineModifiedHidden = { fg = c.text.Warn, bg = c.editor.TabHidden },
     -- * `MiniTablineModifiedCurrent` - buffer is modified and current.
     -- * `MiniTablineModifiedVisible` - buffer is modified and visible.
     -- * `MiniTablineModifiedHidden` - buffer is modified and hidden.
     -- * `MiniTablineFill` - unused right space of tabline.
     -- * `MiniTablineTabpagesection` - section with tabpage information.
+
+    TabLine = { fg = c.editor.Front, bg = c.editor.TabVisible },
+    TabLineFill = { fg = c.editor.Front, bg = c.editor.TabOutside },
+    TabLineSel = { fg = c.editor.Front, bg = c.editor.TabCurrent },
+
     --
 
     -- @Tags
