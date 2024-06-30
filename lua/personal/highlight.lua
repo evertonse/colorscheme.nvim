@@ -271,6 +271,7 @@ local M = {
     --['@definition.var']      = { fg = c.code.Macro, bg = 'NONE' },
 
     --['@macro.cpp']           = { fg = c.code.Macro, bg = 'NONE' },
+    ['@constant'] = { link = 'Constant' },
     ['@constant.macro.cpp'] = { fg = c.code.Macro, bg = 'NONE' },
     --['@error']               = { fg = c.editor.Red, bg = 'NONE' },
     --['@punctuation.bracket'] = { fg = c.editor.Front, bg = 'NONE' },
