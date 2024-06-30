@@ -417,9 +417,9 @@ local M = {
     --     -- bg = c.editor.Back,
     -- },
 
-    TelescopePromptBorder = { fg = c.editor.Red },
-    TelescopeResultsBorder = { fg = c.editor.Red },
-    TelescopePreviewBorder = { fg = c.editor.Red },
+    TelescopePromptBorder = { fg = c.editor.SplitDark },
+    TelescopeResultsBorder = { fg = c.editor.SplitDark },
+    TelescopePreviewBorder = { fg = c.editor.SplitDark },
 
     -- TelescopeResultsTitle = { fg = ss.bg.floating, bg = ss.bg.floating, bold = true },
     -- TelescopePreviewNormal = { bg = ss.bg.floating },
