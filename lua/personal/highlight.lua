@@ -441,8 +441,9 @@ local M = {
     ['@ibl.scope.underline'] = { link = '@ibl.scope.underline.1' },
     IblScopeChar = { link = 'IblScope' },
     IblChar = { link = 'IblIndent' },
-    MiniIndentscopeSymbol = { link = 'IblIndent' },
-    MiniIndentscopeSymbolOff = { fg = c.Debug },
+
+    MiniIndentscopeSymbol = { fg = c.text.LightDim, bold = true },
+    MiniIndentscopeSymbolOff = { bg = c.Debug, fg = c.Debug },
 
     -- TelescopeResultsTitle = { fg = ss.bg.floating, bg = ss.bg.floating, bold = true },
     -- TelescopePreviewNormal = { bg = ss.bg.floating },
