@@ -202,6 +202,7 @@ local M = {
 
     ['@comment'] = { fg = c.code.Comment, bg = 'NONE' },
     ['@keyword'] = { fg = c.code.Keyword, bold = false, bg = 'NONE' },
+    ['@keyword.repeat'] = { fg = c.code.Keyword, bold = false, bg = 'NONE' },
     ['@keyword.enum'] = { fg = c.code.Keyword, bold = false, bg = 'NONE' },
     ['@keyword.function'] = { fg = c.code.Keyword, bold = false, bg = 'NONE' },
     ['@keyword.operator'] = { fg = c.code.Keyword, bold = false, bg = 'NONE' },
@@ -416,7 +417,9 @@ local M = {
 
     -- TELESCOPE THINGY
     TelescopeBorder = {
-        fg = c.editor.Front, --[[ bg = c.editor.Back ]]
+        -- fg = c.editor.Front,
+        link = 'Normal',
+        -- bg = c.editor.Back,
     },
 
     -- TelescopePromptPrefix
