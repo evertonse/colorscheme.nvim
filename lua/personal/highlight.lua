@@ -428,8 +428,8 @@ local M = {
     TelescopeResultsBorder = { fg = c.editor.SplitDark },
     TelescopePreviewBorder = { fg = c.editor.SplitDark },
 
-    TelescopePromptTitle = { fg = c.text.LightDim },
-    TelescopeResultsTitle = { fg = c.text.LightDim },
+    TelescopePromptTitle = { fg = c.text.Normal },
+    TelescopeResultsTitle = { fg = c.text.Normal },
     TelescopePreviewTitle = { fg = c.text.LightDim },
 
     -- TelescopeResultsTitle = { fg = ss.bg.floating, bg = ss.bg.floating, bold = true },
