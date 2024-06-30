@@ -46,8 +46,8 @@ local blow = {
     -- c14    = "#c1ccd0",
 }
 
--- local palette = pastel
-local palette = blow
+local palette = pastel
+-- local palette = blow
 
 M.code = {
     None = 'NONE',
