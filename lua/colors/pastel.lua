@@ -179,7 +179,7 @@ M.editor = {
     TabHidden = pastel.c14,
     TabOutside = '#252526',
 
-    LeftDark = '#252526',
+    LeftDark = '#212121',
     LeftMid = '#373737',
     LeftLight = '#636369',
 
