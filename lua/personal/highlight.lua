@@ -436,12 +436,12 @@ local M = {
     -- TelescopePromptNormal
 
     --Highlight depending on mode (second output from |MiniStatusline.section_mode|):
-    MiniStatuslineModeNormal = { fg = c.text.Dark, bg = c.editor.LightOrange },
-    MiniStatuslineModeInsert = { fg = c.text.Dark, bg = c.editor.LightGreen },
+    MiniStatuslineModeNormal = { fg = c.text.Darkest, bg = c.editor.LightOrange },
+    MiniStatuslineModeInsert = { fg = c.text.Darkest, bg = c.editor.LightGreen },
     MiniStatuslineModeVisual = { bg = c.editor.Selection },
+    MiniStatuslineModeCommand = { bg = c.editor.Search },
 
     -- * `MiniStatuslineModeReplace` - Replace mode.
-    -- * `MiniStatuslineModeCommand` - Command mode.
     -- * `MiniStatuslineModeOther` - other modes (like Terminal, etc.).
     --
     -- Highlight used in default statusline:
