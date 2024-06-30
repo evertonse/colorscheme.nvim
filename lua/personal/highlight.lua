@@ -442,7 +442,8 @@ local M = {
     IblScopeChar = { link = 'IblScope' },
     IblChar = { link = 'IblIndent' },
 
-    MiniIndentscopeSymbol = { link = 'IblIndent' },
+    -- MiniIndentscopeSymbol = { link = 'IblIndent' },
+    MiniIndentscopeSymbol = { bg = c.None, fg = c.None },
     -- MiniIndentscopeSymbol = { fg = c.text.Light },
     MiniIndentscopeSymbolOff = { bg = c.editor.TabCurrent, fg = c.None },
 
