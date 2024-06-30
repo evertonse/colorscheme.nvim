@@ -162,7 +162,9 @@ M.text = {
     Info = '#DCDCAA',
     Hint = '#bBbBAA',
     Dark = '#1E1E1E',
-    Bright = '#D4D4D4',
+    LightDim = '#bfbfbf',
+    Light = '#D4D4D4',
+    Bright = '#F4F4F4',
 }
 
 M.editor = {
@@ -172,7 +174,7 @@ M.editor = {
     Back = pastel.c14,
     --Back = '#1F1F1F',
 
-    TabVisible = pastel.c15,
+    TabVisible = pastel.c14,
     TabCurrent = pastel.c16,
     TabOutside = '#252526',
     TabHidden = pastel.c14,

@@ -455,13 +455,13 @@ local M = {
     -- * `MiniStatuslineInactive` - highliting in not focused window.
 
     -- mini.tabline
-    MiniTablineCurrent = { fg = c.editor.Front, bg = c.editor.TabCurrent },
-    MiniTablineVisible = { fg = c.editor.Front, bg = c.editor.TabVisible },
-    MiniTablineHidden = { fg = c.editor.Front, bg = c.editor.TabHidden },
+    MiniTablineCurrent = { fg = c.text.Bright, bg = c.editor.TabCurrent },
+    MiniTablineVisible = { fg = c.text.Light, bg = c.editor.TabVisible },
+    MiniTablineHidden = { fg = c.text.LightDim, bg = c.editor.TabHidden },
 
-    MiniTablineModifiedCurrent = { fg = c.text.Warn, bg = c.editor.TabCurrent },
+    MiniTablineModifiedCurrent = { fg = c.text.Note, bg = c.editor.TabCurrent },
     MiniTablineModifiedVisible = { fg = c.text.Warn, bg = c.editor.TabVisible },
-    MiniTablineModifiedHidden = { fg = c.text.Warn, bg = c.editor.TabHidden },
+    MiniTablineModifiedHidden = { fg = c.text.Hint, bg = c.editor.TabHidden },
     -- * `MiniTablineModifiedCurrent` - buffer is modified and current.
     -- * `MiniTablineModifiedVisible` - buffer is modified and visible.
     -- * `MiniTablineModifiedHidden` - buffer is modified and hidden.
