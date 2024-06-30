@@ -103,7 +103,7 @@ M.code = {
     -- DefaultLibrary = '#e8DCA1',
     -- DefaultLibrary = '#e8D1b9',
     -- DefaultLibrary = '#ffc187',
-    DefaultLibrary = '#f7c08d',
+    DefaultLibrary = '#e0c08d',
 
     Invalid = '#F47E7E', -- Pastel red
 
