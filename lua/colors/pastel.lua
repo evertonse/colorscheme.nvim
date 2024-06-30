@@ -174,9 +174,9 @@ M.editor = {
     Back = pastel.c14,
     --Back = '#1F1F1F',
 
-    TabCurrent = pastel.c14,
-    TabVisible = pastel.c16,
-    TabHidden = pastel.c16,
+    TabCurrent = pastel.c16,
+    TabVisible = pastel.c14,
+    TabHidden = pastel.c14,
     TabOutside = '#252526',
 
     LeftDark = '#252526',
