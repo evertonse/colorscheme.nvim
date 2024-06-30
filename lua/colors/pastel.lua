@@ -19,6 +19,9 @@ local pastel = {
     c11 = '#c0c8FF',
     c12 = '#85897e',
     c13 = '#b2bfc3',
+    c14 = '#222222',
+    c15 = '#2D2D2D',
+    c16 = '#2e2e2e',
 }
 
 local blow = {
@@ -166,12 +169,13 @@ M.editor = {
     None = 'NONE',
     Folder = '#90A0A0',
     Front = '#D4D4D4',
-    Back = '#1E1E1E',
+    Back = pastel.c14,
+    --Back = '#1F1F1F',
 
-    TabVisible = '#1E1E1E',
-    TabCurrent = '#2D2D2D',
+    TabVisible = pastel.c15,
+    TabCurrent = pastel.c16,
     TabOutside = '#252526',
-    TabHidden = '#252526',
+    TabHidden = pastel.c14,
 
     LeftDark = '#252526',
     LeftMid = '#373737',
