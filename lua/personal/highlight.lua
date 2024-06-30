@@ -442,7 +442,7 @@ local M = {
     IblScopeChar = { link = 'IblScope' },
     IblChar = { link = 'IblIndent' },
 
-    MiniIndentscopeSymbol = { fg = c.text.LightDim, bold = true },
+    MiniIndentscopeSymbol = { fg = c.text.Ligh },
     MiniIndentscopeSymbolOff = { bg = c.Debug, fg = c.Debug },
 
     -- TelescopeResultsTitle = { fg = ss.bg.floating, bg = ss.bg.floating, bold = true },
