@@ -422,6 +422,7 @@ local M = {
     --     -- bg = c.editor.Back,
     -- },
 
+    TelescopeNormal = { fg = c.text.Normal },
     TelescopePromptBorder = { fg = c.editor.SplitDark },
     TelescopeResultsBorder = { fg = c.editor.SplitDark },
     TelescopePreviewBorder = { fg = c.editor.SplitDark },
@@ -430,7 +431,6 @@ local M = {
     -- TelescopePreviewNormal = { bg = ss.bg.floating },
     -- TelescopeResultsNormal = { bg = ss.bg.floating },
     -- TelescopePromptPrefix
-    -- TelescopeNormal
     -- TelescopePreviewTitle
     -- TelescopePromptTitle
     -- TelescopeSelection

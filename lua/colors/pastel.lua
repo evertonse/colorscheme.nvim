@@ -176,6 +176,7 @@ M.text = {
     LightDim = '#484848',
     Light = '#787878',
     Bright = '#f9f9f9',
+    Normal = '#D4D4D4',
 }
 
 M.editor = {
