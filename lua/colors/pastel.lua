@@ -162,8 +162,8 @@ M.text = {
     Info = '#DCDCAA',
     Hint = '#bBbBAA',
     Dark = '#1E1E1E',
-    LightDim = '#595959',
-    Light = '#808080',
+    LightDim = '#484848',
+    Light = '#787878',
     Bright = '#f9f9f9',
 }
 
