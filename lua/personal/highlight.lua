@@ -202,7 +202,8 @@ local M = {
 
     ['@comment'] = { fg = c.code.Comment, bg = 'NONE' },
     ['@keyword'] = { fg = c.code.Keyword, bold = false, bg = 'NONE' },
-    ['@keyword.repeat'] = { fg = c.code.Keyword, bold = false, bg = 'NONE' },
+    ['@keyword.repeat'] = { fg = c.code.ControlFlow, bold = false, bg = 'NONE' },
+    ['@keyword.conditional'] = { fg = c.code.ControlFlow, bold = false, bg = 'NONE' },
     ['@keyword.enum'] = { fg = c.code.Keyword, bold = false, bg = 'NONE' },
     ['@keyword.function'] = { fg = c.code.Keyword, bold = false, bg = 'NONE' },
     ['@keyword.operator'] = { fg = c.code.Keyword, bold = false, bg = 'NONE' },
