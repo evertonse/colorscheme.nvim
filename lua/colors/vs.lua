@@ -120,6 +120,7 @@ M.editor = { -- VS Code
     LightRed = '#D16969',
     YellowOrange = '#D7BA7D',
     Yellow = '#DCDCAA',
+    LightYellow = '#d5CEA8',
     Pink = '#C586C0',
 }
 
