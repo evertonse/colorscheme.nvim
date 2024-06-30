@@ -441,7 +441,19 @@ local M = {
     MiniStatuslineModeInsert = { fg = c.text.Dark, bg = c.editor.LightGreen },
     MiniStatuslineModeVisual = { bg = c.editor.Selection },
 
+    -- * `MiniStatuslineModeReplace` - Replace mode.
+    -- * `MiniStatuslineModeCommand` - Command mode.
+    -- * `MiniStatuslineModeOther` - other modes (like Terminal, etc.).
     --
+    -- Highlight used in default statusline:
+    -- * `MiniStatuslineDevinfo` - for "dev info" group
+    --   (|MiniStatusline.section_git| and |MiniStatusline.section_diagnostics|).
+    -- * `MiniStatuslineFilename` - for |MiniStatusline.section_filename| section.
+    -- * `MiniStatuslineFileinfo` - for |MiniStatusline.section_fileinfo| section.
+    --
+    -- Other groups:
+    -- * `MiniStatuslineInactive` - highliting in not focused window.
+
     -- mini.tabline
     MiniTablineCurrent = { fg = c.editor.Front, bg = c.editor.TabCurrent },
     MiniTablineVisible = { fg = c.editor.Front, bg = c.editor.TabVisible },
