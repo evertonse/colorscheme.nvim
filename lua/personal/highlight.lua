@@ -462,11 +462,9 @@ local M = {
     MiniTablineModifiedCurrent = { fg = c.text.Note, bg = c.editor.TabCurrent },
     MiniTablineModifiedVisible = { fg = c.text.Warn, bg = c.editor.TabVisible },
     MiniTablineModifiedHidden = { fg = c.text.Hint, bg = c.editor.TabHidden },
-    -- * `MiniTablineModifiedCurrent` - buffer is modified and current.
-    -- * `MiniTablineModifiedVisible` - buffer is modified and visible.
-    -- * `MiniTablineModifiedHidden` - buffer is modified and hidden.
     -- * `MiniTablineFill` - unused right space of tabline.
-    -- * `MiniTablineTabpagesection` - section with tabpage information.
+    -- Section with tabpage information.
+    MiniTablineTabpagesection = { fg = c.text.Hint, bg = c.editor.TabHidden },
 
     TabLine = { fg = c.editor.Front, bg = c.editor.TabVisible },
     TabLineFill = { fg = c.editor.Front, bg = c.editor.TabOutside },
