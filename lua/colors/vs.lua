@@ -44,15 +44,14 @@ M.code = {
     -- BuiltInConstant   = "#BA797A",
 }
 
-M.text = {
+M.editor = { -- VS Code
     Background = 'NONE',
+    TextDark = '#1E1E1E',
+    TextBright = '#D4D4D4',
     DiffAdd = '#81b88b',
     -- Title             = "#D7BA7D",
     Title = '#90A0A0',
     DiffDelete = '#f44747',
-}
-
-M.editor = { -- VS Code
     None = 'NONE',
     Folder = '#90A0A0',
     Front = '#D4D4D4',
