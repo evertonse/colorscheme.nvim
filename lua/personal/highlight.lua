@@ -411,12 +411,19 @@ local M = {
     },
 
     -- TELESCOPE THINGY
-    TelescopeBorder = {
-        -- fg = c.editor.Front,
-        link = 'Normal',
-        -- bg = c.editor.Back,
-    },
+    -- TelescopeBorder = {
+    --     -- fg = c.editor.Front,
+    --     link = 'Normal',
+    --     -- bg = c.editor.Back,
+    -- },
 
+    TelescopePromptBorder = { fg = c.editor.Red },
+    TelescopeResultsBorder = { fg = c.editor.Red },
+    TelescopePreviewBorder = { fg = c.editor.Red },
+
+    -- TelescopeResultsTitle = { fg = ss.bg.floating, bg = ss.bg.floating, bold = true },
+    -- TelescopePreviewNormal = { bg = ss.bg.floating },
+    -- TelescopeResultsNormal = { bg = ss.bg.floating },
     -- TelescopePromptPrefix
     -- TelescopeNormal
     -- TelescopePreviewTitle
@@ -426,14 +433,6 @@ local M = {
     -- TelescopeResultsDiffChange
     -- TelescopeResultsDiffDelete
     -- TelescopeMatching
-    -- TelescopePromptBorder
-    -- TelescopePromptNormal
-    -- TelescopeResultsTitle
-    -- TelescopePromptPrefix
-    -- TelescopeResultsTitle
-    -- TelescopePreviewTitle
-    -- TelescopePromptPrefix
-    -- TelescopeNormal
     -- TelescopePromptNormal
 
     --Highlight depending on mode (second output from |MiniStatusline.section_mode|):
