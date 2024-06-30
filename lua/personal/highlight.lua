@@ -444,6 +444,18 @@ local M = {
     MiniStatuslineModeInsert = { fg = c.text.Dark, bg = c.editor.LightGreen },
     MiniStatuslineModeVisual = { bg = c.editor.Selection },
 
+    --
+    -- mini.tabline
+    -- * `MiniTablineCurrent` - buffer is current (has cursor in it).
+    -- * `MiniTablineVisible` - buffer is visible (displayed in some window).
+    -- * `MiniTablineHidden` - buffer is hidden (not displayed).
+    -- * `MiniTablineModifiedCurrent` - buffer is modified and current.
+    -- * `MiniTablineModifiedVisible` - buffer is modified and visible.
+    -- * `MiniTablineModifiedHidden` - buffer is modified and hidden.
+    -- * `MiniTablineFill` - unused right space of tabline.
+    -- * `MiniTablineTabpagesection` - section with tabpage information.
+    --
+
     -- @Tags
     DiffAdd = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffGreenLight },
     DiffChange = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffRedDark },
