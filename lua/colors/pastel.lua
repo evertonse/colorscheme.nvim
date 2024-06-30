@@ -24,7 +24,6 @@ local pastel = {
     c16 = '#2e2e2e',
     c17 = '#3e3e3e',
     c18 = '#FFDCA1',
-    c19 = '#FFDCA1',
 }
 
 local blow = {
@@ -102,7 +101,8 @@ M.code = {
     Global = '#F8D1EF',
     FileScope = '#e8D1d1',
     -- DefaultLibrary = '#e8DCA1',
-    DefaultLibrary = '#e8D1b9',
+    -- DefaultLibrary = '#e8D1b9',
+    DefaultLibrary = '#ad6d4b',
 
     Invalid = '#F47E7E', -- Pastel red
 
