@@ -433,6 +433,7 @@ local M = {
     TelescopePreviewTitle = { fg = c.text.LightDim },
 
     IblIndent = { fg = c.text.LightDim },
+    IblWhitespace = { fg = c.none },
     -- IblScopeChar = { fg = colors.grey },
     -- ['@ibl.scope.underline.1'] = { bg = colors.black2 },
     IblChar = { link = 'IblIndent' },
