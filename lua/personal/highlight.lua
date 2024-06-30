@@ -439,7 +439,7 @@ local M = {
     MiniStatuslineModeNormal = { fg = c.text.Darkest, bg = c.editor.LightOrange },
     MiniStatuslineModeInsert = { fg = c.text.Darkest, bg = c.editor.LightGreen },
     MiniStatuslineModeVisual = { bg = c.editor.Selection },
-    MiniStatuslineModeCommand = { bg = c.editor.Search },
+    MiniStatuslineModeCommand = { bg = c.editor.Violet },
 
     -- * `MiniStatuslineModeReplace` - Replace mode.
     -- * `MiniStatuslineModeOther` - other modes (like Terminal, etc.).
