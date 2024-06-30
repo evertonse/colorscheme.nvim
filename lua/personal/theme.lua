@@ -682,16 +682,16 @@ M.set_highlights = function(opts)
     )
 
     -- mini.statusline
-    hl(0, 'MiniStatuslineModeNormal', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
-    hl(0, 'MiniStatuslineModeInsert', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
-    hl(0, 'MiniStatuslineModeVisual', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
-    hl(0, 'MiniStatuslineModeReplace', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
-    hl(0, 'MiniStatuslineModeCommand', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
-    hl(0, 'MiniStatuslineModeOther', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
-    hl(0, 'MiniStatuslineDevinfo', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
-    hl(0, 'MiniStatuslineFilename', { bg = vscode.vscLeftMid, fg = vscode.vscFront })
-    hl(0, 'MiniStatuslineFileinfo', { bg = vscode.vscLeftLight, fg = vscode.vscFront })
-    hl(0, 'MiniStatuslineInactive', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
+    -- hl(0, 'MiniStatuslineModeNormal', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
+    -- hl(0, 'MiniStatuslineModeInsert', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
+    -- hl(0, 'MiniStatuslineModeVisual', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
+    -- hl(0, 'MiniStatuslineModeReplace', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
+    -- hl(0, 'MiniStatuslineModeCommand', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
+    -- hl(0, 'MiniStatuslineModeOther', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
+    -- hl(0, 'MiniStatuslineDevinfo', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
+    -- hl(0, 'MiniStatuslineFilename', { bg = vscode.vscLeftMid, fg = vscode.vscFront })
+    -- hl(0, 'MiniStatuslineFileinfo', { bg = vscode.vscLeftLight, fg = vscode.vscFront })
+    -- hl(0, 'MiniStatuslineInactive', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
 
     -- NeogitOrg/neogit
     if is_dark then
