@@ -434,6 +434,19 @@ local M = {
     TelescopePromptTitle = { fg = c.text.Normal },
     TelescopeResultsTitle = { fg = c.text.LightDim },
     TelescopePreviewTitle = { fg = c.text.LightDim },
+    TelescopeMatching = { fg = c.text.Dark },
+    -- TelescopeResultsTitle = { fg = ss.bg.floating, bg = ss.bg.floating, bold = true },
+    -- TelescopePreviewNormal = { bg = ss.bg.floating },
+    -- TelescopeResultsNormal = { bg = ss.bg.floating },
+    -- TelescopePromptPrefix
+    -- TelescopePreviewTitle
+    -- TelescopePromptTitle
+    -- TelescopeSelection
+    -- TelescopeResultsDiffAdd
+    -- TelescopeResultsDiffChange
+    -- TelescopeResultsDiffDelete
+    -- TelescopeMatching
+    -- TelescopePromptNormal
 
     IblIndent = { fg = c.text.LightDim },
     IblWhitespace = { fg = c.text.LightDim },
@@ -447,19 +460,6 @@ local M = {
     MiniIndentscopeSymbol = { bg = c.None, fg = c.None },
     -- MiniIndentscopeSymbol = { fg = c.text.Light },
     MiniIndentscopeSymbolOff = { bg = c.editor.TabCurrent, fg = c.None },
-
-    -- TelescopeResultsTitle = { fg = ss.bg.floating, bg = ss.bg.floating, bold = true },
-    -- TelescopePreviewNormal = { bg = ss.bg.floating },
-    -- TelescopeResultsNormal = { bg = ss.bg.floating },
-    -- TelescopePromptPrefix
-    -- TelescopePreviewTitle
-    -- TelescopePromptTitle
-    -- TelescopeSelection
-    -- TelescopeResultsDiffAdd
-    -- TelescopeResultsDiffChange
-    -- TelescopeResultsDiffDelete
-    -- TelescopeMatching
-    -- TelescopePromptNormal
 
     --Highlight depending on mode (second output from |MiniStatusline.section_mode|):
     MiniStatuslineModeNormal = { bg = c.editor.Violet },
