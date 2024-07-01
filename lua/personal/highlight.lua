@@ -434,7 +434,7 @@ local M = {
     TelescopePromptTitle = { fg = c.text.Normal },
     TelescopeResultsTitle = { fg = c.text.LightDim },
     TelescopePreviewTitle = { fg = c.text.LightDim },
-    TelescopeMatching = { fg = c.text.Bright, bold = true, bg = c.text.Dark },
+    TelescopeMatching = { fg = c.text.DiffAdd, bold = true },
     -- TelescopeResultsTitle = { fg = ss.bg.floating, bg = ss.bg.floating, bold = true },
     -- TelescopePreviewNormal = { bg = ss.bg.floating },
     -- TelescopeResultsNormal = { bg = ss.bg.floating },
