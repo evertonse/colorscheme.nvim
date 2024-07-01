@@ -485,9 +485,9 @@ local M = {
     MiniTablineVisible = { fg = c.text.Light, bg = c.editor.TabVisible },
     MiniTablineHidden = { fg = c.text.LightDim, bg = c.editor.TabHidden },
 
-    MiniTablineModifiedCurrent = { fg = c.text.Note, bg = c.editor.TabCurrent },
-    MiniTablineModifiedVisible = { fg = c.text.Warn, bg = c.editor.TabVisible },
-    MiniTablineModifiedHidden = { fg = c.text.Hint, bg = c.editor.TabHidden },
+    MiniTablineModifiedCurrent = { fg = c.text.Modified, bg = c.editor.TabCurrent },
+    MiniTablineModifiedVisible = { fg = c.text.ModifiedLight, bg = c.editor.TabVisible },
+    MiniTablineModifiedHidden = { fg = c.text.ModifiedLightest, bg = c.editor.TabHidden },
     -- * `MiniTablineFill` - unused right space of tabline.
     -- Section with tabpage information.
     MiniTablineTabpagesection = { fg = c.text.Hint, bg = c.editor.TabHidden },

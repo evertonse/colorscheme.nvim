@@ -24,6 +24,9 @@ local pastel = {
     c16 = '#2e2e2e',
     c17 = '#323232',
     c18 = '#FFDCA1',
+    c19 = '#ffc187',
+    c20 = '#D7BA7D',
+    c21 = '#b79A6D',
 }
 
 local blow = {
@@ -170,6 +173,9 @@ M.text = {
     DiffDelete = '#f44747',
     Todo = '#FFA0A9',
     Note = '#D7BA7D',
+    Modified = palette.c19,
+    ModifiedLight = palette.c20,
+    ModifiedLightest = palette.c21,
     Error = '#f48787',
     Warn = '#cdcd88',
     Info = '#DCDCAA',
