@@ -220,9 +220,10 @@ local M = {
     ['@method'] = { fg = c.code.Method, bg = 'NONE' },
 
     --Literals
+    ['@string'] = { fg = c.code.String, bg = c.code.None },
     ['@string.regex'] = { fg = c.code.Char, bg = 'NONE' },
     ['@string.escape'] = { fg = c.code.StringEscape, bg = 'NONE' },
-    ['@string'] = { fg = c.code.String, bg = c.code.None },
+    ['@string.documentation'] = { link = 'Comment' },
 
     ['@character'] = { fg = c.code.Char, bg = 'NONE' },
     ['@number'] = { fg = c.editor.LightGreen, bg = 'NONE' },
