@@ -52,6 +52,10 @@ local blow = {
     c15 = '#2D2D2D',
     c16 = '#2e2e2e',
     c17 = '#3e3e3e',
+    c18 = '#FFDCA1',
+    c19 = '#ffc187',
+    c20 = '#D7BA7D',
+    c21 = '#b79A6D',
     c30 = '#9B9B9B',
     -- c14    = "#c1ccd0",
 }
