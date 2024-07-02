@@ -195,6 +195,7 @@ local M = {
     ['@class'] = { fg = c.code.Type, bold = false, italic = false },
     ['@macro'] = { fg = c.code.Macro, bold = false, italic = false },
     ['@namespace'] = { fg = c.code.Namespace, bold = false, italic = false },
+    ['@lsp.type.namespace'] = { link = 'Namespace' },
     --['@variable#globalScope']  ={ fg = c.code.Global,italic = true,  bold = true},
 
     ['@comment'] = { fg = c.code.Comment, bg = 'NONE' },
