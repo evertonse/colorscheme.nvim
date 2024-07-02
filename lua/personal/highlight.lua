@@ -244,9 +244,9 @@ local M = {
     ['@include.c'] = { fg = c.code.Preprocessor, bg = 'NONE' },
 
     -- Parameteres:
-    ['@parameter'] = { fg = c.code.Parameter, bg = 'NONE' },
+    ['@variable.parameter'] = { fg = c.code.Parameter, bg = 'NONE' },
     ['@parameter.reference'] = { link = '@parameter' },
-    ['@lsp.type.parameter'] = { link = '@parameter' },
+    ['@lsp.type.parameter'] = { link = '@variable.parameter' },
 
     -- @Types
     ['@type'] = { fg = c.code.Type, bg = 'NONE' },
