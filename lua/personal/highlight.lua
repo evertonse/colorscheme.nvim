@@ -93,7 +93,7 @@ local M = {
     WildMenu = { fg = c.editor.None, bg = c.editor.Selection },
     ['@spell'] = { fg = c.code.Comment, bg = c.code.None, italic = true },
     ['@spell.markdown'] = { fg = c.code.Normal, bg = c.code.None, italic = true, bold = true },
-    ['@spell.python'] = { fg = c.code.Comment, bg = c.code.None, italic = true, bold = true },
+    ['@spell.python'] = { fg = c.code.Comment, bg = c.code.None, italic = true, bold = false },
     -------------------------------------------------------------------------
 
     --------------------------BASIC-----------------
