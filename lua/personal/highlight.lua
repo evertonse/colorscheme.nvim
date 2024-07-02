@@ -245,7 +245,8 @@ local M = {
 
     -- Parameteres:
     ['@parameter'] = { fg = c.code.Parameter, bg = 'NONE' },
-    ['@parameter.reference'] = { fg = c.code.Parameter, bg = 'NONE' },
+    ['@parameter.reference'] = { link = '@parameter' },
+    ['@lsp.type.parameter'] = { link = '@parameter' },
 
     -- @Types
     ['@type'] = { fg = c.code.Type, bg = 'NONE' },
