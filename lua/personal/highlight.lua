@@ -16,7 +16,9 @@ local M = {
     Cursor = {
         fg = c.editor.CursorDark, --[[ bg = c.editor.CursorLight ]]
     },
-    CursorLine = { bg = c.editor.CursorDarkDark },
+    -- Set the cursorline background color
+    CursorLine = { cterm = 'NONE', ctermbg = 'darkgray', ctermfg = 'NONE', guibg = '#2e2e2e', guifg = 'NONE' },
+
     CursorColumn = { fg = 'NONE', bg = c.editor.CursorDarkDark },
     Directory = {
         fg = c.code.Method, --[[ bg = c.editor.Back ]]
