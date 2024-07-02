@@ -454,7 +454,9 @@ local M = {
     IblIndent = { fg = c.text.LightDim },
     IblWhitespace = { fg = c.text.LightDim },
     IblScope = { fg = c.text.Light },
-    ['@ibl.scope.underline.1'] = { fg = c.text.Normal },
+    ['@ibl.scope.underline.1'] = {
+        undercurl = true, --[[fg = c.text.Normal]]
+    },
     ['@ibl.scope.underline'] = { link = '@ibl.scope.underline.1' },
     IblScopeChar = { link = 'IblScope' },
     IblChar = { link = 'IblIndent' },
