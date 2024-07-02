@@ -91,13 +91,13 @@ local M = {
     VisualNOS = { fg = c.editor.None, bg = c.editor.Selection },
     WarningMsg = { fg = c.editor.Red, bg = c.editor.Back, bold = true },
     WildMenu = { fg = c.editor.None, bg = c.editor.Selection },
-    ['@spell'] = { fg = c.code.Comment, bg = c.code.None, italic = true },
-    ['@spell.markdown'] = { fg = c.code.Normal, bg = c.code.None, italic = true, bold = true },
-    ['@spell.python'] = { fg = c.code.Comment, bg = c.code.None, italic = true, bold = false },
+    ['@spell'] = { fg = c.code.Comment, bg = c.code.None, italic = false },
+    ['@spell.markdown'] = { fg = c.code.Normal, bg = c.code.None, italic = false, bold = true },
+    ['@spell.python'] = { fg = c.code.Comment, bg = c.code.None, italic = false, bold = false },
     -------------------------------------------------------------------------
 
     --------------------------BASIC-----------------
-    Comment = { fg = c.code.Comment, bg = 'NONE' },
+    Comment = { fg = c.code.Comment, italic = false, bg = 'NONE' },
     Variable = { fg = c.code.Variable, bg = 'None' },
 
     Constant = { fg = c.code.Constant, bg = 'NONE' },
@@ -308,6 +308,7 @@ local M = {
     ['@defaultLibrary.lua'] = { fg = c.code.Native },
 
     ['@lsp.mod.constructorOrDestructor'] = { fg = c.code.ConstrutorOnClass },
+    ['@lsp.type.comment'] = { link = 'Comment' },
     ['@lsp.type.comment.c'] = { fg = c.code.DeadCode },
     ['@lsp.type.comment.cpp'] = { fg = c.code.DeadCode },
 
