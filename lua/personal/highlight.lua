@@ -505,6 +505,8 @@ local M = {
     TabLineFill = { fg = c.editor.Front, bg = c.editor.TabOutside },
     TabLineSel = { fg = c.editor.Front, bg = c.editor.TabCurrent },
 
+    NoiceCmdlinePopupBorder = { fg = c.editor.SplitDark },
+
     --
 
     -- @Tags
