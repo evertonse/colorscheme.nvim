@@ -109,6 +109,7 @@ M.code = {
 
     Namespace = '#cffffe',
     Global = '#F8D1EF',
+    GlobalFunction = '#F8D1d6',
     FileScope = '#e8D1d1',
     -- DefaultLibrary = '#e8DCA1',
     -- DefaultLibrary = '#e8D1b9',

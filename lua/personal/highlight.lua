@@ -302,6 +302,7 @@ local M = {
 
     ['@lsp.mod.variable.global'] = { fg = c.code.Global },
     ['@lsp.typemod.variable.global'] = { fg = c.code.Global },
+    ['@lsp.typemod.function.global'] = { fg = c.code.GlobalFunction },
     ['@lsp.typemod.variable.globalScope'] = { fg = c.code.Global },
     ['@lsp.typemod.variable.fileScope'] = { fg = c.code.FileScope },
     ['@lsp.typemod.variable.defaultLibrary'] = { fg = c.code.DefaultLibrary },
