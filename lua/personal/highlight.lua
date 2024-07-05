@@ -237,6 +237,7 @@ local M = {
     -- Variables
     ['@variable'] = { fg = c.code.Variable, bg = 'NONE' },
     ['@variable.builtin'] = { fg = c.code.VariableBuiltin, bold = true, italic = false, bg = 'NONE' },
+    ['@variable.member'] = { link = '@property' },
     ['@field'] = { fg = c.code.Field, bg = 'NONE' },
     ['@property'] = { fg = c.code.Property, bg = 'NONE' },
     ['@reference'] = { fg = c.code.Normal, bg = 'NONE' },
