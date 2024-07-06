@@ -670,16 +670,16 @@ M.set_highlights = function(opts)
     hl(0, 'DashboardKey', { fg = vscode.vscWhite, bg = 'NONE' })
     hl(0, 'DashboardFooter', { fg = vscode.vscBlue, bg = 'NONE', italic = true })
 
-    -- Illuminate
-    hl(0, 'illuminatedWord', { bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue })
-    hl(0, 'illuminatedCurWord', { bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue })
-    hl(0, 'IlluminatedWordText', { bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue })
-    hl(0, 'IlluminatedWordRead', { bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue })
-    hl(
-        0,
-        'IlluminatedWordWrite',
-        { bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue }
-    )
+    -- -- Illuminate
+    -- hl(0, 'illuminatedWord', { bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue })
+    -- hl(0, 'illuminatedCurWord', { bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue })
+    -- hl(0, 'IlluminatedWordText', { bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue })
+    -- hl(0, 'IlluminatedWordRead', { bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue })
+    -- hl(
+    --     0,
+    --     'IlluminatedWordWrite',
+    --     { bg = is_dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue }
+    -- )
 
     -- mini.statusline
     -- hl(0, 'MiniStatuslineModeNormal', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
