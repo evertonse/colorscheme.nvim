@@ -39,8 +39,8 @@ local M = {
     SignColumn = {
         fg = 'NONE', --[[ bg = c.editor.Back ]]
     },
-    IncSearch = { fg = c.Debug, bg = c.editor.Debug },
-    Search = { fg = c.editor.None, bg = c.editor.Search },
+    IncSearch = { fg = c.text.ModifiedLight, bold = true, bg = c.editor.Search },
+    Search = { fg = c.Debug, bg = c.editor.Search },
     LineNr = {
         fg = c.editor.LineNumber, --[[bg = c.editor.Back]]
     },
