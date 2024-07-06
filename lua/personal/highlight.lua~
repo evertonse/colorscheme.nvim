@@ -18,7 +18,6 @@ local M = {
     },
     -- Set the cursorline background color
     CursorLine = { fg = c.None, bg = c.editor.CursorDarkest },
-    CursorSearchMatch = { fg = c.Debug, bg = c.None },
 
     CursorColumn = { fg = 'NONE', bg = c.editor.CursorDarkDark },
     Directory = {
@@ -41,6 +40,7 @@ local M = {
         fg = 'NONE', --[[ bg = c.editor.Back ]]
     },
     IncSearch = { fg = c.editor.None, bg = c.editor.SearchCurrent },
+    Search = { fg = c.editor.None, bg = c.editor.Search },
     LineNr = {
         fg = c.editor.LineNumber, --[[bg = c.editor.Back]]
     },
@@ -70,7 +70,6 @@ local M = {
     Question = {
         fg = c.editor.Blue, --[[ bg = c.editor.Back ]]
     },
-    Search = { fg = c.editor.None, bg = c.editor.Search },
     SpecialKey = { fg = c.editor.Blue, bg = c.editor.None },
     --StatusLine      =   { fg = c.editor.Front, --[[ bg = c.editor.LeftMid ]] },
     StatusLineNC = {
