@@ -811,7 +811,7 @@ M.set_highlights = function(opts)
     end
     local highlights = require('personal.highlight')
     for hl_group, hl_opts in pairs(highlights) do
-        hl(0, hl_group, hl_opts)
+        -- hl(0, hl_group, hl_opts)
     end
 end
 
