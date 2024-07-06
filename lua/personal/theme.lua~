@@ -694,29 +694,16 @@ M.set_highlights = function(opts)
     -- hl(0, 'MiniStatuslineInactive', { bg = vscode.vscLeftDark, fg = vscode.vscFront })
 
     -- NeogitOrg/neogit
-    if is_dark then
-        hl(0, 'NeogitDiffAdd', { fg = vscode.vscGitAdded, bg = vscode.vscDiffGreenDark })
-        hl(0, 'NeogitDiffAddHighlight', { fg = vscode.vscGitAdded, bg = vscode.vscDiffGreenLight })
-        hl(0, 'NeogitDiffContext', { fg = vscode.vscPopupFront, bg = vscode.vscLeftDark })
-        hl(0, 'NeogitDiffContextHighlight', { fg = vscode.vscPopupFront, bg = vscode.vscLeftMid })
-        hl(0, 'NeogitDiffDelete', { fg = vscode.vscGitDeleted, bg = vscode.vscDiffRedDark })
-        hl(0, 'NeogitDiffDeleteHighlight', { fg = vscode.vscGitDeleted, bg = vscode.vscDiffRedLight })
-        hl(0, 'NeogitDiffHeader', { fg = vscode.vscSplitLight, bg = vscode.vscBack })
-        hl(0, 'NeogitDiffHeaderHighlight', { fg = vscode.vscSplitLight, bg = vscode.vscBack })
-        hl(0, 'NeogitHunkHeader', { fg = vscode.vscGitModified, bg = vscode.vscLeftDark })
-        hl(0, 'NeogitHunkHeaderHighlight', { fg = vscode.vscGitModified, bg = vscode.vscLeftMid })
-    else
-        hl(0, 'NeogitDiffAdd', { fg = vscode.vscGitAdded, bg = vscode.vscDiffGreenLight })
-        hl(0, 'NeogitDiffAddHighlight', { fg = vscode.vscGitAdded, bg = vscode.vscDiffGreenDark })
-        hl(0, 'NeogitDiffContext', { fg = vscode.vscPopupFront, bg = vscode.vscLeftMid })
-        hl(0, 'NeogitDiffContextHighlight', { fg = vscode.vscPopupFront, bg = vscode.vscLeftDark })
-        hl(0, 'NeogitDiffDelete', { fg = vscode.vscGitDeleted, bg = vscode.vscDiffRedLight })
-        hl(0, 'NeogitDiffDeleteHighlight', { fg = vscode.vscGitDeleted, bg = vscode.vscDiffRedDark })
-        hl(0, 'NeogitDiffHeader', { fg = vscode.vscSplitLight, bg = vscode.vscBack })
-        hl(0, 'NeogitDiffHeaderHighlight', { fg = vscode.vscSplitLight, bg = vscode.vscBack })
-        hl(0, 'NeogitHunkHeader', { fg = vscode.vscGitModified, bg = vscode.vscLeftMid })
-        hl(0, 'NeogitHunkHeaderHighlight', { fg = vscode.vscGitModified, bg = vscode.vscLeftDark })
-    end
+    hl(0, 'NeogitDiffAdd', { fg = vscode.vscGitAdded, bg = vscode.vscDiffGreenDark })
+    hl(0, 'NeogitDiffAddHighlight', { fg = vscode.vscGitAdded, bg = vscode.vscDiffGreenLight })
+    hl(0, 'NeogitDiffContext', { fg = vscode.vscPopupFront, bg = vscode.vscLeftDark })
+    hl(0, 'NeogitDiffContextHighlight', { fg = vscode.vscPopupFront, bg = vscode.vscLeftMid })
+    hl(0, 'NeogitDiffDelete', { fg = vscode.vscGitDeleted, bg = vscode.vscDiffRedDark })
+    hl(0, 'NeogitDiffDeleteHighlight', { fg = vscode.vscGitDeleted, bg = vscode.vscDiffRedLight })
+    hl(0, 'NeogitDiffHeader', { fg = vscode.vscSplitLight, bg = vscode.vscBack })
+    hl(0, 'NeogitDiffHeaderHighlight', { fg = vscode.vscSplitLight, bg = vscode.vscBack })
+    hl(0, 'NeogitHunkHeader', { fg = vscode.vscGitModified, bg = vscode.vscLeftDark })
+    hl(0, 'NeogitHunkHeaderHighlight', { fg = vscode.vscGitModified, bg = vscode.vscLeftMid })
 
     if is_dark then
         hl(0, 'NvimTreeFolderIcon', { fg = vscode.vscBlue, bg = 'NONE' })
@@ -811,7 +798,7 @@ M.set_highlights = function(opts)
     end
     local highlights = require('personal.highlight')
     for hl_group, hl_opts in pairs(highlights) do
-        -- hl(0, hl_group, hl_opts)
+        hl(0, hl_group, hl_opts)
     end
 end
 
