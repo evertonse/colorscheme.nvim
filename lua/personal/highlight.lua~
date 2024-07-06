@@ -41,6 +41,7 @@ local M = {
     },
     IncSearch = { fg = c.text.ModifiedLight, bold = true, bg = c.editor.Search },
     Search = { bg = c.editor.Search },
+    CurSearch = {},
     LineNr = {
         fg = c.editor.LineNumber, --[[bg = c.editor.Back]]
     },
@@ -139,10 +140,10 @@ local M = {
     },
     Ignore = { fg = c.editor.Front, bg = 'NONE' },
     Error = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
-    -- SpellBad = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
-    -- SpellCap = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
-    -- SpellRare = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
-    -- SpellLocal = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
+    SpellBad = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
+    SpellCap = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
+    SpellRare = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
+    SpellLocal = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
 
     DiagnosticWarn = {
         fg = c.text.Warn,

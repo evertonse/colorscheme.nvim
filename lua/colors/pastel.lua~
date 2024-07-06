@@ -232,7 +232,6 @@ M.editor = {
     DiffGreenLight = '#4B5632',
     SearchCurrent = '#515c6a',
     Search = '#613315',
-    CurSearch = '#814325',
 
     GitAdded = '#81b88b',
     GitModified = '#e2c08d',
