@@ -41,7 +41,7 @@ local M = {
     },
     IncSearch = { fg = c.text.ModifiedLight, bold = true, bg = c.editor.Search },
     Search = { bg = c.editor.Search },
-    CurSearch = {},
+    CurSearch = { bg = c.editor.CurSearch },
     LineNr = {
         fg = c.editor.LineNumber, --[[bg = c.editor.Back]]
     },
