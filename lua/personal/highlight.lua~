@@ -6,7 +6,7 @@
 -- @important lsp tutorial on nvim https://gist.github.com/swarn/fb37d9eefe1bc616c2a7e476c0bc0316
 -- @example vim.api.nvim_set_hl(0, '@lsp.type.parameter', { fg='Purple' })
 -- NOTE: Best for plugins highlight info: https://github.com/NvChad/base46/tree/v2.5/lua/base46/integrations
-local is_transparent = true
+local is_transparent = false
 local c = require('colors.pastel')
 
 local M = {
