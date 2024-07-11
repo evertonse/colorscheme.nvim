@@ -429,6 +429,10 @@ local M = {
         link = 'Directory',
         bold = true,
     },
+    NvimTreeIndentMarker = {
+        fg = c.text.LightDim,
+        bold = true,
+    },
 
     -- TELESCOPE THINGY
     -- TelescopeBorder = {

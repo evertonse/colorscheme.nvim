@@ -422,11 +422,15 @@ local M = {
     --   bg = c.code.None,
     -- },
     --
-    NvimFolderIcon = {
+    NvimTreeFolderIcon = {
         link = 'Directory',
     },
     NvimTreeOpenedFolderName = {
         link = 'Directory',
+        bold = true,
+    },
+    NvimTreeIndentMarker = {
+        fg = c.text.LightDim,
         bold = true,
     },
 
