@@ -422,8 +422,11 @@ local M = {
     --   bg = c.code.None,
     -- },
     --
+    NvimFolderIcon = {
+        link = 'Directory',
+    },
     NvimTreeOpenedFolderName = {
-        --fg = "#9099dd",
+        link = 'Directory',
         bold = true,
     },
 

@@ -195,7 +195,8 @@ M.text = {
 
 M.editor = {
     None = 'NONE',
-    Folder = '#90A0A0',
+    -- Folder = '#90A0A0',
+    Folder = '#D7BA7D',
     Front = '#D4D4D4',
     Back = pastel.c14,
     --Back = '#1F1F1F',
@@ -232,6 +233,7 @@ M.editor = {
     DiffGreenLight = '#4B5632',
     SearchCurrent = '#515c6a',
     Search = '#613315',
+    CurSearch = '#814325',
 
     GitAdded = '#81b88b',
     GitModified = '#e2c08d',

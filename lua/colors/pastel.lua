@@ -195,7 +195,8 @@ M.text = {
 
 M.editor = {
     None = 'NONE',
-    Folder = '#90A0A0',
+    -- Folder = '#90A0A0',
+    Folder = '#D7BA7D',
     Front = '#D4D4D4',
     Back = pastel.c14,
     --Back = '#1F1F1F',
