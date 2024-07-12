@@ -233,6 +233,7 @@ local M = {
 
     ['@character'] = { fg = c.code.Char, bg = 'NONE' },
     ['@number'] = { fg = c.editor.LightGreen, bg = 'NONE' },
+    ['@number.float'] = { link = '@number' },
     ['@boolean'] = { fg = c.code.BuiltInConstant, bg = 'NONE' },
     ['@float'] = { fg = c.editor.LightGreen, bg = 'NONE' },
 
