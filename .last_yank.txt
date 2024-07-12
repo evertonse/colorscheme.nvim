@@ -1,1 +1,1 @@
-TreeOpenedFolderName
+        link = 'Directory',
