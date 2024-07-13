@@ -6,6 +6,10 @@
 -- @important lsp tutorial on nvim https://gist.github.com/swarn/fb37d9eefe1bc616c2a7e476c0bc0316
 -- @example vim.api.nvim_set_hl(0, '@lsp.type.parameter', { fg='Purple' })
 -- NOTE: Best for plugins highlight info: https://github.com/NvChad/base46/tree/v2.5/lua/base46/integrations
+
+-- By default, `FloatBorder` highlight is used, which links
+-- to `WinSeparator` when not defined. It could also be
+
 local is_transparent = false
 local c = require('palette.pastel')
 
@@ -58,6 +62,10 @@ local M = {
     NonText = {
         fg = c.editor.LineNumber, --[[bg = c.editor.None]]
     },
+    NormalFloat = { link = 'Normal' }, -- Normal text in floating windows.
+    FloatBorder = { fg = c.text.LightDim },
+    WinSeparator = { fg = c.text.LightDim },
+
     Pmenu = {
         fg = c.editor.PopupFront, --[[ bg = c.editor.PopupBack ]]
     },
