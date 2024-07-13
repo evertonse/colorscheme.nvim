@@ -1,1 +1,1 @@
-        link = 'Directory',
+vim.fn.expand '$LOCALAPPDATA/nvim'
