@@ -439,6 +439,7 @@ local M = {
     NvimTreeGitIgnored = { link = 'DiagnosticUnnecessary' },
     NvimTreeCursorLine = { link = 'CursorLine' },
     NvimTreeSpecialFile = {
+        link='Normal'
         bold = true,
     },
 

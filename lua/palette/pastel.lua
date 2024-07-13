@@ -219,7 +219,7 @@ M.editor = {
     SplitDark = '#444444',
     SplitThumb = '#424242',
 
-    CursorDarkest = '#191919',
+    CursorDarkest = '#1e1e1e',
     CursorDarkDark = '#222222',
     CursorDark = '#51504F',
     CursorLight = '#AEAFAD',
