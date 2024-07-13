@@ -310,6 +310,7 @@ local M = {
     ['@lsp.typemod.variable.globalScope'] = { fg = c.code.Global },
     ['@lsp.typemod.variable.fileScope'] = { fg = c.code.FileScope },
     ['@lsp.typemod.variable.defaultLibrary'] = { fg = c.code.DefaultLibrary },
+    ['@lsp.typemod.variable.definition'] = { fg = c.code.VariableBuiltin },
     ['@lsp.typemod.function.defaultLibrary'] = { fg = c.code.DefaultLibrary },
     ['@lsp.mode.defaultLibrary'] = { fg = c.code.Native },
     ['@defaultLibrary.python'] = { fg = c.code.Native },
