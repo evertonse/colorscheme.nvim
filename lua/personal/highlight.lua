@@ -7,7 +7,7 @@
 -- @example vim.api.nvim_set_hl(0, '@lsp.type.parameter', { fg='Purple' })
 -- NOTE: Best for plugins highlight info: https://github.com/NvChad/base46/tree/v2.5/lua/base46/integrations
 local is_transparent = false
-local c = require('colors.pastel')
+local c = require('palette.pastel')
 
 local M = {
     -----------------EDITOR------------------------------
@@ -437,6 +437,10 @@ local M = {
         bold = true,
     },
     NvimTreeGitIgnored = { link = 'DiagnosticUnnecessary' },
+    NvimTreeCursorLine = { link = 'CursorLine' },
+    NvimTreeSpecialFile = {
+        bold = true,
+    },
 
     -- TELESCOPE THINGY
     -- TelescopeBorder = {
