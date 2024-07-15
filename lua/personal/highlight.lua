@@ -84,6 +84,10 @@ local M = {
     StatusLineNC = {
         fg = c.editor.Front, --[[ bg = c.editor.LeftDark ]]
     },
+    Done = {
+        fg = c.text.Done,
+        bold = true,
+    },
     Todo = {
         fg = c.code.Normal,
         bg = c.text.Todo,
@@ -194,7 +198,7 @@ local M = {
     },
 
     --Whitespace                 =   { fg = c.editor.LineNumber },
-    TODO = { fg = c.editor.Red },
+    Todo = { fg = c.editor.Red },
     LspGlobal = { link = 'Global' },
     GlobalScope = { link = 'Global' },
     ['@global'] = { link = 'Global' },

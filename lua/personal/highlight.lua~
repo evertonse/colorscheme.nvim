@@ -84,6 +84,10 @@ local M = {
     StatusLineNC = {
         fg = c.editor.Front, --[[ bg = c.editor.LeftDark ]]
     },
+    Done = {
+        fg = c.text.Done,
+        bold = true,
+    },
     Todo = {
         fg = c.code.Normal,
         bg = c.text.Todo,
@@ -194,7 +198,7 @@ local M = {
     },
 
     --Whitespace                 =   { fg = c.editor.LineNumber },
-    TODO = { fg = c.editor.Red },
+    Todo = { fg = c.editor.Red },
     LspGlobal = { link = 'Global' },
     GlobalScope = { link = 'Global' },
     ['@global'] = { link = 'Global' },
@@ -320,7 +324,7 @@ local M = {
     ['@lsp.typemod.variable.defaultLibrary'] = { fg = c.code.DefaultLibrary },
     ['@lsp.typemod.variable.definition'] = { fg = c.code.VariableBuiltin },
     ['@lsp.typemod.function.defaultLibrary'] = { fg = c.code.DefaultLibrary },
-    ['@lsp.typemod.class.defaultLibrary'] = { link = 'BuiltInType' },
+    ['@lsp.typemod.class.defaultLibrary'] = { link = '@type.builtin' },
     ['@lsp.mode.defaultLibrary'] = { fg = c.code.Native },
     ['@defaultLibrary.python'] = { fg = c.code.Native },
     ['@defaultLibrary.lua'] = { fg = c.code.Native },

@@ -181,6 +181,7 @@ M.text = {
     Modified = palette.c19,
     ModifiedLight = palette.c20,
     ModifiedLightest = palette.c21,
+    Done = '#81b88b',
     Error = '#f48787',
     Warn = '#cdcd88',
     Info = '#DCDCAA',
