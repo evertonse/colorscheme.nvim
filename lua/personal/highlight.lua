@@ -63,8 +63,8 @@ local M = {
         fg = c.editor.LineNumber, --[[bg = c.editor.None]]
     },
     NormalFloat = { link = 'Normal' }, -- Normal text in floating windows.
-    FloatBorder = { fg = c.text.LightDim },
-    WinSeparator = { fg = c.text.LightDim },
+    FloatBorder = { fg = c.text.LightDimest },
+    WinSeparator = { fg = c.text.LightDimest },
 
     Pmenu = {
         fg = c.editor.PopupFront, --[[ bg = c.editor.PopupBack ]]
@@ -320,6 +320,7 @@ local M = {
     ['@lsp.typemod.variable.defaultLibrary'] = { fg = c.code.DefaultLibrary },
     ['@lsp.typemod.variable.definition'] = { fg = c.code.VariableBuiltin },
     ['@lsp.typemod.function.defaultLibrary'] = { fg = c.code.DefaultLibrary },
+    ['@lsp.typemod.class.defaultLibrary'] = { link = '@type.builtin' },
     ['@lsp.mode.defaultLibrary'] = { fg = c.code.Native },
     ['@defaultLibrary.python'] = { fg = c.code.Native },
     ['@defaultLibrary.lua'] = { fg = c.code.Native },
@@ -442,10 +443,13 @@ local M = {
         bold = true,
     },
     NvimTreeIndentMarker = {
-        fg = c.text.LightDim,
+        fg = c.text.LightDimest,
         bold = true,
     },
     NvimTreeGitIgnored = { link = 'DiagnosticUnnecessary' },
+    -- NvimTreeGitFolderIgnoredHL = { fg = c.Debug },
+    NvimTreeGitFileIgnoredHL = { fg = c.text.LightDim },
+
     NvimTreeCursorLine = { link = 'CursorLine' },
     NvimTreeSpecialFile = {
         link = 'Normal',
@@ -467,8 +471,8 @@ local M = {
     TelescopePreviewBorder = { fg = c.editor.SplitDark },
 
     TelescopePromptTitle = { fg = c.text.Normal },
-    TelescopeResultsTitle = { fg = c.text.LightDim },
-    TelescopePreviewTitle = { fg = c.text.LightDim },
+    TelescopeResultsTitle = { fg = c.text.LightDimest },
+    TelescopePreviewTitle = { fg = c.text.LightDimest },
     TelescopeMatching = { fg = c.text.ModifiedLight, bold = true },
     -- TelescopeResultsTitle = { fg = ss.bg.floating, bg = ss.bg.floating, bold = true },
     -- TelescopePreviewNormal = { bg = ss.bg.floating },
@@ -483,8 +487,8 @@ local M = {
     -- TelescopeMatching
     -- TelescopePromptNormal
 
-    IblIndent = { fg = c.text.LightDim },
-    IblWhitespace = { fg = c.text.LightDim },
+    IblIndent = { fg = c.text.LightDimest },
+    IblWhitespace = { fg = c.text.LightDimest },
     IblScope = { fg = c.text.Light },
     ['@ibl.scope.underline.0'] = {
         undercurl = true, --[[fg = c.text.Normal]]
@@ -520,7 +524,7 @@ local M = {
     -- mini.tabline
     MiniTablineCurrent = { fg = c.text.Bright, bg = c.editor.TabCurrent },
     MiniTablineVisible = { fg = c.text.Light, bg = c.editor.TabVisible },
-    MiniTablineHidden = { fg = c.text.LightDim, bg = c.editor.TabHidden },
+    MiniTablineHidden = { fg = c.text.LightDimest, bg = c.editor.TabHidden },
 
     MiniTablineModifiedCurrent = { fg = c.text.Modified, bg = c.editor.TabCurrent },
     MiniTablineModifiedVisible = { fg = c.text.ModifiedLight, bg = c.editor.TabVisible },
