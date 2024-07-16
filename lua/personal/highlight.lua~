@@ -460,6 +460,15 @@ local M = {
         bold = true,
     },
 
+    NvimTreeHiddenFileHL = {
+        fg = c.text.LightDimest,
+    },
+
+    NvimTreeHiddenFolderHL = {
+        fg = c.text.LightDimest,
+        bold = true,
+    },
+
     -- TELESCOPE THINGY
     -- TelescopeBorder = {
     --     -- fg = c.editor.Front,
