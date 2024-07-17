@@ -63,7 +63,7 @@ local blow = {
 -- local palette = pastel
 local palette = blow
 
-M.none = 'NONE'
+M.None = 'NONE'
 M.Debug = '#FF00FF'
 M.code = {
     None = 'NONE',

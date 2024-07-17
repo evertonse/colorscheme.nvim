@@ -13,6 +13,8 @@
 local is_transparent = true
 local c = require('palette.pastel')
 
+-- Set transparent background
+
 local M = {
     -----------------EDITOR------------------------------
     Normal = { fg = c.editor.Front, bg = is_transparent and c.None or c.editor.CursorDarkDark },
