@@ -10,13 +10,17 @@
 -- By default, `FloatBorder` highlight is used, which links
 -- to `WinSeparator` when not defined. It could also be
 
-local is_transparent = false
+local is_transparent = true
 local c = require('palette.pastel')
 
 local M = {
     -----------------EDITOR------------------------------
-    Normal = { fg = c.editor.Front, bg = is_transparent and 'none' or c.editor.CursorDarkDark },
-    ColorColumn = { fg = 'NONE', bg = is_transparent and 'none' or c.editor.CursorDarkDark },
+    Normal = { fg = c.editor.Front, bg = is_transparent and c.None or c.editor.CursorDarkDark },
+    NonText = {
+        fg = c.editor.LineNumber,
+        bg = is_transparent and c.None or c.editor.CursorDarkDark,
+    },
+    ColorColumn = { fg = 'NONE', bg = is_transparent and c.None or c.editor.CursorDarkDark },
     Cursor = {
         fg = c.editor.CursorDark, --[[ bg = c.editor.CursorLight ]]
     },
@@ -27,27 +31,30 @@ local M = {
     Directory = {
         fg = c.code.Method, --[[ bg = c.editor.Back ]]
     },
-    EndOfBuffer = { fg = c.editor.Back, bg = 'NONE' },
+    EndOfBuffer = { fg = c.editor.Back, bg = is_transparent and c.None or c.editor.CursorDarkDark },
     ErrorMsg = {
         fg = c.editor.Red, --[[ bg = c.editor.Back ]]
     },
     VertSplit = {
-        fg = c.editor.SplitDark, --[[ bg = c.editor.Back ]]
+        fg = c.editor.SplitDark,
+        bg = c.None,
     },
     Folded = {
-        fg = 'NONE', --[[ bg = c.editor.FoldBackground ]]
+        fg = 'NONE',
+        bg = is_transparent and c.None or c.editor.CursorDarkDark,
     },
     FoldColumn = {
         fg = c.editor.LineNumber, --[[ bg = c.editor.Back ]]
     },
     SignColumn = {
-        fg = 'NONE', --[[ bg = c.editor.Back ]]
+        bg = c.None,
     },
     IncSearch = { fg = c.text.ModifiedLight, bold = true, bg = c.editor.Search },
     Search = { bg = c.editor.Search },
     CurSearch = { bold = true, bg = c.editor.CurSearch },
     LineNr = {
-        fg = c.editor.LineNumber, --[[bg = c.editor.Back]]
+        fg = c.editor.LineNumber,
+        bg = is_transparent and c.None or c.editor.CursorDarkDark,
     },
     CursorLineNr = {
         fg = c.editor.PopupFront, --[[bg = c.editor.Back ]]
@@ -58,9 +65,6 @@ local M = {
     },
     MoreMsg = {
         fg = c.editor.Front, --[[ bg = c.editor.LeftDark ]]
-    },
-    NonText = {
-        fg = c.editor.LineNumber, --[[bg = c.editor.None]]
     },
     NormalFloat = { link = 'Normal' }, -- Normal text in floating windows.
     FloatBorder = { fg = c.text.LightDimest },
@@ -80,16 +84,18 @@ local M = {
         fg = c.editor.Blue, --[[ bg = c.editor.Back ]]
     },
     SpecialKey = { fg = c.editor.Blue, bg = c.editor.None },
-    --StatusLine      =   { fg = c.editor.Front, --[[ bg = c.editor.LeftMid ]] },
+    StatusLine = {
+        fg = c.editor.Front,
+    },
     StatusLineNC = {
-        fg = c.editor.Front, --[[ bg = c.editor.LeftDark ]]
+        link = 'StatusLine',
     },
     Done = {
         fg = c.text.Done,
         bold = true,
     },
     Todo = {
-        fg = c.code.Normal,
+        fg = c.code.Red,
         bg = c.text.Todo,
         bold = true,
     },
@@ -198,7 +204,6 @@ local M = {
     },
 
     --Whitespace                 =   { fg = c.editor.LineNumber },
-    Todo = { fg = c.editor.Red },
     LspGlobal = { link = 'Global' },
     GlobalScope = { link = 'Global' },
     ['@global'] = { link = 'Global' },
