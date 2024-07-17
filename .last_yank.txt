@@ -1,3 +1,1 @@
-      Normal = {
-        guibg = '<VALUE-HERE>',
-      },
+change this BS of copying with crtl+shift+v, and remove crlt+y mapping

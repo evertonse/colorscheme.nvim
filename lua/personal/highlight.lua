@@ -71,7 +71,8 @@ local M = {
     MoreMsg = {
         fg = c.editor.Front, --[[ bg = c.editor.LeftDark ]]
     },
-    NormalFloat = { fg = c.editor.Front, bg = is_transparent and c.editor.PopupBack or c.editor.Back }, -- Normal text in floating windows.
+    -- NormalFloat = { fg = c.editor.Front, bg = is_transparent and c.editor.PopupBack or c.editor.Back }, -- Normal text in floating windows.
+    NormalFloat = { fg = c.editor.Front, bg = is_transparent and c.None or c.editor.Back }, -- Normal text in floating windows.
     FloatBorder = { fg = c.text.LightDimest, bg = is_transparent and c.None or c.editor.Back },
     WinSeparator = { fg = c.text.LightDimest },
 
@@ -450,7 +451,8 @@ local M = {
     --
 
     NvimTreeNormalFloat = { link = 'NormalFloat' },
-    NvimTreeNormalFloatBorder = { fg = c.text.LightDimest, bg = is_transparent and c.editor.PopupBack or c.editor.Back },
+    -- NvimTreeNormalFloatBorder = { fg = c.text.LightDimest, bg = is_transparent and c.editor.PopupBack or c.editor.Back },
+    NvimTreeNormalFloatBorder = { link = 'FloatBorder' },
 
     NvimTreeFolderIcon = {
         link = 'Directory',
