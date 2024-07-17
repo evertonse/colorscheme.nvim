@@ -6,6 +6,8 @@
 -- @important lsp tutorial on nvim https://gist.github.com/swarn/fb37d9eefe1bc616c2a7e476c0bc0316
 -- @example vim.api.nvim_set_hl(0, '@lsp.type.parameter', { fg='Purple' })
 -- NOTE: Best for plugins highlight info: https://github.com/NvChad/base46/tree/v2.5/lua/base46/integrations
+-- TODO: Make this transperant work with opts given by the user
+-- TODO: Telescope result going in front of Telescope selection
 
 -- By default, `FloatBorder` highlight is used, which links
 -- to `WinSeparator` when not defined. It could also be
@@ -18,6 +20,7 @@ local c = require('palette.pastel')
 local M = {
     -----------------EDITOR------------------------------
     Normal = { fg = c.editor.Front, bg = is_transparent and c.None or c.editor.CursorDarkDark },
+    -- Normal = { fg = c.editor.Front, bg = c.editor.CursorDarkDark },
     NonText = {
         fg = c.editor.LineNumber,
         bg = is_transparent and c.None or c.editor.CursorDarkDark,
@@ -27,7 +30,7 @@ local M = {
         fg = c.editor.CursorDark, --[[ bg = c.editor.CursorLight ]]
     },
     -- Set the cursorline background color
-    CursorLine = { fg = c.None, bg = c.editor.CursorDarkest },
+    CursorLine = { fg = c.None, bg = is_transparent and c.editor.CursorDarkDark or c.editor.CursorDarkest },
 
     CursorColumn = { fg = 'NONE', bg = c.editor.CursorDarkDark },
     Directory = {
@@ -68,8 +71,8 @@ local M = {
     MoreMsg = {
         fg = c.editor.Front, --[[ bg = c.editor.LeftDark ]]
     },
-    NormalFloat = { link = 'Normal' }, -- Normal text in floating windows.
-    FloatBorder = { fg = c.text.LightDimest },
+    NormalFloat = { fg = c.editor.Front, bg = is_transparent and c.editor.PopupBack or c.editor.Back }, -- Normal text in floating windows.
+    FloatBorder = { fg = c.text.LightDimest, bg = is_transparent and c.None or c.editor.Back },
     WinSeparator = { fg = c.text.LightDimest },
 
     Pmenu = {
@@ -112,7 +115,7 @@ local M = {
     },
     Visual = { fg = c.editor.None, bg = c.editor.Selection },
     VisualNOS = { fg = c.editor.None, bg = c.editor.Selection },
-    WarningMsg = { fg = c.editor.Red, bg = c.editor.Back, bold = true },
+    WarningMsg = { fg = c.text.Warn, bg = c.editor.Back, bold = true },
     WildMenu = { fg = c.editor.None, bg = c.editor.Selection },
     ['@spell'] = { fg = c.code.Comment, bg = c.code.None, italic = false },
     ['@spell.markdown'] = { fg = c.code.Normal, bg = c.code.None, italic = false, bold = true },
@@ -198,7 +201,6 @@ local M = {
     },
     DiagnosticUnnecessary = {
         fg = c.code.DeadCode,
-        bg = c.code.None,
         italic = true,
         underline = false,
         undercurl = false,
@@ -446,6 +448,10 @@ local M = {
     --   bg = c.code.None,
     -- },
     --
+
+    NvimTreeNormalFloat = { link = 'NormalFloat' },
+    NvimTreeNormalFloatBorder = { fg = c.text.LightDimest, bg = is_transparent and c.editor.PopupBack or c.editor.Back },
+
     NvimTreeFolderIcon = {
         link = 'Directory',
     },
@@ -476,27 +482,22 @@ local M = {
         bold = true,
     },
 
-    -- TELESCOPE THINGY
-    -- TelescopeBorder = {
-    --     -- fg = c.editor.Front,
-    --     link = 'Normal',
-    --     -- bg = c.editor.Back,
-    -- },
+    -- TelescopeNormal = { link = 'NormalFloat' },
+    -- TelescopePreviewNormal = { link = 'NormalFloat' },
+    -- TelescopePromptNormal = { link = 'NormalFloat' },
 
-    TelescopeNormal = { fg = c.text.Normal, bg = c.None },
-    TelescopePreviewNormal = { fg = c.text.Normal, bg = c.None },
-
-    TelescopePromptBorder = { fg = c.editor.SplitDark },
-    TelescopeResultsBorder = { fg = c.editor.SplitDark },
-    TelescopePreviewBorder = { fg = c.editor.SplitDark },
+    TelescopePromptBorder = { link = 'FloatBorder' },
+    TelescopeResultsBorder = { link = 'FloatBorder' },
+    TelescopePreviewBorder = { link = 'FloatBorder' },
 
     TelescopePromptTitle = { fg = c.text.Normal },
-    TelescopeResultsTitle = { fg = c.text.LightDimest },
-    TelescopePreviewTitle = { fg = c.text.LightDimest },
-    TelescopeMatching = { fg = c.text.ModifiedLight, bold = true },
+    -- TelescopeResultsTitle = { fg = c.text.LightDimest },
+    -- TelescopePreviewTitle = { fg = c.text.LightDimest },
+    -- TelescopeMatching = { fg = c.text.ModifiedLight, bold = true },
     -- TelescopeResultsTitle = { fg = ss.bg.floating, bg = ss.bg.floating, bold = true },
     -- TelescopePreviewNormal = { bg = ss.bg.floating },
-    -- TelescopeResultsNormal = { bg = ss.bg.floating },
+    -- TelescopeResultsNormal = { bg = c.Debug },
+    -- TelescopeSelection = { bg = c.editor.Red },
     -- TelescopePromptPrefix
     -- TelescopePreviewTitle
     -- TelescopePromptTitle
@@ -505,7 +506,6 @@ local M = {
     -- TelescopeResultsDiffChange
     -- TelescopeResultsDiffDelete
     -- TelescopeMatching
-    -- TelescopePromptNormal
 
     IblIndent = { fg = c.text.LightDimest },
     IblWhitespace = { fg = c.text.LightDimest },
@@ -551,11 +551,11 @@ local M = {
     MiniTablineModifiedHidden = { fg = c.text.ModifiedLightest, bg = c.editor.TabHidden },
     -- * `MiniTablineFill` - unused right space of tabline.
     -- Section with tabpage information.
-    MiniTablineTabpagesection = { fg = c.text.Hint, bg = c.editor.TabHidden },
+    MiniTablineTabpagesection = { fg = c.text.Hint, bg = is_transparent and c.None or c.editor.TabHidden },
 
-    TabLine = { fg = c.editor.Front, bg = c.editor.TabVisible },
-    TabLineFill = { fg = c.editor.Front, bg = c.editor.TabOutside },
-    TabLineSel = { fg = c.editor.Front, bg = c.editor.TabCurrent },
+    TabLine = { fg = c.editor.Front, bg = is_transparent and c.None or c.editor.TabVisible },
+    TabLineFill = { fg = c.editor.Front, bg = is_transparent and c.None or c.editor.TabOutside },
+    TabLineSel = { fg = c.editor.Front, bg = is_transparent and c.None or c.editor.TabCurrent },
 
     NoiceCmdlinePopupBorder = { fg = c.editor.SplitDark },
 

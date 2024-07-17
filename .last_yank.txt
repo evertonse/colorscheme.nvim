@@ -1,1 +1,3 @@
-|Shift
+      Normal = {
+        guibg = '<VALUE-HERE>',
+      },
