@@ -550,7 +550,10 @@ local M = {
     -- mini.tabline
     MiniTablineCurrent = { fg = c.text.Bright, bg = c.editor.TabCurrent },
     MiniTablineVisible = { fg = c.text.Light, bg = c.editor.TabVisible },
-    MiniTablineHidden = { fg = c.text.LightDimest, bg = c.editor.TabHidden },
+    MiniTablineHidden = {
+        fg = is_transparent and c.text.LightDim or c.text.LightDimest,
+        bg = is_transparent and c.None or c.editor.TabHidden,
+    },
 
     MiniTablineModifiedCurrent = { fg = c.text.Modified, bg = c.editor.TabCurrent },
     MiniTablineModifiedVisible = { fg = c.text.ModifiedLight, bg = c.editor.TabVisible },
