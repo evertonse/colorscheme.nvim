@@ -11,6 +11,13 @@
 
 -- By default, `FloatBorder` highlight is used, which links
 -- to `WinSeparator` when not defined. It could also be
+-- --   groupsnneded for transparaceny = { -- table: default groups
+--     'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
+--     'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
+--     'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
+--     'SignColumn', 'CursorLine', 'CursorLineNr', 'StatusLine', 'StatusLineNC',
+--     'EndOfBuffer',
+--   },
 
 local is_transparent = true
 local c = require('palette.pastel')
@@ -487,11 +494,11 @@ local M = {
         bold = true,
     },
 
-    -- TelescopeNormal = { link = 'NormalFloat' },
     -- TelescopePreviewNormal = { link = 'NormalFloat' },
     -- TelescopePromptNormal = { link = 'NormalFloat' },
 
     TelescopePromptBorder = { link = 'FloatBorder' },
+    TelescopeNormal = { link = 'NormalFloat' },
     TelescopeResultsBorder = { link = 'FloatBorder' },
     TelescopePreviewBorder = { link = 'FloatBorder' },
 

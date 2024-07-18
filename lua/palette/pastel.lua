@@ -20,7 +20,7 @@ local pastel = {
     c12 = '#85897e',
     c13 = '#b2bfc3',
     c14 = '#222222',
-    c15 = '#2D2D2D',
+    c15 = '#242424',
     c16 = '#2e2e2e',
     c17 = '#323232',
     c18 = '#FFDCA1',
@@ -204,7 +204,7 @@ M.editor = {
     --Back = '#1F1F1F',
 
     TabCurrent = pastel.c17,
-    TabVisible = pastel.c14,
+    TabVisible = pastel.c15,
     TabHidden = pastel.c14,
     TabOutside = '#252526',
 
