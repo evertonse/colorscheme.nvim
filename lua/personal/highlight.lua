@@ -11,13 +11,6 @@
 
 -- By default, `FloatBorder` highlight is used, which links
 -- to `WinSeparator` when not defined. It could also be
--- --   groupsnneded for transparaceny = { -- table: default groups
---     'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
---     'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
---     'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
---     'SignColumn', 'CursorLine', 'CursorLineNr', 'StatusLine', 'StatusLineNC',
---     'EndOfBuffer',
---   },
 
 local is_transparent = true
 local c = require('palette.pastel')
@@ -494,11 +487,12 @@ local M = {
         bold = true,
     },
 
+    -- TelescopeNormal = { link = 'NormalFloat' },
     -- TelescopePreviewNormal = { link = 'NormalFloat' },
     -- TelescopePromptNormal = { link = 'NormalFloat' },
 
-    TelescopePromptBorder = { link = 'FloatBorder' },
     TelescopeNormal = { link = 'NormalFloat' },
+    TelescopePromptBorder = { link = 'FloatBorder' },
     TelescopeResultsBorder = { link = 'FloatBorder' },
     TelescopePreviewBorder = { link = 'FloatBorder' },
 
@@ -560,7 +554,7 @@ local M = {
 
     MiniTablineModifiedCurrent = { fg = c.text.Modified, bg = c.editor.TabCurrent },
     MiniTablineModifiedVisible = { fg = c.text.ModifiedLight, bg = c.editor.TabVisible },
-    MiniTablineModifiedHidden = { fg = c.text.ModifiedLightest, bg = c.None and is_transparent or c.editor.TabHidden },
+    MiniTablineModifiedHidden = { fg = c.text.ModifiedLightest, bg = c.editor.TabHidden },
     -- * `MiniTablineFill` - unused right space of tabline.
     -- Section with tabpage information.
     MiniTablineTabpagesection = { fg = c.text.Hint, bg = is_transparent and c.None or c.editor.TabHidden },
