@@ -20,6 +20,7 @@ local c = require('palette.pastel')
 local M = {
     -----------------EDITOR------------------------------
     Normal = { fg = c.editor.Front, bg = is_transparent and c.None or c.editor.CursorDarkDark },
+    NormalNC = { link = 'Normal' },
     -- Normal = { fg = c.editor.Front, bg = c.editor.CursorDarkDark },
     NonText = {
         fg = c.editor.LineNumber,
@@ -36,7 +37,10 @@ local M = {
     Directory = {
         fg = c.code.Method, --[[ bg = c.editor.Back ]]
     },
-    EndOfBuffer = { fg = c.editor.Back, bg = is_transparent and c.None or c.editor.CursorDarkDark },
+    EndOfBuffer = {
+        fg = is_transparent and c.None or c.editor.Back,
+        bg = is_transparent and c.None or c.editor.CursorDarkDark,
+    },
     ErrorMsg = {
         fg = c.editor.Red, --[[ bg = c.editor.Back ]]
     },
@@ -52,7 +56,7 @@ local M = {
         fg = c.editor.LineNumber, --[[ bg = c.editor.Back ]]
     },
     SignColumn = {
-        bg = c.None,
+        link = 'Normal',
     },
     IncSearch = { fg = c.text.ModifiedLight, bold = true, bg = c.editor.Search },
     Search = { bg = c.editor.Search },
@@ -62,7 +66,8 @@ local M = {
         bg = is_transparent and c.None or c.editor.CursorDarkDark,
     },
     CursorLineNr = {
-        fg = c.editor.PopupFront, --[[bg = c.editor.Back ]]
+        fg = c.editor.PopupFront,
+        bg = c.None,
     },
     MatchParen = { fg = c.editor.None, bg = c.editor.CursorDark },
     ModeMsg = {
@@ -96,6 +101,7 @@ local M = {
     SpecialKey = { fg = c.editor.Blue, bg = c.editor.None },
     StatusLine = {
         fg = c.editor.Front,
+        bg = c.None,
     },
     StatusLineNC = {
         link = 'StatusLine',
@@ -128,7 +134,7 @@ local M = {
     -------------------------------------------------------------------------
 
     --------------------------BASIC-----------------
-    Comment = { fg = c.code.Comment, italic = false, bg = 'NONE' },
+    Comment = { fg = c.code.Comment, italic = false, bg = c.None },
     Variable = { fg = c.code.Variable, bg = 'None' },
 
     Constant = { fg = c.code.Constant, bg = 'NONE' },
@@ -140,18 +146,18 @@ local M = {
     Float = { fg = c.code.Constant, bg = 'NONE' },
     Identifier = { fg = c.code.Normal, bg = 'NONE' },
     Function = { fg = c.editor.Yellow, bg = 'NONE' },
-    Statement = { fg = c.code.Preprocessor, bg = 'NONE' },
+    Statement = { fg = c.code.Preprocessor, bg = c.None },
     Conditional = { fg = c.code.ControlFlow, bold = true, bg = 'NONE' },
     Repeat = { fg = c.code.ControlFlow, bold = true, bg = 'NONE' },
     Label = { fg = c.code.ControlFlow, bg = 'NONE' },
     Operator = { fg = c.code.Normal, bg = 'NONE' },
     Keyword = { fg = c.code.Keyword, bold = true, bg = 'NONE' },
     Exception = { fg = c.code.ControlFlow, bg = 'NONE' },
-    PreProc = { fg = c.code.Preprocessor, bg = 'NONE' },
+    PreProc = { fg = c.code.Preprocessor, bg = c.None },
     Include = { fg = c.code.Include, bg = 'NONE' },
     Define = { fg = c.code.Preprocessor, bg = 'NONE' },
     Macro = { fg = c.code.Macro, bg = 'NONE' },
-    Type = { fg = c.code.Type, bg = 'NONE' },
+    Type = { fg = c.code.Type, bg = c.None },
     StorageClass = { fg = c.code.Keyword, bg = 'NONE' },
     Structure = { fg = c.code.Type, bg = 'NONE' },
     Typedef = { fg = c.code.Type, bg = 'NONE' },
@@ -162,7 +168,7 @@ local M = {
     Delimiter = { fg = c.editor.Front, bg = 'NONE' },
     SpecialComment = { fg = c.code.Comment, bg = 'NONE' },
     Debug = { fg = c.editor.Front, bg = 'NONE' },
-    Underlined = { fg = c.editor.None, bg = 'NONE', underline = true },
+    Underlined = { fg = c.Debug, bg = c.None, underline = true },
     Conceal = {
         fg = c.editor.Front, --[[ bg = c.editor.Back ]]
     },
@@ -487,31 +493,28 @@ local M = {
         bold = true,
     },
 
-    -- TelescopeNormal = { link = 'NormalFloat' },
-    -- TelescopePreviewNormal = { link = 'NormalFloat' },
-    -- TelescopePromptNormal = { link = 'NormalFloat' },
-
     TelescopeNormal = { link = 'NormalFloat' },
+
+    TelescopePreviewNormal = { link = 'NormalFloat' },
+
     TelescopePromptBorder = { link = 'FloatBorder' },
     TelescopeResultsBorder = { link = 'FloatBorder' },
     TelescopePreviewBorder = { link = 'FloatBorder' },
 
-    TelescopePromptTitle = { fg = c.text.Normal },
+    TelescopePromptTitle = { link = 'NormalFloat' },
+    TelescopePromptPrefix = { link = 'FloatBorder' },
+    -- TelescopePromptCounter = { fg = c.Debug },
+
     -- TelescopeResultsTitle = { fg = c.text.LightDimest },
     -- TelescopePreviewTitle = { fg = c.text.LightDimest },
     -- TelescopeMatching = { fg = c.text.ModifiedLight, bold = true },
-    -- TelescopeResultsTitle = { fg = ss.bg.floating, bg = ss.bg.floating, bold = true },
-    -- TelescopePreviewNormal = { bg = ss.bg.floating },
     -- TelescopeResultsNormal = { bg = c.Debug },
     -- TelescopeSelection = { bg = c.editor.Red },
-    -- TelescopePromptPrefix
     -- TelescopePreviewTitle
-    -- TelescopePromptTitle
     -- TelescopeSelection
     -- TelescopeResultsDiffAdd
     -- TelescopeResultsDiffChange
     -- TelescopeResultsDiffDelete
-    -- TelescopeMatching
 
     IblIndent = { fg = c.text.LightDimest },
     IblWhitespace = { fg = c.text.LightDimest },
