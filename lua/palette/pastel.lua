@@ -255,7 +255,8 @@ M.editor = {
 
     -- Syntax colors
     Gray = '#808080',
-    Violet = '#646695',
+    -- Violet = '#646695',
+    Violet = '#343665',
     Blue = '#569CD6',
     DarkBlue = '#223E55',
     MediumBlue = '#18a2fe',
