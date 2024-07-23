@@ -170,7 +170,7 @@ local M = {
     Debug = { fg = c.editor.Front, bg = 'NONE' },
     Underlined = { fg = c.Debug, bg = c.None, underline = true },
     Conceal = {
-        fg = c.editor.Front, --[[ bg = c.editor.Back ]]
+        fg = c.text.LightDim, --[[ bg = c.editor.Back ]]
     },
     Ignore = { fg = c.editor.Front, bg = 'NONE' },
     Error = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
@@ -472,7 +472,7 @@ local M = {
     },
     NvimTreeIndentMarker = {
         fg = c.text.LightDimest,
-        bold = true,
+        bold = false,
     },
     NvimTreeGitIgnored = { link = 'DiagnosticUnnecessary' },
     -- NvimTreeGitFolderIgnoredHL = { fg = c.Debug },
