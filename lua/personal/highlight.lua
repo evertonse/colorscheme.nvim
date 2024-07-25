@@ -577,11 +577,14 @@ local M = {
     DiffAdd = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffGreenLight },
     DiffChange = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffRedDark },
     DiffText = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffRedLight },
+
     ['cDefine'] = { fg = c.code.Preprocessor, bg = 'NONE' },
     ['cppModifier'] = { fg = c.code.Keyword, bg = 'NONE' },
     ['@lsp.type.variable'] = { fg = c.code.Variable, bg = 'NONE' },
 
     ['@keyword.python'] = { fg = c.code.Keyword, sp = c.code.None, bg = 'NONE' },
+
+    ['odinKeyword'] = { link = '@keyword' },
 }
 
 return M
