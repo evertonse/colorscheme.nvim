@@ -275,7 +275,8 @@ local M = {
     ['@variable.member'] = { link = '@property' },
     ['@field'] = { fg = c.code.Field, bg = 'NONE' },
     ['@property'] = { fg = c.code.Property, bg = 'NONE' },
-    ['@reference'] = { fg = c.code.Normal, bg = 'NONE' },
+    ['@lsp.type.property.lua'] = { fg = c.code.Property, bg = 'NONE' },
+    ['@reference'] = { link = '@property' },
     -- Preprocessores
     ['@preproc'] = { fg = c.code.Preprocessor, bg = 'NONE' },
     ['@define'] = { fg = c.code.Preprocessor, bg = 'NONE' },
