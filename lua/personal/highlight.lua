@@ -592,6 +592,8 @@ local M = {
     ['@keyword.python'] = { fg = c.code.Keyword, sp = c.code.None, bg = 'NONE' },
 
     ['odinKeyword'] = { link = '@keyword' },
+    ['odinTemplate'] = { link = '@type.builtin' },
+    ['odinType'] = { link = '@type.builtin' },
 }
 
 return M
