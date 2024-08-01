@@ -7,7 +7,10 @@
 -- @example vim.api.nvim_set_hl(0, '@lsp.type.parameter', { fg='Purple' })
 -- NOTE: Best for plugins highlight info: https://github.com/NvChad/base46/tree/v2.5/lua/base46/integrations
 -- TODO: Make this transperant work with opts given by the user
--- TODO: Telescope result going in front of Telescope selection
+-- TODO: use some sorta of .hls of darken or lighten function to degine the color scheme better
+-- IMPORTANT TODO: Simplify the logic of everything here, by having just one place with higlight groups
+-- DONE: Telescope result going in front of Telescope selection
+-- Make a color into a class
 
 -- By default, `FloatBorder` highlight is used, which links
 -- to `WinSeparator` when not defined. It could also be
@@ -576,6 +579,7 @@ local M = {
 
     -- @Tags
     DiffAdd = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffGreenLight },
+    DiffDelete = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffRedDark },
     DiffChange = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffRedDark },
     DiffText = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffRedLight },
 

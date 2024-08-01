@@ -228,11 +228,11 @@ M.editor = {
     Selection = '#264F78',
     LineNumber = '#5A5A5A',
 
-    DiffRedDark = '#4B1818',
+    DiffRedDark = '#3B2222',
     DiffRedLight = '#6F1313',
     DiffRedLightLight = '#FB0101',
     DiffGreenDark = '#373D29',
-    DiffGreenLight = '#4B5632',
+    DiffGreenLight = '#223022',
     SearchCurrent = '#515c6a',
     Search = '#613315',
     CurSearch = '#814325',
