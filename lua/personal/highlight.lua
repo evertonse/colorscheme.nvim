@@ -177,7 +177,7 @@ local M = {
     },
     Ignore = { fg = c.editor.Front, bg = 'NONE' },
     Error = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
-    SpellBad = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
+    SpellBad = { bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
     SpellCap = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
     SpellRare = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
     SpellLocal = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
@@ -466,6 +466,7 @@ local M = {
 
     NvimTreeNormalFloat = { link = 'NormalFloat' },
     NvimTreeNormalFloatBorder = { link = 'FloatBorder' },
+    NvimTreeCutHL = { link = 'Note' },
 
     NvimTreeFolderIcon = {
         link = 'Directory',
@@ -574,6 +575,7 @@ local M = {
     TabLineSel = { fg = c.editor.Front, bg = is_transparent and c.None or c.editor.TabCurrent },
 
     NoiceCmdlinePopupBorder = { fg = c.editor.SplitDark },
+    ['@markup.list.unchecked.markdown'] = { link = 'Conceal' },
 
     --
 
