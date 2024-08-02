@@ -132,7 +132,7 @@ local M = {
     WarningMsg = { fg = c.text.Warn, bg = c.editor.Back, bold = true },
     WildMenu = { fg = c.editor.None, bg = c.editor.Selection },
     ['@spell'] = { fg = c.code.Comment, bg = c.code.None, italic = false },
-    ['@spell.markdown'] = { fg = c.code.Normal, bg = c.code.None, italic = false, bold = true },
+    ['@spell.markdown'] = { fg = c.code.Variable, bg = c.code.None, italic = false, bold = true },
     ['@spell.python'] = { fg = c.code.Comment, bg = c.code.None, italic = false, bold = false },
     -------------------------------------------------------------------------
 
@@ -320,9 +320,11 @@ local M = {
     ['@constant'] = { link = 'Constant' },
     ['@constant.macro.cpp'] = { fg = c.code.Macro, bg = 'NONE' },
     --['@error']               = { fg = c.editor.Red, bg = 'NONE' },
-    --['@punctuation.bracket'] = { fg = c.editor.Front, bg = 'NONE' },
+    ['@punctuation.bracket'] = { fg = c.editor.Front, bg = 'NONE' },
     ['@punctuation.special'] = { fg = c.code.Punct, bg = 'NONE' },
-    --['@constant']            = { fg = c.editor.Macro, bg = 'NONE' },
+    -- ['@punctuation.bracket'] = { fg = c.code.Normal, bg = 'NONE' },
+
+    ['@constant'] = { link = 'Constant' },
     ['@constant.builtin'] = { fg = c.code.BuiltInConstant, bg = 'NONE' },
 
     --['@annotation']          = { fg = c.editor.Yellow, bg = 'NONE' },
@@ -576,6 +578,15 @@ local M = {
 
     NoiceCmdlinePopupBorder = { fg = c.editor.SplitDark },
     ['@markup.list.unchecked.markdown'] = { link = 'Conceal' },
+    ['@markup.list.checked.markdown'] = {
+        fg = c.text.LightDimest,--[[  bg = c.editor.DiffGreenLight, ]]
+        standout = false,
+        underdotted = false,
+        strikethrough = true,
+        bold = true,
+        nocombine = false,
+        reverse = false,
+    },
 
     --
 
