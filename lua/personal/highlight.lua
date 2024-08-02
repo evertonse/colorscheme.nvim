@@ -485,7 +485,8 @@ local M = {
     -- NvimTreeGitFolderIgnoredHL = { fg = c.Debug },
     NvimTreeGitFileIgnoredHL = { fg = c.text.LightDim },
 
-    NvimTreeCursorLine = { link = 'CursorLine' },
+    NvimTreeCursorLine = { fg = c.None, bg = c.editor.CursorDarkDarkest },
+
     NvimTreeSpecialFile = {
         link = 'Normal',
         bold = true,
