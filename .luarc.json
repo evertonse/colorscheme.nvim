@@ -1,0 +1,8 @@
+{
+    "workspace.library": [
+        "/home/excyber/.local/share/nvim/lazy/neodev.nvim/types/nightly",
+        "/usr/local/share/nvim/runtime/lua",
+        "/home/excyber/.local/share/nvim/lazy/colorscheme.nvim/lua",
+        "${3rd}/luv/library"
+    ]
+}

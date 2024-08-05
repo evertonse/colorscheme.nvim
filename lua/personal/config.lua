@@ -1,15 +1,17 @@
 local config = {}
 
-config.opts = {}
+config = {}
+
+local default_opts = {
+    overrides = {},
+    transparent = true,
+    dark = true,
+    italic_comments = true,
+}
 
 ---@param user_opts? table
 config.setup = function(user_opts)
-    config.opts = user_opts or {}
-
-    -- setting transparent to true removes the default background
-    if config.opts.transparent then
-        config.opts.color_overrides.vscBack = 'NONE'
-    end
+    config.opts = vim.tbl_extend('force', default_opts, user_opts or {})
 end
 
 -- initialize config
