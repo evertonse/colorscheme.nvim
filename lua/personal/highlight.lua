@@ -15,7 +15,7 @@
 -- By default, `FloatBorder` highlight is used, which links
 -- to `WinSeparator` when not defined. It could also be
 
-local c = require('palette.pastel')
+local c = require('palette')
 local vscode = require('palette.vscode_colors')
 
 local opts = require('personal.config').opts
