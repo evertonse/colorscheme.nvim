@@ -24,139 +24,34 @@ local opts = require('personal.config').opts
 
 local M = {
 
-    ['Normal'] = { fg = vscode.vscFront, bg = vscode.vscBack },
-    ['ColorColumn'] = { fg = 'NONE', bg = vscode.vscCursorDarkDark },
-    ['Cursor'] = { fg = vscode.vscCursorDark, bg = vscode.vscCursorLight },
-    ['CursorLine'] = { bg = vscode.vscCursorDarkDark },
-    ['CursorColumn'] = { fg = 'NONE', bg = vscode.vscCursorDarkDark },
-    ['Directory'] = { fg = vscode.vscBlue, bg = vscode.vscBack },
-    ['DiffAdd'] = { fg = 'NONE', bg = vscode.vscDiffGreenLight },
     ['DiffChange'] = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffRedDark },
-    ['DiffDelete'] = { fg = 'NONE', bg = vscode.vscDiffRedLight },
-    ['DiffText'] = { fg = 'NONE', bg = vscode.vscDiffRedLight },
-    ['EndOfBuffer'] = { fg = vscode.vscBack, bg = 'NONE' },
-    ['ErrorMsg'] = { fg = vscode.vscRed, bg = vscode.vscBack },
-    ['VertSplit'] = { fg = vscode.vscSplitDark, bg = vscode.vscBack },
-    ['WinSeparator'] = { link = 'VertSplit' },
-    ['Folded'] = { fg = 'NONE', bg = vscode.vscFoldBackground },
-    ['FoldColumn'] = { fg = vscode.vscLineNumber, bg = vscode.vscBack },
-    ['SignColumn'] = { fg = 'NONE', bg = vscode.vscBack },
-    ['LineNr'] = { fg = vscode.vscLineNumber, bg = vscode.vscBack },
-    ['CursorLineNr'] = { fg = vscode.vscPopupFront, bg = vscode.vscBack },
-    ['MatchParen'] = { fg = vscode.vscNone, bg = vscode.vscDimHighlight },
-    ['ModeMsg'] = { fg = vscode.vscFront, bg = vscode.vscLeftDark },
-    ['MoreMsg'] = { fg = vscode.vscFront, bg = vscode.vscLeftDark },
-    ['NonText'] = { fg = (opts.dark and vscode.vscLineNumber or vscode.vscTabOther), bg = vscode.vscNone },
-    ['Pmenu'] = { fg = vscode.vscPopupFront, bg = vscode.vscPopupBack },
-    ['PmenuSel'] = { fg = opts.dark and vscode.vscPopupFront or vscode.vscBack, bg = vscode.vscPopupHighlightBlue },
-    ['PmenuSbar'] = { fg = 'NONE', bg = vscode.vscPopupHighlightGray },
-    ['PmenuThumb'] = { fg = 'NONE', bg = vscode.vscPopupFront },
-    ['Question'] = { fg = vscode.vscBlue, bg = vscode.vscBack },
-    ['Search'] = { fg = vscode.vscNone, bg = vscode.vscNone },
-    ['SpecialKey'] = { fg = vscode.vscBlue, bg = vscode.vscNone },
-    ['StatusLine'] = { fg = vscode.vscFront, bg = vscode.vscLeftMid },
-    ['StatusLineNC'] = { fg = vscode.vscFront, bg = opts.transparent and vscode.vscBack or vscode.vscLeftDark },
-    ['TabLine'] = { fg = vscode.vscFront, bg = vscode.vscTabOther },
-    ['TabLineFill'] = { fg = vscode.vscFront, bg = vscode.vscTabOutside },
-    ['TabLineSel'] = { fg = vscode.vscFront, bg = vscode.vscTabCurrent },
-    ['Title'] = { fg = vscode.vscNone, bg = vscode.vscNone, bold = true },
-    ['Visual'] = { fg = vscode.vscNone, bg = vscode.vscSelection },
-    ['VisualNOS'] = { fg = vscode.vscNone, bg = vscode.vscSelection },
-    ['WarningMsg'] = { fg = vscode.vscRed, bg = vscode.vscBack, bold = true },
-    ['WildMenu'] = { fg = vscode.vscNone, bg = vscode.vscSelection },
-    ['Comment'] = { fg = vscode.vscGreen, bg = 'NONE', italic = opts.italic_comments },
-    ['Constant'] = { fg = vscode.vscBlue, bg = 'NONE' },
-    ['String'] = { fg = vscode.vscOrange, bg = 'NONE' },
-    ['Character'] = { fg = vscode.vscOrange, bg = 'NONE' },
-    ['Number'] = { fg = vscode.vscLightGreen, bg = 'NONE' },
-    ['Boolean'] = { fg = vscode.vscBlue, bg = 'NONE' },
-    ['Float'] = { fg = vscode.vscLightGreen, bg = 'NONE' },
-    ['Identifier'] = { fg = vscode.vscLightBlue, bg = 'NONE' },
-    ['Function'] = { fg = vscode.vscYellow, bg = 'NONE' },
-    ['Statement'] = { fg = vscode.vscPink, bg = 'NONE' },
-    ['Conditional'] = { fg = vscode.vscPink, bg = 'NONE' },
-    ['Repeat'] = { fg = vscode.vscPink, bg = 'NONE' },
-    ['Label'] = { fg = vscode.vscPink, bg = 'NONE' },
-    ['Operator'] = { fg = vscode.vscFront, bg = 'NONE' },
-    ['Keyword'] = { fg = vscode.vscPink, bg = 'NONE' },
-    ['Exception'] = { fg = vscode.vscPink, bg = 'NONE' },
-    ['PreProc'] = { fg = vscode.vscPink, bg = 'NONE' },
-    ['Include'] = { fg = vscode.vscPink, bg = 'NONE' },
-    ['Define'] = { fg = vscode.vscPink, bg = 'NONE' },
-    ['Macro'] = { fg = vscode.vscPink, bg = 'NONE' },
-    ['Type'] = { fg = vscode.vscBlue, bg = 'NONE' },
-    ['StorageClass'] = { fg = vscode.vscBlue, bg = 'NONE' },
-    ['Structure'] = { fg = vscode.vscBlueGreen, bg = 'NONE' },
-    ['Typedef'] = { fg = vscode.vscBlue, bg = 'NONE' },
-    ['Special'] = { fg = vscode.vscYellowOrange, bg = 'NONE' },
-    ['SpecialChar'] = { fg = vscode.vscFront, bg = 'NONE' },
-    ['Tag'] = { fg = vscode.vscFront, bg = 'NONE' },
-    ['Delimiter'] = { fg = vscode.vscFront, bg = 'NONE' },
-    ['SpecialComment'] = { fg = vscode.vscGreen, bg = 'NONE' },
-    ['Debug'] = { fg = vscode.vscFront, bg = 'NONE' },
-    ['Underlined'] = { fg = vscode.vscNone, bg = 'NONE', underline = true },
-    ['Conceal'] = { fg = vscode.vscFront, bg = vscode.vscBack },
-    ['Ignore'] = { fg = vscode.vscFront, bg = 'NONE' },
-    ['Error'] = { fg = vscode.vscRed, bg = vscode.vscBack, undercurl = true, sp = vscode.vscRed },
-    ['Todo'] = { fg = vscode.vscYellowOrange, bg = vscode.vscBack, bold = true },
-    ['SpellBad'] = { fg = 'NONE', undercurl = true, sp = vscode.vscRed },
-    ['SpellCap'] = { fg = 'NONE', undercurl = true, sp = vscode.vscYellow },
-    ['SpellRare'] = { fg = 'NONE', undercurl = true, sp = vscode.vscViolet },
-    ['SpellLocal'] = { fg = 'NONE', undercurl = true, sp = vscode.vscBlue },
-    ['Whitespace'] = { fg = opts.dark and vscode.vscLineNumber or vscode.vscTabOther },
-    ['NormalFloat'] = { bg = vscode.vscPopupBack },
     ['WinBar'] = { fg = vscode.vscFront, bg = vscode.vscBack, bold = true },
     ['WinBarNc'] = { fg = vscode.vscFront, bg = vscode.vscBack },
     ['QuickFixLine'] = { bold = true },
 
     -- Treesitter
     ['@error'] = { fg = vscode.vscRed, bg = 'NONE' }, -- Legac,
-    ['@punctuation.bracket'] = { fg = vscode.vscFront, bg = 'NONE' },
-    ['@punctuation.special'] = { fg = vscode.vscFront, bg = 'NONE' },
     ['@punctuation.delimiter'] = { fg = vscode.vscFront, bg = 'NONE' },
-    ['@comment'] = { fg = vscode.vscGreen, bg = 'NONE', italic = opts.italic_comments },
     ['@comment.note'] = { fg = vscode.vscBlueGreen, bg = 'NONE', bold = true },
     ['@comment.warning'] = { fg = vscode.vscYellowOrange, bg = 'NONE', bold = true },
     ['@comment.error'] = { fg = vscode.vscRed, bg = 'NONE', bold = true },
-    ['@constant'] = { fg = vscode.vscAccentBlue, bg = 'NONE' },
-    ['@constant.builtin'] = { fg = vscode.vscBlue, bg = 'NONE' },
     ['@constant.macro'] = { fg = vscode.vscBlueGreen, bg = 'NONE' },
+    --['@macro.cpp']           = { fg = c.code.Macro, bg = 'NONE' },
+    ['@constant'] = { link = 'Constant' },
+    ['@constant.macro.cpp'] = { fg = c.code.Macro, bg = 'NONE' },
+    --['@error']               = { fg = c.editor.Red, bg = 'NONE' },
+    ['@punctuation.bracket'] = { fg = c.editor.Front, bg = 'NONE' },
+    ['@punctuation.special'] = { fg = c.code.Punct, bg = 'NONE' },
+    -- ['@punctuation.bracket'] = { fg = c.code.Normal, bg = 'NONE' },
+
+    ['@constant.builtin'] = { fg = c.code.BuiltInConstant, bg = 'NONE' },
     ['@string.regexp'] = { fg = vscode.vscOrange, bg = 'NONE' },
-    ['@string'] = { fg = vscode.vscOrange, bg = 'NONE' },
-    ['@character'] = { fg = vscode.vscOrange, bg = 'NONE' },
-    ['@number'] = { fg = vscode.vscLightGreen, bg = 'NONE' },
-    ['@number.float'] = { fg = vscode.vscLightGreen, bg = 'NONE' },
-    ['@boolean'] = { fg = vscode.vscBlue, bg = 'NONE' },
     ['@annotation'] = { fg = vscode.vscYellow, bg = 'NONE' },
     ['@attribute'] = { fg = vscode.vscYellow, bg = 'NONE' },
     ['@attribute.builtin'] = { fg = vscode.vscBlueGreen, bg = 'NONE' },
-    ['@module'] = { fg = vscode.vscBlueGreen, bg = 'NONE' },
-    ['@function'] = { fg = vscode.vscYellow, bg = 'NONE' },
-    ['@function.builtin'] = { fg = vscode.vscYellow, bg = 'NONE' },
-    ['@function.macro'] = { fg = vscode.vscYellow, bg = 'NONE' },
-    ['@function.method'] = { fg = vscode.vscYellow, bg = 'NONE' },
-    ['@variable'] = { fg = vscode.vscLightBlue, bg = 'NONE' },
-    ['@variable.builtin'] = { fg = vscode.vscBlue, bg = 'NONE' },
-    ['@variable.parameter'] = { fg = vscode.vscLightBlue, bg = 'NONE' },
     ['@variable.parameter.reference'] = { fg = vscode.vscLightBlue, bg = 'NONE' },
-    ['@variable.member'] = { fg = vscode.vscLightBlue, bg = 'NONE' },
-    ['@property'] = { fg = vscode.vscLightBlue, bg = 'NONE' },
-    ['@constructor'] = { fg = vscode.vscBlue, bg = 'NONE' },
-    ['@label'] = { fg = vscode.vscLightBlue, bg = 'NONE' },
-    ['@keyword'] = { fg = vscode.vscBlue, bg = 'NONE' },
-    ['@keyword.conditional'] = { fg = vscode.vscPink, bg = 'NONE' },
-    ['@keyword.repeat'] = { fg = vscode.vscPink, bg = 'NONE' },
-    ['@keyword.return'] = { fg = vscode.vscPink, bg = 'NONE' },
-    ['@keyword.exception'] = { fg = vscode.vscPink, bg = 'NONE' },
-    ['@keyword.import'] = { fg = vscode.vscPink, bg = 'NONE' },
-    ['@operator'] = { fg = vscode.vscFront, bg = 'NONE' },
-    ['@type'] = { fg = vscode.vscBlueGreen, bg = 'NONE' },
-    ['@type.qualifier'] = { fg = vscode.vscBlue, bg = 'NONE' },
-    ['@structure'] = { fg = vscode.vscLightBlue, bg = 'NONE' },
     ['@tag'] = { fg = vscode.vscBlue, bg = 'NONE' },
     ['@tag.builtin'] = { fg = vscode.vscBlue, bg = 'NONE' },
-    ['@tag.delimiter'] = { fg = vscode.vscGray, bg = 'NONE' },
-    ['@tag.attribute'] = { fg = vscode.vscLightBlue, bg = 'NONE' },
 
     ['@text'] = { fg = vscode.vscFront, bg = 'NONE' },
     ['@markup.strong'] = { fg = opts.dark and vscode.vscBlue or vscode.vscViolet, bold = true },
@@ -179,7 +74,6 @@ local M = {
     ['@diff.delta'] = { link = 'DiffChange' },
 
     -- LSP semantic tokens
-    ['@type.builtin'] = { link = '@type' },
     ['@lsp.typemod.type.defaultLibrary'] = { link = '@type.builtin' },
     ['@lsp.type.type'] = { link = '@type' },
     ['@lsp.type.typeParameter'] = { link = '@type' },
@@ -191,8 +85,6 @@ local M = {
     ['@lsp.type.member'] = { link = '@function' },
     ['@lsp.type.keyword'] = { link = '@keyword' },
     ['@lsp.typemod.keyword.controlFlow'] = { fg = vscode.vscPink, bg = 'NONE' },
-    ['@lsp.type.comment.c'] = { fg = vscode.vscDimHighlight, bg = 'NONE' },
-    ['@lsp.type.comment.cpp'] = { fg = vscode.vscDimHighlight, bg = 'NONE' },
     ['@event'] = { link = 'Identifier' },
     ['@interface'] = { link = 'Identifier' },
     ['@modifier'] = { link = 'Identifier' },
@@ -279,6 +171,11 @@ local M = {
     ['cssUnitDecorators'] = { fg = vscode.vscOrange, bg = 'NONE' },
     ['cssStyle'] = { fg = vscode.vscLightBlue, bg = 'NONE' },
     ['cssImportant'] = { fg = vscode.vscBlue, bg = 'NONE' },
+
+    -- Odin
+    ['odinKeyword'] = { link = '@keyword' },
+    ['odinTemplate'] = { link = '@type.builtin' },
+    ['odinType'] = { link = '@type.builtin' },
 
     -- JavaScript
     ['jsVariableDef'] = { fg = vscode.vscLightBlue, bg = 'NONE' },
@@ -477,19 +374,20 @@ local M = {
 
     -- NvimTree
     ['NvimTreeRootFolder'] = { fg = vscode.vscFront, bg = 'NONE', bold = true },
-    ['NvimTreeGitDirty'] = { fg = vscode.vscYellow, bg = 'NONE' },
     ['NvimTreeGitNew'] = { fg = vscode.vscGreen, bg = 'NONE' },
     ['NvimTreeImageFile'] = { fg = vscode.vscViolet, bg = 'NONE' },
     ['NvimTreeEmptyFolderName'] = { fg = vscode.vscGray, bg = 'NONE' },
     ['NvimTreeFolderName'] = { fg = vscode.vscFront, bg = 'NONE' },
-    ['NvimTreeSpecialFile'] = { fg = vscode.vscPink, bg = 'NONE', underline = true },
+    NvimTreeSpecialFile = {
+        link = 'Normal',
+        bold = true,
+    },
     ['NvimTreeGitRenamed'] = { fg = vscode.vscGitRenamed, bg = 'NONE' },
-    ['NvimTreeGitIgnored'] = { fg = vscode.vscGitIgnored, bg = 'NONE' },
+    NvimTreeGitIgnored = { link = 'DiagnosticUnnecessary' },
     ['NvimTreeGitDeleted'] = { fg = vscode.vscGitDeleted, bg = 'NONE' },
     ['NvimTreeGitStaged'] = { fg = vscode.vscGitStageModified, bg = 'NONE' },
     ['NvimTreeGitMerge'] = { fg = vscode.vscGitUntracked, bg = 'NONE' },
     ['NvimTreeGitDirty'] = { fg = vscode.vscGitModified, bg = 'NONE' },
-    ['NvimTreeGitNew'] = { fg = vscode.vscGitAdded, bg = 'NONE' },
 
     -- Bufferline
     ['BufferLineIndicatorSelected'] = { fg = vscode.vscLeftDark, bg = 'NONE' },
@@ -542,13 +440,45 @@ local M = {
 
     -- LSP
     ['DiagnosticOk'] = { fg = vscode.vscBlueGreen, bg = 'NONE' },
-    ['DiagnosticError'] = { fg = vscode.vscRed, bg = 'NONE' },
-    ['DiagnosticWarn'] = { fg = vscode.vscYellow, bg = 'NONE' },
-    ['DiagnosticInfo'] = { fg = vscode.vscBlue, bg = 'NONE' },
-    ['DiagnosticHint'] = { fg = vscode.vscBlue, bg = 'NONE' },
-    ['DiagnosticUnnecessary'] = { fg = vscode.vscDisabledBlue, bg = 'NONE' },
+    DiagnosticWarn = {
+        fg = c.text.Warn,
+        italic = true,
+        underline = false,
+        undercurl = false,
+        sp = c.code.None,
+    },
+    DiagnosticError = {
+        fg = c.text.Error,
+        bg = c.code.None,
+        italic = true,
+        underline = false,
+        undercurl = false,
+        sp = c.code.None,
+    },
+    DiagnosticInfo = {
+        fg = c.text.Info,
+        bg = c.code.None,
+        italic = true,
+        underline = false,
+        undercurl = false,
+        sp = c.code.None,
+    },
+    DiagnosticHint = {
+        fg = c.text.Hint,
+        bg = c.code.None,
+        italic = true,
+        underline = false,
+        undercurl = false,
+        sp = c.code.None,
+    },
+    DiagnosticUnnecessary = {
+        fg = c.code.DeadCode,
+        italic = true,
+        underline = false,
+        undercurl = false,
+        sp = c.code.None,
+    },
     ['DiagnosticUnderlineError'] = { fg = 'NONE', bg = 'NONE', undercurl = true, sp = vscode.vscRed },
-    ['DiagnosticUnderlineWarn'] = { fg = 'NONE', bg = 'NONE', undercurl = true, sp = vscode.vscYellow },
     ['DiagnosticUnderlineInfo'] = { fg = 'NONE', bg = 'NONE', undercurl = true, sp = vscode.vscBlue },
     ['DiagnosticUnderlineHint'] = { fg = 'NONE', bg = 'NONE', undercurl = true, sp = vscode.vscBlue },
 
@@ -677,9 +607,6 @@ local M = {
     ['NeogitHunkHeader'] = { fg = vscode.vscGitModified, bg = vscode.vscLeftDark },
     ['NeogitHunkHeaderHighlight'] = { fg = vscode.vscGitModified, bg = vscode.vscLeftMid },
 
-    ['NvimTreeFolderIcon'] = { fg = vscode.vscBlue, bg = 'NONE' },
-    ['NvimTreeIndentMarker'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
-
     ['LspFloatWinNormal'] = { fg = vscode.vscFront, bg = 'NONE' },
     ['LspFloatWinBorder'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
     ['LspInfoBorder'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
@@ -688,25 +615,39 @@ local M = {
     ['LspSagaCodeActionBorder'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
     ['LspSagaDefPreviewBorder'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
     ['LspLinesDiagBorder'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
-    ['LspSagaRenameBorder'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
     ['LspSagaBorderTitle'] = { fg = vscode.vscCursorDark, bg = 'NONE' },
     ['LSPSagaDiagnosticTruncateLine'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
     ['LspSagaDiagnosticBorder'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
-    ['LspSagaDiagnosticBorder'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
-    ['LspSagaShTruncateLine'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
     ['LspSagaShTruncateLine'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
     ['LspSagaDocTruncateLine'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
     ['LspSagaRenameBorder'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
     ['LspSagaLspFinderBorder'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
 
-    ['TelescopePromptBorder'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
-    ['TelescopeResultsBorder'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
-    ['TelescopePreviewBorder'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
-    ['TelescopeNormal'] = { fg = vscode.vscFront, bg = 'NONE' },
+    TelescopeNormal = { link = 'NormalFloat' },
+
+    TelescopePreviewNormal = { link = 'NormalFloat' },
+
+    TelescopePromptBorder = { link = 'FloatBorder' },
+    TelescopeResultsBorder = { link = 'FloatBorder' },
+    TelescopePreviewBorder = { link = 'FloatBorder' },
+
+    TelescopePromptTitle = { link = 'NormalFloat' },
+    TelescopePromptPrefix = { link = 'FloatBorder' },
+    -- TelescopePromptCounter = { fg = c.Debug },
+
+    -- TelescopeResultsTitle = { fg = c.text.LightDimest },
+    -- TelescopePreviewTitle = { fg = c.text.LightDimest },
+    -- TelescopeMatching = { fg = c.text.ModifiedLight, bold = true },
+    -- TelescopeResultsNormal = { bg = c.Debug },
+    -- TelescopeSelection = { bg = c.editor.Red },
+    -- TelescopePreviewTitle
+    -- TelescopeSelection
+    -- TelescopeResultsDiffAdd
+    -- TelescopeResultsDiffChange
+    -- TelescopeResultsDiffDelete
     ['TelescopeSelection'] = { fg = vscode.vscFront, bg = vscode.vscPopupHighlightBlue },
     ['TelescopeMultiSelection'] = { fg = vscode.vscFront, bg = vscode.vscPopupHighlightBlue },
     ['TelescopeMatching'] = { fg = vscode.vscMediumBlue, bg = 'NONE', bold = true },
-    ['TelescopePromptPrefix'] = { fg = vscode.vscFront, bg = 'NONE' },
 
     -- Debugging
     ['debugPC'] = { bg = '#4C4C19' },
@@ -722,15 +663,18 @@ local M = {
     ['diffRemoved'] = { link = 'DiffDelete' },
     -- Legacy groups for treesitter
     ['@parameter'] = { link = '@variable.parameter' },
-    ['@field'] = { link = '@variable.member' },
+    ['@field'] = { fg = c.code.Field, bg = 'NONE' },
     ['@string.regex'] = { link = '@string.regexp' },
     ['@float'] = { link = '@number.float' },
     ['@namespace'] = { link = '@module' },
     ['@method'] = { link = '@function.method' },
-    ['@field'] = { link = '@variable.member' },
+    ['@method.call.python'] = { fg = c.code.Method, bg = 'NONE' },
+    ['@method.call'] = { fg = c.code.Method, bg = 'NONE' },
     ['@conditional'] = { link = '@keyword.conditional' },
     ['@repeat'] = { link = '@keyword.repeat' },
-    ['@exception'] = { link = '@keyword.exception' },
+
+    ['@exception'] = { fg = c.code.ControlFlow, bold = true, bg = 'NONE' },
+    ['@exception.python'] = { fg = c.code.ControlFlow, bold = true, bg = 'NONE' },
     ['@storageclass'] = { link = '@keyword.storage' },
     ['@include'] = { link = '@keyword.import' },
     ['@text.strong'] = { link = '@markup.strong' },
@@ -738,6 +682,8 @@ local M = {
     ['@text.emphasis'] = { link = '@markup.italic' },
     ['@text.strike'] = { link = '@markup.strikethrough' },
     ['@text.title'] = { link = '@markup.heading' },
+    ['@text.title.1.markdown'] = { fg = c.text.Title, sp = c.code.None, bg = c.code.None },
+    ['@text.title.markdown'] = { fg = c.text.Title, sp = c.code.None, bg = c.code.None },
     ['@text.uri'] = { link = '@markup.link.url' },
     ['@text.literal'] = { link = '@markup.raw' },
     ['@text.note'] = { link = '@comment.note' },
@@ -934,45 +880,6 @@ local M = {
     SpellRare = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
     SpellLocal = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
 
-    DiagnosticWarn = {
-        fg = c.text.Warn,
-        italic = true,
-        underline = false,
-        undercurl = false,
-        sp = c.code.None,
-    },
-    DiagnosticError = {
-        fg = c.text.Error,
-        bg = c.code.None,
-        italic = true,
-        underline = false,
-        undercurl = false,
-        sp = c.code.None,
-    },
-    DiagnosticInfo = {
-        fg = c.text.Info,
-        bg = c.code.None,
-        italic = true,
-        underline = false,
-        undercurl = false,
-        sp = c.code.None,
-    },
-    DiagnosticHint = {
-        fg = c.text.Hint,
-        bg = c.code.None,
-        italic = true,
-        underline = false,
-        undercurl = false,
-        sp = c.code.None,
-    },
-    DiagnosticUnnecessary = {
-        fg = c.code.DeadCode,
-        italic = true,
-        underline = false,
-        undercurl = false,
-        sp = c.code.None,
-    },
-
     --Whitespace                 =   { fg = c.editor.LineNumber },
     LspGlobal = { link = 'Global' },
     GlobalScope = { link = 'Global' },
@@ -985,7 +892,6 @@ local M = {
     ['@class'] = { fg = c.code.Type, bold = false, italic = false },
     ['@macro'] = { fg = c.code.Macro, bold = false, italic = false },
     ['@module'] = { link = 'Namespace' },
-    ['@namespace'] = { fg = c.code.Namespace, bold = false, italic = false },
     ['@lsp.type.namespace'] = { link = 'Namespace' },
     --['@variable#globalScope']  ={ fg = c.code.Global,italic = true,  bold = true},
 
@@ -1008,13 +914,8 @@ local M = {
     ['@function.macro'] = { fg = c.code.MacroFunction, bg = 'NONE' },
     ['@function.call'] = { fg = c.code.FunctionCall, bg = 'NONE' },
 
-    ['@method.call.python'] = { fg = c.code.Method, bg = 'NONE' },
-    ['@method.call'] = { fg = c.code.Method, bg = 'NONE' },
-    ['@method'] = { fg = c.code.Method, bg = 'NONE' },
-
     --Literals
     ['@string'] = { fg = c.code.String, bg = c.code.None },
-    ['@string.regex'] = { fg = c.code.Char, bg = 'NONE' },
     ['@string.escape'] = { fg = c.code.StringEscape, bg = 'NONE' },
     ['@string.documentation'] = { link = 'Comment' },
 
@@ -1022,20 +923,17 @@ local M = {
     ['@number'] = { fg = c.editor.LightGreen, bg = 'NONE' },
     ['@number.float'] = { link = '@number' },
     ['@boolean'] = { fg = c.code.BuiltInConstant, bg = 'NONE' },
-    ['@float'] = { fg = c.editor.LightGreen, bg = 'NONE' },
 
     -- Variables
     ['@variable'] = { fg = c.code.Variable, bg = 'NONE' },
     ['@variable.builtin'] = { fg = c.code.VariableBuiltin, bold = true, italic = false, bg = 'NONE' },
     ['@variable.member'] = { link = '@property' },
-    ['@field'] = { fg = c.code.Field, bg = 'NONE' },
     ['@property'] = { fg = c.code.Property, bg = 'NONE' },
     ['@lsp.type.property.lua'] = { fg = c.code.Property, bg = 'NONE' },
     ['@reference'] = { link = '@property' },
     -- Preprocessores
     ['@preproc'] = { fg = c.code.Preprocessor, bg = 'NONE' },
     ['@define'] = { fg = c.code.Preprocessor, bg = 'NONE' },
-    ['@include'] = { fg = c.code.Include, bg = 'NONE' },
     ['@include.c'] = { fg = c.code.Preprocessor, bg = 'NONE' },
 
     -- Parameteres:
@@ -1052,7 +950,6 @@ local M = {
     ['@type.builtin'] = { fg = c.code.BuiltInType, bg = 'NONE' },
     ['@type.builtin.py'] = { fg = c.code.BuiltInType, bg = 'NONE' },
     ['@type.builtin.python'] = { fg = c.code.BuiltInType, bg = 'NONE' },
-    ['@storageclass'] = { fg = c.code.Keyword, bg = 'NONE' },
     ['@structure'] = { fg = c.code.Type, bg = 'NONE' },
 
     -- @Tags
@@ -1060,24 +957,11 @@ local M = {
     ['@tag.attribute'] = { fg = c.editor.Keyword, italic = true, bg = 'NONE' },
     ['@tag.html'] = { fg = c.editor.Keyword, bold = true, bg = 'NONE' },
 
-    ['@text.title'] = { fg = c.editor.Blue, bold = true },
-    ['@text.literal'] = { fg = c.editor.Front, bg = 'NONE' },
     ['@text.diff.delete.diff'] = { fg = c.text.DiffDelete },
     ['@text.diff.add.diff'] = { fg = c.text.DiffAdd },
 
     --['@definition.macro']    = { fg = c.code.Macro, bg = 'NONE' },
     --['@definition.var']      = { fg = c.code.Macro, bg = 'NONE' },
-
-    --['@macro.cpp']           = { fg = c.code.Macro, bg = 'NONE' },
-    ['@constant'] = { link = 'Constant' },
-    ['@constant.macro.cpp'] = { fg = c.code.Macro, bg = 'NONE' },
-    --['@error']               = { fg = c.editor.Red, bg = 'NONE' },
-    ['@punctuation.bracket'] = { fg = c.editor.Front, bg = 'NONE' },
-    ['@punctuation.special'] = { fg = c.code.Punct, bg = 'NONE' },
-    -- ['@punctuation.bracket'] = { fg = c.code.Normal, bg = 'NONE' },
-
-    ['@constant'] = { link = 'Constant' },
-    ['@constant.builtin'] = { fg = c.code.BuiltInConstant, bg = 'NONE' },
 
     --['@annotation']          = { fg = c.editor.Yellow, bg = 'NONE' },
     --['@attribute']           = { fg = c.editor.BlueGreen, bg = 'NONE' },
@@ -1086,13 +970,8 @@ local M = {
     ['@constructor.cpp'] = { fg = c.code.Construtor, bold = true },
     ['@constructor.py'] = { fg = c.code.Construtor, bold = true },
 
-    ['@conditional'] = { fg = c.code.ControlFlow, bold = true, bg = 'NONE' },
-    ['@repeat'] = { fg = c.code.ControlFlow, bold = true, bg = 'NONE' },
     ['@label'] = { fg = c.code.Label, bg = 'NONE' },
     ['@operator'] = { fg = c.editor.Front, bg = 'NONE' },
-
-    ['@exception'] = { fg = c.code.ControlFlow, bold = true, bg = 'NONE' },
-    ['@exception.python'] = { fg = c.code.ControlFlow, bold = true, bg = 'NONE' },
 
     ['@lsp.mod.variable.global'] = { fg = c.code.Global },
     ['@lsp.typemod.variable.global'] = { fg = c.code.Global },
@@ -1112,8 +991,6 @@ local M = {
     ['@lsp.type.comment.c'] = { fg = c.code.DeadCode },
     ['@lsp.type.comment.cpp'] = { fg = c.code.DeadCode },
 
-    ['@text.title.1.markdown'] = { fg = c.text.Title, sp = c.code.None, bg = c.code.None },
-    ['@text.title.markdown'] = { fg = c.text.Title, sp = c.code.None, bg = c.code.None },
     -- ['@variable.builtin']= { fg = c.code.VariableBuiltin, bg = 'NONE' },
     -- ['@text']= { fg = c.editor.Front, bg = 'NONE' },
     -- ['@text.underline']= { fg = c.editor.YellowOrange, bg = 'NONE' },
@@ -1233,16 +1110,10 @@ local M = {
         fg = c.text.LightDimest,
         bold = false,
     },
-    NvimTreeGitIgnored = { link = 'DiagnosticUnnecessary' },
     -- NvimTreeGitFolderIgnoredHL = { fg = c.Debug },
     NvimTreeGitFileIgnoredHL = { fg = c.text.LightDim },
 
     NvimTreeCursorLine = { fg = c.None, bg = c.editor.CursorDarkDarkest },
-
-    NvimTreeSpecialFile = {
-        link = 'Normal',
-        bold = true,
-    },
 
     NvimTreeHiddenFileHL = {
         fg = c.text.LightDimest,
@@ -1254,29 +1125,6 @@ local M = {
         bold = true,
         italic = true,
     },
-
-    TelescopeNormal = { link = 'NormalFloat' },
-
-    TelescopePreviewNormal = { link = 'NormalFloat' },
-
-    TelescopePromptBorder = { link = 'FloatBorder' },
-    TelescopeResultsBorder = { link = 'FloatBorder' },
-    TelescopePreviewBorder = { link = 'FloatBorder' },
-
-    TelescopePromptTitle = { link = 'NormalFloat' },
-    TelescopePromptPrefix = { link = 'FloatBorder' },
-    -- TelescopePromptCounter = { fg = c.Debug },
-
-    -- TelescopeResultsTitle = { fg = c.text.LightDimest },
-    -- TelescopePreviewTitle = { fg = c.text.LightDimest },
-    -- TelescopeMatching = { fg = c.text.ModifiedLight, bold = true },
-    -- TelescopeResultsNormal = { bg = c.Debug },
-    -- TelescopeSelection = { bg = c.editor.Red },
-    -- TelescopePreviewTitle
-    -- TelescopeSelection
-    -- TelescopeResultsDiffAdd
-    -- TelescopeResultsDiffChange
-    -- TelescopeResultsDiffDelete
 
     IblIndent = { fg = c.text.LightDimest },
     IblWhitespace = { fg = c.text.LightDimest },
@@ -1354,10 +1202,6 @@ local M = {
     ['@lsp.type.variable'] = { fg = c.code.Variable, bg = 'NONE' },
 
     ['@keyword.python'] = { fg = c.code.Keyword, sp = c.code.None, bg = 'NONE' },
-
-    ['odinKeyword'] = { link = '@keyword' },
-    ['odinTemplate'] = { link = '@type.builtin' },
-    ['odinType'] = { link = '@type.builtin' },
 }
 
 return M
