@@ -515,6 +515,26 @@ local M = {
         bg = opts.dark and vscode.vscPopupHighlightGray or vscode.vscPopupHighlightLightBlue,
     },
 
+    ['CompeDocumentation'] = { link = 'Pmenu' },
+    ['CompeDocumentationBorder'] = { link = 'Pmenu' },
+    ['CmpItemKind'] = { link = 'Pmenu' },
+    ['CmpItemKindClass'] = { link = 'CmpItemKindConstructor' },
+    ['CmpItemKindModule'] = { link = 'CmpItemKindKeyword' },
+    ['CmpItemKindOperator'] = { link = '@operator' },
+    ['CmpItemKindReference'] = { link = '@variable.parameter.reference' },
+    ['CmpItemKindValue'] = { link = '@variable.member' },
+    ['CmpItemKindField'] = { link = '@variable.member' },
+    ['CmpItemKindEnum'] = { link = '@variable.member' },
+    ['CmpItemKindSnippet'] = { link = '@text' },
+    ['CmpItemKindColor'] = { link = 'cssColor' },
+    ['CmpItemKindFile'] = { link = '@text.uri' },
+    ['CmpItemKindFolder'] = { link = '@text.uri' },
+    ['CmpItemKindEvent'] = { link = '@constant' },
+    ['CmpItemKindEnumMember'] = { link = '@variable.member' },
+    ['CmpItemKindConstant'] = { link = '@constant' },
+    ['CmpItemKindStruct'] = { link = '@structure' },
+    ['CmpItemKindTypeParameter'] = { link = '@variable.parameter' },
+
     -- Nvim compe
     ['CmpItemKindVariable'] = { fg = vscode.vscLightBlue, bg = 'NONE' },
     ['CmpItemKindInterface'] = { fg = vscode.vscLightBlue, bg = 'NONE' },
@@ -645,7 +665,6 @@ local M = {
     -- TelescopeResultsDiffDelete
     ['TelescopeSelection'] = { fg = vscode.vscFront, bg = vscode.vscPopupHighlightBlue },
     ['TelescopeMultiSelection'] = { fg = vscode.vscFront, bg = vscode.vscPopupHighlightBlue },
-    ['TelescopeMatching'] = { fg = vscode.vscMediumBlue, bg = 'NONE', bold = true },
 
     -- Debugging
     ['debugPC'] = { bg = '#4C4C19' },
@@ -655,6 +674,9 @@ local M = {
     ['FocusedSymbol'] = { fg = '#ffffff', bg = vscode.vscUiBlue },
     ['SymbolsOutlineConnector'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
 
+    ------------------------------------------------
+    -----------------LEGACY-------------------------
+    ------------------------------------------------
     -- Legacy groups for official git.vim and diff.vim syntax
     ['diffAdded'] = { link = 'DiffAdd' },
     ['diffChanged'] = { link = 'DiffChange' },
@@ -689,26 +711,6 @@ local M = {
     ['@text.danger'] = { link = '@comment.error' },
     ['@text.diff.add'] = { link = '@diff.plus' },
     ['@text.diff.delete'] = { link = '@diff.minus' },
-    -- Nvim compe
-    ['CompeDocumentation'] = { link = 'Pmenu' },
-    ['CompeDocumentationBorder'] = { link = 'Pmenu' },
-    ['CmpItemKind'] = { link = 'Pmenu' },
-    ['CmpItemKindClass'] = { link = 'CmpItemKindConstructor' },
-    ['CmpItemKindModule'] = { link = 'CmpItemKindKeyword' },
-    ['CmpItemKindOperator'] = { link = '@operator' },
-    ['CmpItemKindReference'] = { link = '@variable.parameter.reference' },
-    ['CmpItemKindValue'] = { link = '@variable.member' },
-    ['CmpItemKindField'] = { link = '@variable.member' },
-    ['CmpItemKindEnum'] = { link = '@variable.member' },
-    ['CmpItemKindSnippet'] = { link = '@text' },
-    ['CmpItemKindColor'] = { link = 'cssColor' },
-    ['CmpItemKindFile'] = { link = '@text.uri' },
-    ['CmpItemKindFolder'] = { link = '@text.uri' },
-    ['CmpItemKindEvent'] = { link = '@constant' },
-    ['CmpItemKindEnumMember'] = { link = '@variable.member' },
-    ['CmpItemKindConstant'] = { link = '@constant' },
-    ['CmpItemKindStruct'] = { link = '@structure' },
-    ['CmpItemKindTypeParameter'] = { link = '@variable.parameter' },
 
     --------------------------------------------------------------------------------------
     -----------------REDEFINITIONU--------------------------------------------------------
