@@ -78,9 +78,9 @@ M.code.Construtor = palette.Type:copy():lighten(0.05):str()
 M.code.ConstrutorOnClass = palette.Type:copy():lighten(0.09):str()
 
 -- '#767676',
-M.code.Args = palette.Variable:copy():saturation(0.001):darken(0.26):str()
+M.code.Args = palette.Variable:copy():saturation(0.009):darken(0.26):str()
 M.code.Parameter = M.code.Args
-vim.fn.confirm(vim.inspect(M.code.Parameter))
+-- vim.fn.confirm(vim.inspect(M.code.Parameter))
 
 M.text = {
     Background = 'NONE',
