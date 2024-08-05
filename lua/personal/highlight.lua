@@ -23,6 +23,8 @@ local opts = require('personal.config').opts
 -- Set transparent background
 
 local M = {
+    -- Made up groups
+    Matching = { fg = c.text.ModifiedLight, bold = true },
 
     ['DiffChange'] = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffRedDark },
     ['WinBar'] = { fg = vscode.vscFront, bg = vscode.vscBack, bold = true },
@@ -526,12 +528,8 @@ local M = {
     ['CmpItemMenu'] = { fg = vscode.vscPopupFront, bg = 'NONE' },
     ['CmpItemAbbr'] = { fg = vscode.vscFront, bg = 'NONE' },
     ['CmpItemAbbrDeprecated'] = { fg = vscode.vscCursorDark, bg = vscode.vscPopupBack, strikethrough = true },
-    ['CmpItemAbbrMatch'] = { fg = opts.dark and vscode.vscMediumBlue or vscode.vscDarkBlue, bg = 'NONE', bold = true },
-    ['CmpItemAbbrMatchFuzzy'] = {
-        fg = opts.dark and vscode.vscMediumBlue or vscode.vscDarkBlue,
-        bg = 'NONE',
-        bold = true,
-    },
+    ['CmpItemAbbrMatch'] = { link = 'Matching' },
+    ['CmpItemAbbrMatchFuzzy'] = { link = 'Matching' },
 
     -- HiPhish/rainbow-delimiters.nvim
     ['RainbowDelimiterRed'] = { fg = vscode.vscPink, bg = 'NONE' },
@@ -631,13 +629,13 @@ local M = {
     TelescopeResultsBorder = { link = 'FloatBorder' },
     TelescopePreviewBorder = { link = 'FloatBorder' },
 
-    TelescopePromptTitle = { link = 'NormalFloat' },
     TelescopePromptPrefix = { link = 'FloatBorder' },
+    TelescopePromptTitle = { link = 'NormalFloat' },
     -- TelescopePromptCounter = { fg = c.Debug },
 
     -- TelescopeResultsTitle = { fg = c.text.LightDimest },
     -- TelescopePreviewTitle = { fg = c.text.LightDimest },
-    -- TelescopeMatching = { fg = c.text.ModifiedLight, bold = true },
+    TelescopeMatching = { link = 'Matching' },
     -- TelescopeResultsNormal = { bg = c.Debug },
     -- TelescopeSelection = { bg = c.editor.Red },
     -- TelescopePreviewTitle
