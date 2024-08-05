@@ -25,6 +25,10 @@ local opts = require('personal.config').opts
 local M = {
     -- Made up groups
     Matching = { fg = c.text.ModifiedLight, bold = true },
+    Directory = {
+        fg = c.code.Method, --[[ bg = c.editor.Back ]]
+    },
+    Folder = { link = 'Directory' },
 
     ['DiffChange'] = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffRedDark },
     ['WinBar'] = { fg = vscode.vscFront, bg = vscode.vscBack, bold = true },
@@ -379,7 +383,7 @@ local M = {
     ['NvimTreeGitNew'] = { fg = vscode.vscGreen, bg = 'NONE' },
     ['NvimTreeImageFile'] = { fg = vscode.vscViolet, bg = 'NONE' },
     ['NvimTreeEmptyFolderName'] = { fg = vscode.vscGray, bg = 'NONE' },
-    ['NvimTreeFolderName'] = { fg = vscode.vscFront, bg = 'NONE' },
+    ['NvimTreeFolderName'] = { link = 'Folder' },
     NvimTreeSpecialFile = {
         link = 'Normal',
         bold = true,
@@ -735,9 +739,6 @@ local M = {
     CursorLine = { fg = c.None, bg = opts.transparent and c.editor.CursorDarkDark or c.editor.CursorDarkest },
 
     CursorColumn = { fg = 'NONE', bg = c.editor.CursorDarkDark },
-    Directory = {
-        fg = c.code.Method, --[[ bg = c.editor.Back ]]
-    },
     EndOfBuffer = {
         fg = opts.transparent and c.None or c.editor.Back,
         bg = opts.transparent and c.None or c.editor.CursorDarkDark,

@@ -82,10 +82,10 @@ local blow = {
 -- ConstrutorOnClass    = "#C3B783", -- Warm pastel yellow
 -- Construtor           = "#F09683", -- Warm pastel orange
 
-blow.Type = Color.hex('#64B5B7')
 blow.Type = Color.hex('#569CD6')
 blow.Type = Color.hex('#548ac4')
 blow.Type = Color.hex('#5879A8')
+blow.Type = Color.hex('#64B5B7')
 
 blow.Namespace = Color.hex('#cffffe') and blow.Type.g > blow.Type.b or Color.hex('#cff1ff')
 
