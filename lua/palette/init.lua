@@ -14,9 +14,6 @@ M.code = {
     Char = '#DE9178',
     Punct = '#DE9178',
 
-    Args = palette.c0,
-    Parameter = palette.c0,
-
     Namespace = palette.Namespace:str(),
     Global = '#F8D1EF',
     GlobalFunction = '#F8D1df',
@@ -51,7 +48,6 @@ M.code = {
     Field = palette.Field:str(), -- palette blue
     Property = palette.Field:str(), -- palette blue
     VariableBuiltin = palette.c11, -- Light palette blue
-
     -- ControlFlow          = "#F09683",
     -- ControlFlow          = "#6E92B8",
     ControlFlow = palette.c1,
@@ -80,6 +76,11 @@ M.code.Construtor = M.code.Type
 M.code.BuiltInType = palette.Type:copy():darken(0.12):str()
 M.code.Construtor = palette.Type:copy():lighten(0.05):str()
 M.code.ConstrutorOnClass = palette.Type:copy():lighten(0.09):str()
+
+-- '#767676',
+M.code.Args = palette.Variable:copy():saturation(0.001):darken(0.26):str()
+M.code.Parameter = M.code.Args
+vim.fn.confirm(vim.inspect(M.code.Parameter))
 
 M.text = {
     Background = 'NONE',
