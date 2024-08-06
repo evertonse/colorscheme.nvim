@@ -1,13 +1,21 @@
+local M = {}
+
+---@enum METHOD
+local METHOD = {
+    additive = 1,
+    percentage = 2,
+    relative = 3, -- relative percentage
+}
+
 --- Color class for handling RGB colors
---- @class Color
+---@class Color
 ---@field r integer|nil
 ---@field g integer|nil
 ---@field b integer|nil
-
-Color = {}
+local Color = {}
 Color.__index = Color
 
-local clamp_rgb = function(val)
+local clamp_255 = function(val)
     return math.max(math.max(0, val), math.min(255, val))
 end
 
@@ -16,10 +24,13 @@ end
 --- @param b float Blue component (0 to 1.0)
 --- @return Color instance
 function Color.rgb(r, g, b)
+    if r > 1 or g > 1 or b > 1 then
+        return Color.rgbi(r, g, b)
+    end
     local self = setmetatable({}, Color)
-    self.r = math.floor(r * 255)
-    self.g = math.floor(g * 255)
-    self.b = math.floor(b * 255)
+    self.r = math.floor(r * 255 * 0.5)
+    self.g = math.floor(g * 255 * 0.5)
+    self.b = math.floor(b * 255 * 0.5)
     return self
 end
 
@@ -29,9 +40,9 @@ end
 --- @return Color instance
 function Color.rgbi(r, g, b)
     local self = setmetatable({}, Color)
-    self.r = clamp_rgb(r)
-    self.g = clamp_rgb(g)
-    self.b = clamp_rgb(b)
+    self.r = clamp_255(r)
+    self.g = clamp_255(g)
+    self.b = clamp_255(b)
     return self
 end
 
@@ -56,6 +67,12 @@ function Color:str()
     return '#' .. to_hex_component(self.r) .. to_hex_component(self.g) .. to_hex_component(self.b)
 end
 
+--- Create a copy of the color.
+--- @return Color instance
+function Color:copy()
+    return Color.rgbi(self.r, self.g, self.b)
+end
+
 --- Helper function to convert RGB to HSL.
 --- @param r integer Red component (0 to 255)
 --- @param g integer Green component (0 to 255)
@@ -71,7 +88,7 @@ local function rgb_to_hsl(r, g, b)
         local d = max - min
         s = l > 0.5 and d / (2 - max - min) or d / (max + min)
         if max == r then
-            h = (g - b) / d + (g < b and 6 or 0)
+            h = ((g - b) / d) + (g < b and 6 or 0)
         elseif max == g then
             h = (b - r) / d + 2
         elseif max == b then
@@ -120,14 +137,14 @@ local function hsl_to_rgb(h, s, l)
         b = hue_to_rgb(p, q, h - 1 / 3)
     end
 
-    return math.floor(r * 255), math.floor(g * 255), math.floor(b * 255)
+    return math.floor(r * 255 + 0.5), math.floor(g * 255 + 0.5), math.floor(b * 255 + 0.5)
 end
 
 --- Adjust the brightness of the color.
 --- @param value float Brightness value (0 to 1)
 function Color:brightness(value)
     local h, s, l = rgb_to_hsl(self.r, self.g, self.b)
-    l = clamp_rgb(value)
+    l = clamp_255(value)
     self.r, self.g, self.b = hsl_to_rgb(h, s, l)
     return self
 end
@@ -136,33 +153,52 @@ end
 --- @param value float Saturation value (0 to 1)
 function Color:saturation(value)
     local h, s, l = rgb_to_hsl(self.r, self.g, self.b)
-    s = clamp_rgb(value)
+    s = clamp_255(value)
     self.r, self.g, self.b = hsl_to_rgb(h, s, l)
     return self
 end
 
 --- Darken the color by reducing the lightness.
 --- @param factor float Factor to darken (0 to 1)
-function Color:darken(factor)
+--- @param method? METHOD
+function Color:darken(factor, method)
     local h, s, l = rgb_to_hsl(self.r, self.g, self.b)
-    l = math.max(0, l - factor)
+    if method == METHOD.percentage then
+        l = math.max(0, l * (1 - factor))
+    elseif method == METHOD.additive then
+        l = math.min(1, l - factor)
+    else
+        l = math.min(1, l - l * factor)
+    end
     self.r, self.g, self.b = hsl_to_rgb(h, s, l)
     return self
 end
 
 --- Lighten the color by increasing the lightness.
 --- @param factor float Factor to lighten (0 to 1)
-function Color:lighten(factor)
+--- @param method? METHOD
+function Color:lighten(factor, method)
     local h, s, l = rgb_to_hsl(self.r, self.g, self.b)
-    l = math.min(1, l + factor)
+    if method == METHOD.percentage then
+        l = math.min(1, l * (1 + factor))
+    elseif method == METHOD.additive then
+        l = math.min(1, l + factor)
+    else
+        l = math.min(1, l + (1 - l) * factor)
+    end
     self.r, self.g, self.b = hsl_to_rgb(h, s, l)
     return self
 end
 
---- Create a copy of the color.
---- @return Color instance
-function Color:copy()
-    return Color.rgbi(self.r, self.g, self.b)
+--- @return  integer, integer, integer
+function Color:hsl()
+    -- local h, s, l = rgb_to_hsl(self.r, self.g, self.b)
+    return rgb_to_hsl(self.r, self.g, self.b)
 end
 
-return Color
+M.Color = Color
+M.METHOD = METHOD
+M.hsl_to_rgb = hsl_to_rgb
+M.rgb_to_hsl = rgb_to_hsl
+
+return M

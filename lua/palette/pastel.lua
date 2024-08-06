@@ -1,4 +1,5 @@
-local Color = require('palette.color')
+local Color = require('palette.color').Color
+local METHOD = require('palette.color').METHOD
 
 local pastel = {
     -- c1  = "#6A789e",
@@ -12,7 +13,6 @@ local pastel = {
     c5 = '#5E82a8',
     c6 = '#747987',
     c7 = '#a08080',
-
     c8 = '#d0d0d0',
     c9 = '#D8E9FF',
     c10 = '#D1E2FF',
@@ -82,17 +82,23 @@ local blow = {
 -- ConstrutorOnClass    = "#C3B783", -- Warm pastel yellow
 -- Construtor           = "#F09683", -- Warm pastel orange
 
-blow.Type = Color.hex('#569CD6')
-blow.Type = Color.hex('#548ac4')
-blow.Type = Color.hex('#5879A8')
 blow.Type = Color.hex('#64B5B7')
+blow.Type = Color.hex('#E9BBB5')
+blow.Type = Color.hex('#F48680') -- TODO: need to ajust to make darken work with stron colors such as this
+blow.Type = Color.hex('#548ac4')
+blow.Type = Color.hex('#569CD6')
+blow.Type = Color.hex('#5879A8')
+blow.Type = Color.rgb(147, 152, 192)
 
-blow.Namespace = Color.hex('#cffffe') and blow.Type.g > blow.Type.b or Color.hex('#cff1ff')
+blow.Namespace = blow.Type.g >= blow.Type.b and Color.hex('#cffffe') or Color.hex('#bfe1ff')
+blow.Namespace = blow.Type.r >= blow.Type.b and Color.hex('#fff0fb') or blow.Namespace
 
--- '#D8E9FF',
--- '#D1E2FF',
+blow.String = Color.hex('#CE9178'):saturation(0.38)
+blow.Field = Color.hex('#D8E9FF')
+blow.Field = Color.hex('#D1E2FF')
 blow.Field = Color.hex('#c7E1Fe')
 blow.Field = Color.hex('#c9E2Fe')
+
 blow.Field = Color.hex('#c0d0e5')
 blow.Variable = Color.hex('#b1b4bc')
 

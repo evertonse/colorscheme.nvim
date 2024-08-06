@@ -1,3 +1,6 @@
+local Color = require('palette.color').Color
+local METHOD = require('palette.color').METHOD
+
 local palette = require('palette.pastel')
 local M = {}
 M.None = 'NONE'
@@ -9,7 +12,6 @@ M.code = {
     DeadCode = '#878787',
     Comment = palette.c2,
 
-    String = '#CE9178',
     StringEscape = '#FFDCA1',
     Char = '#DE9178',
     Punct = '#DE9178',
@@ -70,15 +72,19 @@ M.code = {
 }
 
 M.code.Type = palette.Type:str()
+M.code.String = palette.String:str()
 M.code.EnumType = M.code.Type
 M.code.Construtor = M.code.Type
+-- M.code.BuiltInType = palette.Type:copy():darken(0.118, METHOD.additive):str()
+M.code.BuiltInType = palette.Type:copy():darken(0.085, METHOD.additive):str()
+-- Inspect({ palette.Type:copy():hsl() })
+-- Inspect({ palette.Type:copy():darken(0.118, METHOD.additive):hsl() })
 
-M.code.BuiltInType = palette.Type:copy():darken(0.12):str()
-M.code.Construtor = palette.Type:copy():lighten(0.05):str()
-M.code.ConstrutorOnClass = palette.Type:copy():lighten(0.09):str()
+M.code.Construtor = palette.Type:copy():lighten(0.06):str()
+M.code.ConstrutorOnClass = palette.Type:copy():lighten(0.1):str()
 
 -- '#767676',
-M.code.Args = palette.Variable:copy():saturation(0.009):darken(0.26):str()
+M.code.Args = palette.Variable:copy():saturation(0.009):darken(0.34):str()
 M.code.Parameter = M.code.Args
 -- vim.fn.confirm(vim.inspect(M.code.Parameter))
 
