@@ -102,6 +102,9 @@ blow.Field = Color.hex('#c9E2Fe')
 blow.Field = Color.hex('#c0d0e5')
 blow.Variable = Color.hex('#b1b4bc')
 
+blow.Background = Color.hex('#181818')
+
 -- local palette = pastel
 local palette = blow
+
 return palette

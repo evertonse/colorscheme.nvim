@@ -26,7 +26,7 @@ local M = {
     -- Made up groups
     Matching = { fg = c.text.ModifiedLight, bold = true },
     Directory = {
-        fg = c.code.Method, --[[ bg = c.editor.Back ]]
+        fg = c.code.Method, --[[ bg = c.editor.Background ]]
     },
     Folder = { link = 'Directory' },
 
@@ -741,7 +741,7 @@ local M = {
 
     CursorColumn = { fg = 'NONE', bg = c.editor.CursorDarkDark },
     EndOfBuffer = {
-        fg = opts.transparent and c.None or c.editor.Back,
+        fg = opts.transparent and c.None or c.editor.Background,
         bg = opts.transparent and c.None or c.editor.CursorDarkDark,
     },
     ErrorMsg = {
@@ -756,7 +756,7 @@ local M = {
         bg = opts.transparent and c.None or c.editor.CursorDarkDark,
     },
     FoldColumn = {
-        fg = c.editor.LineNumber, --[[ bg = c.editor.Back ]]
+        fg = c.editor.LineNumber, --[[ bg = c.editor.Background ]]
     },
     SignColumn = {
         link = 'Normal',
@@ -780,11 +780,14 @@ local M = {
         fg = c.editor.Front, --[[ bg = c.editor.LeftDark ]]
     },
 
-    NormalFloat = { fg = c.editor.Front, bg = opts.transparent and c.None or c.editor.Back }, -- Normal text in floating windows.
-    NormalFloatWinblend = { fg = c.editor.Front, bg = opts.transparent and c.editor.PopupBack or c.editor.Back }, -- Normal text in floating windows using with winblend
+    NormalFloat = { fg = c.editor.Front, bg = opts.transparent and c.None or c.editor.Background }, -- Normal text in floating windows.
+    NormalFloatWinblend = { fg = c.editor.Front, bg = opts.transparent and c.editor.PopupBack or c.editor.Background }, -- Normal text in floating windows using with winblend
 
-    FloatBorder = { fg = c.text.LightDimest, bg = opts.transparent and c.None or c.editor.Back },
-    FloatBorderWinblend = { fg = c.text.LightDimest, bg = opts.transparent and c.editor.PopupBack or c.editor.Back },
+    FloatBorder = { fg = c.text.LightDimest, bg = opts.transparent and c.None or c.editor.Background },
+    FloatBorderWinblend = {
+        fg = c.text.LightDimest,
+        bg = opts.transparent and c.editor.PopupBack or c.editor.Background,
+    },
 
     WinSeparator = { fg = c.text.LightDimest },
 
@@ -799,7 +802,7 @@ local M = {
         fg = 'NONE', --[[ bg = c.editor.PopupFront ]]
     },
     Question = {
-        fg = c.editor.Blue, --[[ bg = c.editor.Back ]]
+        fg = c.editor.Blue, --[[ bg = c.editor.Background ]]
     },
     SpecialKey = { fg = c.editor.Blue, bg = c.editor.None },
     StatusLine = {
@@ -829,7 +832,7 @@ local M = {
     },
     Visual = { fg = c.editor.None, bg = c.editor.Selection },
     VisualNOS = { fg = c.editor.None, bg = c.editor.Selection },
-    WarningMsg = { fg = c.text.Warn, bg = c.editor.Back, bold = true },
+    WarningMsg = { fg = c.text.Warn, bg = c.editor.Background, bold = true },
     WildMenu = { fg = c.editor.None, bg = c.editor.Selection },
     ['@spell'] = { fg = c.code.Comment, bg = c.code.None, italic = false },
     ['@spell.markdown'] = { fg = c.code.Variable, bg = c.code.None, italic = false, bold = true },
@@ -873,14 +876,14 @@ local M = {
     Debug = { fg = c.editor.Front, bg = 'NONE' },
     Underlined = { fg = c.Debug, bg = c.None, underline = true },
     Conceal = {
-        fg = c.text.LightDim, --[[ bg = c.editor.Back ]]
+        fg = c.text.LightDim, --[[ bg = c.editor.Background ]]
     },
     Ignore = { fg = c.editor.Front, bg = 'NONE' },
-    Error = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
-    SpellBad = { bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
-    SpellCap = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
-    SpellRare = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
-    SpellLocal = { fg = c.editor.Red, bg = c.editor.Back, undercurl = true, sp = c.editor.Red },
+    Error = { fg = c.editor.Red, bg = c.editor.Background, undercurl = true, sp = c.editor.Red },
+    SpellBad = { bg = c.editor.Background, undercurl = true, sp = c.editor.Red },
+    SpellCap = { fg = c.editor.Red, bg = c.editor.Background, undercurl = true, sp = c.editor.Red },
+    SpellRare = { fg = c.editor.Red, bg = c.editor.Background, undercurl = true, sp = c.editor.Red },
+    SpellLocal = { fg = c.editor.Red, bg = c.editor.Background, undercurl = true, sp = c.editor.Red },
 
     --Whitespace                 =   { fg = c.editor.LineNumber },
     LspGlobal = { link = 'Global' },
@@ -982,6 +985,7 @@ local M = {
     ['@lsp.typemod.variable.fileScope'] = { fg = c.code.FileScope },
     ['@lsp.typemod.variable.defaultLibrary'] = { fg = c.code.DefaultLibrary },
     ['@lsp.typemod.variable.definition'] = { fg = c.code.VariableBuiltin },
+    ['@lsp.typemod.variable.definition.c'] = { link = '@lsp.type.variable' },
     ['@lsp.typemod.function.defaultLibrary'] = { fg = c.code.DefaultLibrary },
     ['@lsp.typemod.class.defaultLibrary'] = { link = '@type.builtin' },
     ['@lsp.mode.defaultLibrary'] = { fg = c.code.Native },

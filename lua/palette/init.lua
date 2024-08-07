@@ -2,7 +2,13 @@ local Color = require('palette.color').Color
 local METHOD = require('palette.color').METHOD
 
 local palette = require('palette.pastel')
-local M = {}
+
+local M = {
+    editor = {},
+    code = {},
+    text = {},
+}
+
 M.None = 'NONE'
 M.Debug = '#FF00FF'
 
@@ -86,7 +92,6 @@ M.code.ConstrutorOnClass = palette.Type:copy():lighten(0.1):str()
 -- '#767676',
 M.code.Args = palette.Variable:copy():saturation(0.009):darken(0.34):str()
 M.code.Parameter = M.code.Args
--- vim.fn.confirm(vim.inspect(M.code.Parameter))
 
 M.text = {
     Background = 'NONE',
@@ -117,8 +122,6 @@ M.editor = {
     -- Folder = '#90A0A0',
     Folder = '#D7BA7D',
     Front = '#D4D4D4',
-    Back = palette.c14,
-    --Back = '#1F1F1F',
 
     TabCurrent = palette.c17,
     TabVisible = palette.c15,
@@ -190,5 +193,6 @@ M.editor = {
     YellowOrange = '#D7BA7D',
     Pink = '#C586C0',
 }
+M.editor.Background = palette.Background:str()
 
 return M
