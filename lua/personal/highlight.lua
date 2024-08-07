@@ -52,6 +52,7 @@ local M = {
 
     ['@constant.builtin'] = { fg = c.code.BuiltInConstant, bg = 'NONE' },
     ['@string.regexp'] = { fg = vscode.vscOrange, bg = 'NONE' },
+    ['@string.special.url'] = { link = 'Type' },
     ['@annotation'] = { fg = vscode.vscYellow, bg = 'NONE' },
     ['@attribute'] = { fg = vscode.vscYellow, bg = 'NONE' },
     ['@attribute.builtin'] = { fg = vscode.vscBlueGreen, bg = 'NONE' },
@@ -1182,6 +1183,7 @@ local M = {
 
     NoiceCmdlinePopupBorder = { fg = c.editor.SplitDark },
     ['@markup.list.unchecked.markdown'] = { link = 'Conceal' },
+    ['@markup.link.markdown_inline'] = { link = 'Conceal' },
     ['@markup.list.checked.markdown'] = {
         fg = c.text.LightDimest,--[[  bg = c.editor.DiffGreenLight, ]]
         standout = false,
