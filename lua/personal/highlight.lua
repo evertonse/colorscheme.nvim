@@ -850,7 +850,7 @@ local M = {
     Number = { fg = c.code.Constant, bg = 'NONE' },
     Boolean = { fg = c.code.BuiltInConstant, bg = 'NONE' },
     Float = { fg = c.code.Constant, bg = 'NONE' },
-    Identifier = { fg = c.code.Normal, bg = 'NONE' },
+    Identifier = { fg = c.code.Variable, bg = 'NONE' },
     Function = { fg = c.editor.Yellow, bg = 'NONE' },
     Statement = { fg = c.code.Preprocessor, bg = c.None },
     Conditional = { fg = c.code.ControlFlow, bold = true, bg = 'NONE' },
