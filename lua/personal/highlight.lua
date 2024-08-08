@@ -81,7 +81,9 @@ local M = {
     ['@diff.delta'] = { link = 'DiffChange' },
 
     -- LSP semantic tokens
-    ['@lsp.typemod.type.defaultLibrary'] = { link = '@type.builtin' },
+    ['@lsp.typemod.type.defaultLibrary'] = { fg = c.code.DefaultLibraryType },
+    ['@lsp.typemod.function.defaultLibrary'] = { fg = c.code.DefaultLibraryFunction },
+
     ['@lsp.type.type'] = { link = '@type' },
     ['@lsp.type.typeParameter'] = { link = '@type' },
     ['@lsp.type.macro'] = { link = '@constant' },
@@ -914,7 +916,7 @@ local M = {
 
     -- Fucntions
     ['@function'] = { fg = c.code.Function, bg = 'NONE' },
-    ['@function.method'] = { fg = c.code.Function, bg = 'NONE' },
+    ['@function.method'] = { fg = c.code.FunctionMethod, bg = 'NONE' },
     ['@function.builtin'] = { fg = c.editor.YellowOrange, bg = 'NONE' },
     ['@function.macro'] = { fg = c.code.MacroFunction, bg = 'NONE' },
     ['@function.call'] = { fg = c.code.FunctionCall, bg = 'NONE' },
@@ -987,7 +989,6 @@ local M = {
     ['@lsp.typemod.variable.definition'] = { fg = c.code.VariableBuiltin },
     ['@lsp.typemod.variable.definition.c'] = { link = '@lsp.type.variable' },
     ['@lsp.typemod.variable.definition.cpp'] = { link = '@lsp.type.variable' },
-    ['@lsp.typemod.function.defaultLibrary'] = { fg = c.code.DefaultLibrary },
     ['@lsp.typemod.class.defaultLibrary'] = { link = '@type.builtin' },
     ['@lsp.mode.defaultLibrary'] = { fg = c.code.Native },
     ['@defaultLibrary.python'] = { fg = c.code.Native },

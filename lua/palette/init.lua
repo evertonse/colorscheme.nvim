@@ -66,7 +66,6 @@ M.code = {
     -- Label                = "#9B9B9B", -- palette pink
     Label = '#E9BBB5', -- palette pink
     Method = '#FFEDC0', -- Warm palette yellow
-    Function = '#FFEDC0', -- Warm palette yellow
     FunctionCall = '#FFEDC0', -- Warm palette yellow
     Native = '#FFDCA1', -- palette orange
     Special = '#FFDCA1', -- palette orange
@@ -77,14 +76,24 @@ M.code = {
     BuiltInConstant = '#b5cea8',
 }
 
-M.code.Type = palette.Type:copy():darken(0.036, METHOD.additive):str()
+M.code.Type = palette.Type:copy():darken(0.018, METHOD.additive):str()
 M.code.String = palette.String:str()
 M.code.EnumType = M.code.Type
 M.code.Construtor = M.code.Type
 -- M.code.BuiltInType = palette.Type:copy():darken(0.118, METHOD.additive):str()
-M.code.BuiltInType = palette.Type:copy():darken(0.091, METHOD.additive):str()
+M.code.BuiltInType = palette.Type:copy():darken(0.102, METHOD.additive):str()
 -- Inspect({ palette.Type:copy():hsl() })
 -- Inspect({ palette.Type:copy():darken(0.118, METHOD.additive):hsl() })
+M.code.DefaultLibraryType = palette.Type:copy():darken(0.061, METHOD.additive):str()
+
+M.code.Function = palette.Function:copy():darken(0.0095, METHOD.additive):str()
+local method = palette.Function:copy():saturation(0.92):lighten(0.0216, METHOD.additive)
+method.g = math.min(method.g - 4, 255)
+method.b = math.min(method.b + 8, 255)
+-- method.r = math.min(method.r - 20, 255)
+-- method.b = math.min(method.r + 255, 255)
+M.code.FunctionMethod = method:str()
+M.code.DefaultLibraryFunction = palette.Function:copy():darken(0.065, METHOD.additive):str()
 
 M.code.Construtor = palette.Type:copy():lighten(0.06):str()
 M.code.ConstrutorOnClass = palette.Type:copy():lighten(0.1):str()

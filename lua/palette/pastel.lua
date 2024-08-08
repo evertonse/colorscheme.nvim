@@ -93,6 +93,8 @@ blow.Type = Color.rgb(147, 152, 192)
 blow.Namespace = blow.Type.g >= blow.Type.b and Color.hex('#cffffe') or Color.hex('#bfe1ff')
 blow.Namespace = blow.Type.r >= blow.Type.b and Color.hex('#fff0fb') or blow.Namespace
 
+blow.Function = Color.hex('#FFEDC0') -- Warm palette yellow
+
 blow.String = Color.hex('#CE9178'):saturation(0.38)
 blow.Field = Color.hex('#D8E9FF')
 blow.Field = Color.hex('#D1E2FF')
