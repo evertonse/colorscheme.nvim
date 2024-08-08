@@ -986,6 +986,7 @@ local M = {
     ['@lsp.typemod.variable.defaultLibrary'] = { fg = c.code.DefaultLibrary },
     ['@lsp.typemod.variable.definition'] = { fg = c.code.VariableBuiltin },
     ['@lsp.typemod.variable.definition.c'] = { link = '@lsp.type.variable' },
+    ['@lsp.typemod.variable.definition.cpp'] = { link = '@lsp.type.variable' },
     ['@lsp.typemod.function.defaultLibrary'] = { fg = c.code.DefaultLibrary },
     ['@lsp.typemod.class.defaultLibrary'] = { link = '@type.builtin' },
     ['@lsp.mode.defaultLibrary'] = { fg = c.code.Native },

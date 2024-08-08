@@ -77,12 +77,12 @@ M.code = {
     BuiltInConstant = '#b5cea8',
 }
 
-M.code.Type = palette.Type:str()
+M.code.Type = palette.Type:copy():darken(0.036, METHOD.additive):str()
 M.code.String = palette.String:str()
 M.code.EnumType = M.code.Type
 M.code.Construtor = M.code.Type
 -- M.code.BuiltInType = palette.Type:copy():darken(0.118, METHOD.additive):str()
-M.code.BuiltInType = palette.Type:copy():darken(0.085, METHOD.additive):str()
+M.code.BuiltInType = palette.Type:copy():darken(0.091, METHOD.additive):str()
 -- Inspect({ palette.Type:copy():hsl() })
 -- Inspect({ palette.Type:copy():darken(0.118, METHOD.additive):hsl() })
 
