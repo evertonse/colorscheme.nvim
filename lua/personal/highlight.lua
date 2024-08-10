@@ -981,6 +981,7 @@ local M = {
     ['@operator'] = { fg = c.editor.Front, bg = 'NONE' },
 
     ['@lsp.mod.variable.global'] = { fg = c.code.Global },
+    ['@lsp.typemod.parameter.definition'] = {},
     ['@lsp.typemod.variable.global'] = { fg = c.code.Global },
     ['@lsp.typemod.function.global'] = { fg = c.code.GlobalFunction },
     ['@lsp.typemod.variable.globalScope'] = { fg = c.code.Global },
