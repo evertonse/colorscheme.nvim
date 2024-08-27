@@ -83,6 +83,7 @@ local M = {
     -- LSP semantic tokens
     ['@lsp.typemod.type.defaultLibrary'] = { fg = c.code.DefaultLibraryType },
     ['@lsp.typemod.function.defaultLibrary'] = { fg = c.code.DefaultLibraryFunction },
+    ['@lsp.type.interface'] = { fg = c.code.InterfaceType },
 
     ['@lsp.type.type'] = { link = '@type' },
     ['@lsp.type.typeParameter'] = { link = '@type' },

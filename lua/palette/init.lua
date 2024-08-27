@@ -76,17 +76,23 @@ M.code = {
     BuiltInConstant = '#b5cea8',
 }
 
-M.code.Type = palette.Type:copy():darken(0.018, METHOD.additive):str()
 M.code.String = palette.String:str()
+
+M.code.Type = palette.Type:copy():darken(0.018, METHOD.additive):str()
 M.code.EnumType = M.code.Type
 M.code.Construtor = M.code.Type
 -- M.code.BuiltInType = palette.Type:copy():darken(0.118, METHOD.additive):str()
 M.code.BuiltInType = palette.Type:copy():darken(0.102, METHOD.additive):str()
+M.code.InterfaceType = palette.Type:copy():saturation(0.10):darken(0.15, METHOD.additive):str()
 -- Inspect({ palette.Type:copy():hsl() })
 -- Inspect({ palette.Type:copy():darken(0.118, METHOD.additive):hsl() })
 M.code.DefaultLibraryType = palette.Type:copy():darken(0.061, METHOD.additive):str()
 
 M.code.Function = palette.Function:copy():darken(0.0095, METHOD.additive):str()
+
+M.code.Field = palette.Variable:copy():lighten(0.165, METHOD.additive):str()
+M.code.Property = M.code.Field
+
 local method = palette.Function:copy():saturation(0.95):lighten(0.019, METHOD.additive)
 method.g = math.min(method.g - 4, 255)
 method.b = math.min(method.b + 8, 255)
