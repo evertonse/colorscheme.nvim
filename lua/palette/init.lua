@@ -83,7 +83,7 @@ M.code.EnumType = M.code.Type
 M.code.Construtor = M.code.Type
 -- M.code.BuiltInType = palette.Type:copy():darken(0.118, METHOD.additive):str()
 M.code.BuiltInType = palette.Type:copy():darken(0.102, METHOD.additive):str()
-M.code.InterfaceType = palette.Type:copy():saturation(0.10):darken(0.15, METHOD.additive):str()
+M.code.InterfaceType = palette.Type:copy():saturation(0.49):lighten(0.15, METHOD.additive):str()
 -- Inspect({ palette.Type:copy():hsl() })
 -- Inspect({ palette.Type:copy():darken(0.118, METHOD.additive):hsl() })
 M.code.DefaultLibraryType = palette.Type:copy():darken(0.061, METHOD.additive):str()
