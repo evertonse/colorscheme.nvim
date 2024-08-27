@@ -44,7 +44,7 @@ M.code = {
     -- Keyword              = "#FFB366", -- palette orange
     -- Keyword              = "#8FCACA", -- palette orange
     -- Keyword              = "#FFDBCC", -- palette orange
-    Keyword = palette.c1, -- palette orange
+    Keyword = '#FeFeFe', -- palette orange
     -- Keyword              = "#F09683", -- palette orange
     -- Keyword              = "#E9BBB5", -- palette orange
     -- Keyword              = "#9B9B9B", -- palette orange
@@ -90,7 +90,7 @@ M.code.DefaultLibraryType = palette.Type:copy():darken(0.061, METHOD.additive):s
 
 M.code.Function = palette.Function:copy():darken(0.0095, METHOD.additive):str()
 
-M.code.Field = palette.Variable:copy():lighten(0.165, METHOD.additive):str()
+M.code.Field = palette.Variable:copy():lighten(0.155, METHOD.additive):str()
 M.code.Property = M.code.Field
 
 local method = palette.Function:copy():saturation(0.95):lighten(0.019, METHOD.additive)
