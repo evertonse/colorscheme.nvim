@@ -151,11 +151,18 @@ end
 
 --- Adjust the saturation of the color.
 --- @param value float Saturation value (0 to 1)
-function Color:saturation(value)
+function Color:saturate(value)
     local h, s, l = rgb_to_hsl(self.r, self.g, self.b)
     s = clamp_255(value)
     self.r, self.g, self.b = hsl_to_rgb(h, s, l)
     return self
+end
+
+--- Get the saturation of the color.
+--- @param value float Saturation value (0 to 1)
+function Color:saturation()
+    local _, s, _ = rgb_to_hsl(self.r, self.g, self.b)
+    return s
 end
 
 --- Darken the color by reducing the lightness.

@@ -83,17 +83,19 @@ M.code.EnumType = M.code.Type
 M.code.Construtor = M.code.Type
 -- M.code.BuiltInType = palette.Type:copy():darken(0.118, METHOD.additive):str()
 M.code.BuiltInType = palette.Type:copy():darken(0.12, METHOD.additive):str()
-M.code.InterfaceType = palette.Type:copy():saturation(0.49):lighten(0.15, METHOD.additive):str()
+M.code.InterfaceType = palette.Type:copy():saturate(0.49):lighten(0.15, METHOD.additive):str()
 -- Inspect({ palette.Type:copy():hsl() })
 -- Inspect({ palette.Type:copy():darken(0.118, METHOD.additive):hsl() })
 M.code.DefaultLibraryType = palette.Type:copy():darken(0.061, METHOD.additive):str()
 
 M.code.Function = palette.Function:copy():darken(0.0095, METHOD.additive):str()
 
-M.code.Field = palette.Variable:copy():lighten(0.185, METHOD.additive):str()
+M.code.Field =
+    palette.Variable:copy():saturate(palette.Variable:saturation() + 0.01):lighten(0.185, METHOD.additive):str()
+
 M.code.Property = M.code.Field
 
-local method = palette.Function:copy():saturation(0.95):lighten(0.019, METHOD.additive)
+local method = palette.Function:copy():saturate(0.95):lighten(0.019, METHOD.additive)
 method.g = math.min(method.g - 4, 255)
 method.b = math.min(method.b + 8, 255)
 -- method.r = math.min(method.r - 20, 255)
@@ -105,7 +107,7 @@ M.code.Construtor = palette.Type:copy():lighten(0.06):str()
 M.code.ConstrutorOnClass = palette.Type:copy():lighten(0.1):str()
 
 -- '#767676',
-M.code.Args = palette.Variable:copy():saturation(0.009):darken(0.34):str()
+M.code.Args = palette.Variable:copy():saturate(0.009):darken(0.34):str()
 M.code.Parameter = M.code.Args
 
 M.text = {

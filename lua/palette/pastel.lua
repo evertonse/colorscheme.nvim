@@ -95,7 +95,7 @@ blow.Namespace = blow.Type.r >= blow.Type.b and Color.hex('#fff0fb') or blow.Nam
 
 blow.Function = Color.hex('#FFEDC0') -- Warm palette yellow
 
-blow.String = Color.hex('#CE9178'):saturation(0.38)
+blow.String = Color.hex('#CE9178'):saturate(0.38)
 blow.Field = Color.hex('#D8E9FF')
 blow.Field = Color.hex('#D1E2FF')
 blow.Field = Color.hex('#c7E1Fe')
@@ -104,7 +104,7 @@ blow.Field = Color.hex('#c0d0e5')
 
 blow.Variable = Color.hex('#b1b4bc')
 blow.Variable = Color.rgbi(117, 108, 94)
-blow.Variable = Color.rgbi(110, 90, 80):saturation(0.06):lighten(0.28)
+blow.Variable = Color.rgbi(110, 90, 80):saturate(0.08):lighten(0.28)
 
 blow.Background = Color.hex('#181818')
 
