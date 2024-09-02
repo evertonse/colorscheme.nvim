@@ -89,9 +89,12 @@ local M = {
     ['@lsp.type.typeParameter'] = { link = '@type' },
     ['@lsp.type.macro'] = { link = '@constant' },
     ['@lsp.type.enumMember'] = { link = '@constant' },
-    ['@lsp.typemod.variable.readonly'] = { link = '@constant' },
-    ['@lsp.typemod.property.readonly'] = { link = '@constant' },
-    ['@lsp.typemod.variable.constant'] = { link = '@constant' },
+
+    ['@lsp.mod.readonly'] = { link = '@constant' },
+    ['@lsp.typemod.variable.readonly'] = { link = '@lsp.mod.readonly' },
+    ['@lsp.typemod.property.readonly'] = { link = '@lsp.mod.readonly' },
+    ['@lsp.typemod.variable.constant'] = { link = '@lsp.mod.readonly' },
+
     ['@lsp.type.member'] = { link = '@function' },
     ['@lsp.type.keyword'] = { link = '@keyword' },
     ['@lsp.typemod.keyword.controlFlow'] = { fg = vscode.vscPink, bg = 'NONE' },

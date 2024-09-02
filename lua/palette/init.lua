@@ -91,7 +91,7 @@ M.code.DefaultLibraryType = palette.Type:copy():darken(0.061, METHOD.additive):s
 M.code.Function = palette.Function:copy():darken(0.0095, METHOD.additive):str()
 
 M.code.Field =
-    palette.Variable:copy():saturate(palette.Variable:saturation() + 0.01):lighten(0.185, METHOD.additive):str()
+    palette.Variable:copy():saturate(palette.Variable:saturation() + 0.1):lighten(0.185, METHOD.additive):str()
 
 M.code.Property = M.code.Field
 

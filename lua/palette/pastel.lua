@@ -104,7 +104,7 @@ blow.Field = Color.hex('#c0d0e5')
 
 blow.Variable = Color.hex('#b1b4bc')
 blow.Variable = Color.rgbi(117, 108, 94)
-blow.Variable = Color.rgbi(110, 90, 80):saturate(0.08):lighten(0.28)
+blow.Variable = Color.rgbi(110, 90, 80):saturate(0.06):lighten(0.28)
 
 blow.Background = Color.hex('#181818')
 
