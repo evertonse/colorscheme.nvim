@@ -90,10 +90,12 @@ local M = {
     ['@lsp.type.macro'] = { link = '@constant' },
     ['@lsp.type.enumMember'] = { link = '@constant' },
 
-    ['@lsp.mod.readonly'] = { link = '@constant' },
-    ['@lsp.typemod.variable.readonly'] = { link = '@lsp.mod.readonly' },
-    ['@lsp.typemod.property.readonly'] = { link = '@lsp.mod.readonly' },
-    ['@lsp.typemod.variable.constant'] = { link = '@lsp.mod.readonly' },
+    ['@lsp.type.variable'] = { link = 'Variable' },
+    -- ['@lsp.mod.readonly'] = { link = '@constant' },
+    ['@lsp.typemod.variable.readonly'] = { link = '@constant' },
+    ['@lsp.typemod.property.readonly'] = { link = '@constant' },
+    ['@lsp.typemod.variable.constant'] = { link = '@constant' },
+    ['@lsp.typemod.function.readonly'] = { link = '@function' },
 
     ['@lsp.type.member'] = { link = '@function' },
     ['@lsp.type.keyword'] = { link = '@keyword' },
@@ -840,7 +842,7 @@ local M = {
     VisualNOS = { fg = c.editor.None, bg = c.editor.Selection },
     WarningMsg = { fg = c.text.Warn, bg = c.editor.Background, bold = true },
     WildMenu = { fg = c.editor.None, bg = c.editor.Selection },
-    ['@spell'] = { fg = c.code.Comment, bg = c.code.None, italic = false },
+    ['@spell'] = { fg = c.code.Normal, bg = c.code.None, italic = false },
     ['@spell.markdown'] = { fg = c.code.Variable, bg = c.code.None, italic = false, bold = true },
     ['@spell.python'] = { fg = c.code.Comment, bg = c.code.None, italic = false, bold = false },
     -------------------------------------------------------------------------
@@ -1213,7 +1215,6 @@ local M = {
 
     ['cDefine'] = { fg = c.code.Preprocessor, bg = 'NONE' },
     ['cppModifier'] = { fg = c.code.Keyword, bg = 'NONE' },
-    ['@lsp.type.variable'] = { fg = c.code.Variable, bg = 'NONE' },
 
     ['@keyword.python'] = { fg = c.code.Keyword, sp = c.code.None, bg = 'NONE' },
 }
