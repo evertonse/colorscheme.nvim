@@ -843,7 +843,7 @@ local M = {
     WarningMsg = { fg = c.text.Warn, bg = c.editor.Background, bold = true },
     WildMenu = { fg = c.editor.None, bg = c.editor.Selection },
     ['@spell'] = { fg = c.code.Comment, bg = c.code.None, italic = false },
-    ['@spell.markdown'] = { fg = c.code.Variable, bg = c.code.None, italic = false, bold = true },
+    ['@spell.markdown'] = { fg = c.text.Normal, bg = c.code.None, italic = false, bold = true },
     ['@spell.python'] = { fg = c.code.Comment, bg = c.code.None, italic = false, bold = false },
     -------------------------------------------------------------------------
 
