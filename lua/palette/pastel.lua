@@ -103,10 +103,10 @@ blow.Field = Color.hex('#c9E2Fe')
 blow.Field = Color.hex('#c0d0e5')
 
 blow.Variable = Color.hex('#b1b4bc')
-blow.Variable = Color.rgbi(117, 108, 94)
-blow.Variable = Color.rgbi(165, 142, 126) -- Cephon Altera
-blow.Variable = Color.rgbi(190, 164, 146) -- Cephon Altera
-blow.Variable = Color.rgbi(110, 90, 80):saturate(0.06):lighten(0.28)
+blow.Variable = Color.rgb(117, 108, 94)
+blow.Variable = Color.rgb(165, 142, 126) -- Cephon Altera
+blow.Variable = Color.rgb(190, 164, 146) -- Cephon Altera
+blow.Variable = Color.rgb(110, 90, 80):saturate(0.06):lighten(0.28)
 
 blow.Background = Color.hex('#181818')
 
@@ -120,6 +120,8 @@ blow.Keyword = Color.hex('#FeFeFe') -- palette orange
 
 -- local palette = pastel
 blow.Constant = Color.hex('#D0ECC8') -- palette green
+
+blow.Comment = Color.hex('#748779')
 local palette = blow
 
 return palette

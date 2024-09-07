@@ -17,7 +17,6 @@ M.code = {
     None = 'NONE',
     Debug = '#FF00FF',
     DeadCode = '#878787',
-    Comment = palette.c2,
 
     StringEscape = '#FFDCA1',
     Char = '#DE9178',
@@ -208,5 +207,6 @@ M.code.Constant = palette.Constant:str()
 M.code.EnumConstant = palette.Constant:str()
 M.code.BuiltInConstant = '#b5cea8'
 M.code.ControlFlow = palette.ControlFlow:str()
+M.code.Comment = palette.Comment:str()
 
 return M

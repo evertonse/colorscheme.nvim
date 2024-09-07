@@ -16,7 +16,7 @@ palette.InterfaceType = palette.Type:copy():lighten(0.24, METHOD.percentage)
 -- '#c0d0e5'
 palette.Namespace = Color.hex('#D8E9FF')
 
-palette.Function = Color.hex('#FFEDC0'):saturate(0.1) -- Warm palette yellow
+palette.Function = Color.hex('#FFEDBf')
 
 palette.String = Color.hex('#CE9178'):saturate(0.48)
 
@@ -26,7 +26,7 @@ palette.Variable = Color.rgbi(165, 142, 126) -- Cephon Altera
 palette.Variable = Color.rgbi(138, 128, 109) -- Cephon Altera
 palette.Variable = Color.rgbi(110, 95, 80):saturate(0.08):lighten(0.22)
 
-palette.Keyword = palette.Variable:copy():lighten(0.85)
+palette.Keyword = palette.Variable:copy():lighten(0.75)
 -- c1 = '#FfFeFF',
 palette.ControlFlow = palette.Keyword:copy():lighten(0.9)
 
@@ -34,5 +34,12 @@ palette.Background = Color.hex('#181512')
 palette.Background = Color.hex('#242118')
 
 palette.Constant = Color.hex('#D0ECC8')
+-- LightGreen = '#B5CEA8',
+palette.Constant = Color.rgbi(144, 138, 102)
+palette.Constant = Color.rgbi(119, 132, 100)
+palette.Constant = Color.rgb(64, 88, 93) -- Cephon Altera
+palette.Constant = Color.rgb(80, 100, 110)
+palette.Constant = Color.rgb(80, 100, 110)
+palette.Comment = Color.hex('#748779'):darken(0.22):saturate(0.058)
 
 return palette
