@@ -1,7 +1,8 @@
 local Color = require('palette.color').Color
 local METHOD = require('palette.color').METHOD
 
-local palette = require('palette.pastel')
+-- local palette = require('palette.pastel')
+local palette = require('palette.cephon_altera')
 
 local M = {
     editor = {},
@@ -41,14 +42,6 @@ M.code = {
 
     Unnecessary = '#B2B2B2', -- Light gray
 
-    -- Keyword              = "#FFB366", -- palette orange
-    -- Keyword              = "#8FCACA", -- palette orange
-    -- Keyword              = "#FFDBCC", -- palette orange
-    Keyword = '#FeFeFe', -- palette orange
-    -- Keyword              = "#F09683", -- palette orange
-    -- Keyword              = "#E9BBB5", -- palette orange
-    -- Keyword              = "#9B9B9B", -- palette orange
-
     Normal = '#E2E2E2', -- Light gray
 
     Variable = palette.Variable:str(), -- palette blue
@@ -71,9 +64,6 @@ M.code = {
     Special = '#FFDCA1', -- palette orange
 
     Numeric = '#D0ECC8', -- palette green
-    Constant = '#D0ECC8', -- palette green
-    EnumConstant = '#D0ECC8', -- palette green
-    BuiltInConstant = '#b5cea8',
 }
 
 M.code.String = palette.String:str()
@@ -83,7 +73,8 @@ M.code.EnumType = M.code.Type
 M.code.Construtor = M.code.Type
 -- M.code.BuiltInType = palette.Type:copy():darken(0.118, METHOD.additive):str()
 M.code.BuiltInType = palette.Type:copy():darken(0.12, METHOD.additive):str()
-M.code.InterfaceType = palette.Type:copy():saturate(0.49):lighten(0.15, METHOD.additive):str()
+M.code.InterfaceType = (palette.InterfaceType and palette.InterfaceType:str())
+    or palette.Type:copy():saturate(0.51):lighten(0.33, METHOD.percentage):str()
 -- Inspect({ palette.Type:copy():hsl() })
 -- Inspect({ palette.Type:copy():darken(0.118, METHOD.additive):hsl() })
 M.code.DefaultLibraryType = palette.Type:copy():darken(0.061, METHOD.additive):str()
@@ -91,7 +82,7 @@ M.code.DefaultLibraryType = palette.Type:copy():darken(0.061, METHOD.additive):s
 M.code.Function = palette.Function:copy():darken(0.0095, METHOD.additive):str()
 
 M.code.Field =
-    palette.Variable:copy():saturate(palette.Variable:saturation() + 0.1):lighten(0.185, METHOD.additive):str()
+    palette.Variable:copy():saturate(palette.Variable:saturation() + 0.11):lighten(0.184, METHOD.additive):str()
 
 M.code.Property = M.code.Field
 
@@ -211,5 +202,11 @@ M.editor = {
     Pink = '#C586C0',
 }
 M.editor.Background = palette.Background:str()
+M.code.Keyword = palette.Keyword:str()
+
+M.code.Constant = palette.Constant:str()
+M.code.EnumConstant = palette.Constant:str()
+M.code.BuiltInConstant = '#b5cea8'
+M.code.ControlFlow = palette.ControlFlow:str()
 
 return M
