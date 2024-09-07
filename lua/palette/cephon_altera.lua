@@ -9,17 +9,16 @@ palette.Type = Color.rgb(100, 124, 148)
 palette.Type = Color.rgb(108, 126, 138)
 palette.InterfaceType = palette.Type:copy():lighten(0.24, METHOD.percentage)
 
+-- '#D8E9FF'
+-- '#D1E2FF'
+-- '#c7E1Fe'
+-- '#c9E2Fe'
+-- '#c0d0e5'
 palette.Namespace = Color.hex('#D8E9FF')
 
 palette.Function = Color.hex('#FFEDC0'):saturate(0.1) -- Warm palette yellow
 
 palette.String = Color.hex('#CE9178'):saturate(0.48)
-
-palette.Field = Color.hex('#D8E9FF')
-palette.Field = Color.hex('#D1E2FF')
-palette.Field = Color.hex('#c7E1Fe')
-palette.Field = Color.hex('#c9E2Fe')
-palette.Field = Color.hex('#c0d0e5')
 
 palette.Variable = Color.rgbi(190, 164, 146) -- Cephon Altera
 palette.Variable = Color.rgbi(165, 142, 126):darken(0.18) -- Cephon Altera
