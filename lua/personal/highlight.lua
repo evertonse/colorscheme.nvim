@@ -65,7 +65,7 @@ local M = {
     ['@markup.italic'] = { fg = vscode.vscFront, bg = 'NONE', italic = true },
     ['@markup.underline'] = { fg = vscode.vscYellowOrange, bg = 'NONE', underline = true },
     ['@markup.strikethrough'] = { fg = vscode.vscFront, bg = 'NONE', strikethrough = true },
-    ['@markup.heading'] = { fg = opts.dark and vscode.vscBlue or vscode.vscYellowOrange, bold = true },
+    ['@markup.heading'] = { fg = c.editor.YellowOrange or c.code.Normal, bold = true },
     ['@markup.raw'] = { fg = vscode.vscFront, bg = 'NONE' },
     ['@markup.raw.markdown'] = { fg = vscode.vscOrange, bg = 'NONE' },
     ['@markup.raw.markdown_inline'] = { fg = vscode.vscOrange, bg = 'NONE' },
@@ -847,7 +847,8 @@ local M = {
     WarningMsg = { fg = c.text.Warn, bg = c.editor.Background, bold = true },
     WildMenu = { fg = c.editor.None, bg = c.editor.Selection },
     ['@spell'] = { fg = c.code.Comment, bg = c.code.None, italic = false },
-    ['@spell.markdown'] = { fg = c.text.Normal, bg = c.code.None, italic = false, bold = true },
+    -- ['@spell.markdown'] = { fg = c.text.Normal, bg = c.code.None, italic = false, bold = true },
+    ['@spell.markdown'] = { fg = c.None, bg = c.code.None, italic = false, bold = true },
     ['@spell.python'] = { fg = c.code.Comment, bg = c.code.None, italic = false, bold = false },
     -------------------------------------------------------------------------
 
