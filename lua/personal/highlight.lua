@@ -734,8 +734,12 @@ local M = {
         ctermfg = c.None,
         -- guifg = c.None,
     },
-    NormalNC = { link = 'Normal' },
-    -- Normal = { fg = c.editor.Front, bg = c.editor.CursorDarkDark },
+    NormalNC = {
+        fg = c.editor.FrontNC,
+        bg = opts.transparent and c.None or c.editor.CursorDarkDark,
+        ctermfg = c.None,
+        -- link = 'Normal'
+    },
     NonText = {
         fg = c.editor.LineNumber,
         bg = opts.transparent and c.None or c.editor.CursorDarkDark,
@@ -933,7 +937,7 @@ local M = {
     ['@string.documentation'] = { link = 'Comment' },
 
     ['@character'] = { fg = c.code.Char, bg = 'NONE' },
-    ['@number'] = { fg = c.editor.LightGreen, bg = 'NONE' },
+    ['@number'] = { fg = c.code.Number, bg = 'NONE' },
     ['@number.float'] = { link = '@number' },
     ['@boolean'] = { fg = c.code.BuiltInConstant, bg = 'NONE' },
 

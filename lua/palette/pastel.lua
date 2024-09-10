@@ -122,6 +122,9 @@ blow.Keyword = Color.hex('#FeFeFe') -- palette orange
 blow.Constant = Color.hex('#D0ECC8') -- palette green
 
 blow.Comment = Color.hex('#748779')
+blow.Comment = Color.hex('#748779')
+blow.Number = Color.hex('#D0ECC8')
+
 local palette = blow
 
 return palette

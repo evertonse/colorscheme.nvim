@@ -128,7 +128,12 @@ M.editor = {
     None = 'NONE',
     -- Folder = '#90A0A0',
     Folder = '#D7BA7D',
-    Front = '#D4D4D4',
+    -- Front = '#D4D4D4',
+    -- Front = '#8d8278',
+    -- #aea7a0
+    -- "#a79f97
+    Front = '#c4b6a8',
+    FrontNC = '#a79f97',
 
     TabCurrent = palette.c17,
     TabVisible = palette.c15,
@@ -208,5 +213,5 @@ M.code.EnumConstant = palette.Constant:str()
 M.code.BuiltInConstant = '#b5cea8'
 M.code.ControlFlow = palette.ControlFlow:str()
 M.code.Comment = palette.Comment:str()
-
+M.code.Number = palette.Number:str()
 return M
