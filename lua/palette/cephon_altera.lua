@@ -24,9 +24,10 @@ palette.Variable = Color.rgb(190, 164, 146) -- Cephon Altera
 palette.Variable = Color.rgb(165, 142, 126):darken(0.18) -- Cephon Altera
 palette.Variable = Color.rgb(165, 142, 126) -- Cephon Altera
 palette.Variable = Color.rgb(138, 128, 109) -- Cephon Altera
-palette.Variable = Color.rgb(110, 95, 80):saturate(0.085):lighten(0.25)
 
-Inspect(Color.rgb(110, 95, 80):saturate(0.085):lighten(0.40):str())
+palette.Variable = Color.rgb(159, 142, 122) -- Jblow
+
+palette.Variable = Color.rgb(110, 95, 80):saturate(0.085):lighten(0.25)
 
 palette.Keyword = palette.Variable:copy():lighten(0.75)
 -- c1 = '#FfFeFF',
