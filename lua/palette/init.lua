@@ -85,7 +85,7 @@ M.code.Field =
 
 M.code.Property = M.code.Field
 
-local method = palette.Function:copy():saturate(0.95):lighten(0.019, METHOD.additive)
+local method = palette.Function:copy():saturate(0.97):lighten(0.014, METHOD.additive)
 method.g = math.min(method.g - 4, 255)
 method.b = math.min(method.b + 8, 255)
 -- method.r = math.min(method.r - 20, 255)
