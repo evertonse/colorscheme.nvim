@@ -88,6 +88,7 @@ local M = {
     ['@lsp.type.type'] = { link = '@type' },
     ['@lsp.type.typeParameter'] = { link = '@type' },
     ['@lsp.type.macro'] = { link = '@constant' },
+    ['@lsp.type.macro.c'] = { fg = c.code.MacroFunction },
     ['@lsp.type.enumMember'] = { link = '@constant' },
 
     ['@lsp.type.variable'] = { link = 'Variable' },
@@ -962,9 +963,10 @@ local M = {
     -- @Types
     ['@type'] = { fg = c.code.Type, bg = 'NONE' },
     ['@type.qualifier'] = { fg = c.code.Keyword, bg = 'NONE' },
-    ['@type.qualifier.cpp'] = { fg = c.code.Keyword, bg = 'NONE' },
-    ['@type.qualifier.c'] = { fg = c.code.Keyword, bg = 'NONE' },
     ['@type.definition'] = { fg = c.code.Keyword, bg = 'NONE' },
+    ['@type.qualifier.c'] = { fg = c.code.Keyword, bg = 'NONE' },
+    ['@type.qualifier.cpp'] = { fg = c.code.Keyword, bg = 'NONE' },
+    ['@type.definition.hare'] = { fg = c.code.Type, bg = 'NONE' },
     ['@type.builtin'] = { fg = c.code.BuiltInType, bg = 'NONE' },
     ['@type.builtin.py'] = { fg = c.code.BuiltInType, bg = 'NONE' },
     ['@type.builtin.python'] = { fg = c.code.BuiltInType, bg = 'NONE' },

@@ -33,7 +33,16 @@ M.code = {
 
     Invalid = '#F47E7E', -- palette red
 
-    MacroFunction = '#D5D5FF', -- palette lavender
+    -- MacroFunction = '#D5D5FF', -- palette lavender
+    -- MacroFunction = '#D5Dfff', -- palette lavender
+    -- MacroFunction = '#e5D5d9', -- palette lavender
+    -- MacroFunction = '#e8D1b9',
+    -- MacroFunction = '#d0D1e9',
+    -- MacroFunction = '#c9D1e8',
+    -- MacroFunction = '#e0D5f9', -- palette lavender
+    -- MacroFunction = '#d0cfe8',
+    -- MacroFunction = '#D0B8A8',
+
     Macro = '#D0C2FF', -- palette purple
 
     Preprocessor = palette.c30,
