@@ -966,7 +966,8 @@ local M = {
     -- @Types
     ['@type'] = { fg = c.code.Type, bg = 'NONE' },
     ['@type.qualifier'] = { fg = c.code.Keyword, bg = 'NONE' },
-    ['@type.definition'] = { fg = c.code.Keyword, bg = 'NONE' },
+    -- ['@type.definition'] = { fg = c.code.Keyword, bg = 'NONE' },
+    ['@type.definition'] = { link = '@type' },
     ['@type.qualifier.c'] = { fg = c.code.Keyword, bg = 'NONE' },
     ['@type.qualifier.cpp'] = { fg = c.code.Keyword, bg = 'NONE' },
     ['@type.definition.hare'] = { fg = c.code.Type, bg = 'NONE' },
