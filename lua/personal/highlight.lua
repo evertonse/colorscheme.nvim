@@ -49,6 +49,7 @@ local M = {
     --['@error']               = { fg = c.editor.Red, bg = 'NONE' },
     ['@punctuation.bracket'] = { fg = c.editor.Front, bg = 'NONE' },
     ['@punctuation.special'] = { fg = c.code.Punct, bg = 'NONE' },
+    ['@punctuation.special.bash'] = { fg = c.code.Keyword, bg = 'NONE' },
     -- ['@punctuation.bracket'] = { fg = c.code.Normal, bg = 'NONE' },
 
     ['@constant.builtin'] = { fg = c.code.BuiltInConstant, bg = 'NONE' },
