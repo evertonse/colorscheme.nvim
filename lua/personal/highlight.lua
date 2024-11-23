@@ -73,6 +73,7 @@ local M = {
     ['@markup.raw'] = { fg = vscode.vscFront, bg = 'NONE' },
     ['@markup.raw.markdown'] = { fg = vscode.vscOrange, bg = 'NONE' },
     ['@markup.raw.markdown_inline'] = { fg = vscode.vscOrange, bg = 'NONE' },
+    ['@markup.link'] = { link = 'Conceal' },
     ['@markup.link.label'] = { fg = vscode.vscLightBlue, bg = 'NONE', underline = opts.underline_links },
     ['@markup.link.url'] = { fg = vscode.vscFront, bg = 'NONE', underline = opts.underline_links },
     ['@markup.list.checked'] = { link = 'Todo' },
@@ -852,6 +853,7 @@ local M = {
     WarningMsg = { fg = c.text.Warn, bg = c.editor.Background, bold = true },
     WildMenu = { fg = c.editor.None, bg = c.editor.Selection },
     ['@spell'] = { fg = c.code.Comment, bg = c.code.None, italic = false },
+    ['@spell.latex'] = { fg = c.code.Variable, bg = c.code.None, italic = false },
     -- ['@spell.markdown'] = { fg = c.text.Normal, bg = c.code.None, italic = false, bold = true },
     ['@spell.markdown'] = { fg = c.None, bg = c.code.None, italic = false, bold = true },
     ['@spell.python'] = { fg = c.code.Comment, bg = c.code.None, italic = false, bold = false },
@@ -935,6 +937,7 @@ local M = {
     ['@function.method'] = { fg = c.code.FunctionMethod, bg = 'NONE' },
     ['@function.builtin'] = { fg = c.editor.YellowOrange, bg = 'NONE' },
     ['@function.macro'] = { fg = c.code.MacroFunction, bg = 'NONE' },
+    ['@function.macro.latex'] = { fg = c.code.Keyword, bg = 'NONE' },
     ['@function.call'] = { fg = c.code.FunctionCall, bg = 'NONE' },
 
     --Literals
