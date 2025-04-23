@@ -29,7 +29,6 @@ local M = {
         fg = c.code.Method, --[[ bg = c.editor.Background ]]
     },
     Folder = { link = 'Directory' },
-    Label = { fg = c.code.Label, bg = 'NONE' },
 
     ['DiffChange'] = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffRedDark },
     ['WinBar'] = { fg = vscode.vscFront, bg = vscode.vscBack, bold = true },
@@ -876,7 +875,7 @@ local M = {
     Statement = { fg = c.code.Preprocessor, bg = c.None },
     Conditional = { fg = c.code.ControlFlow, bold = true, bg = 'NONE' },
     Repeat = { fg = c.code.ControlFlow, bold = true, bg = 'NONE' },
-    Label = { fg = c.code.ControlFlow, bg = 'NONE' },
+    Label = { fg = c.code.Label, bg = 'NONE' },
     Operator = { fg = c.code.Normal, bg = 'NONE' },
     Keyword = { fg = c.code.Keyword, bold = true, bg = 'NONE' },
     Exception = { fg = c.code.ControlFlow, bg = 'NONE' },
