@@ -29,6 +29,7 @@ local M = {
         fg = c.code.Method, --[[ bg = c.editor.Background ]]
     },
     Folder = { link = 'Directory' },
+    Label = { fg = c.code.Label, bg = 'NONE' },
 
     ['DiffChange'] = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffRedDark },
     ['WinBar'] = { fg = vscode.vscFront, bg = vscode.vscBack, bold = true },
@@ -999,6 +1000,7 @@ local M = {
     ['@constructor.py'] = { fg = c.code.Construtor, bold = true },
 
     ['@label'] = { fg = c.code.Label, bg = 'NONE' },
+
     ['@operator'] = { fg = c.editor.Front, bg = 'NONE' },
 
     ['@lsp.mod.variable.global'] = { fg = c.code.Global },
