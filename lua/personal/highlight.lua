@@ -836,13 +836,16 @@ local M = {
         bold = true,
     },
     Todo = {
-        fg = c.code.Red,
-        bg = c.text.Todo,
+        fg = c.text.Todo,
+        bg = c.None,
         bold = true,
     },
+    -- NOTE
     Note = {
-        fg = c.code.Normal,
-        bg = c.text.Todo,
+        -- fg = c.code.Variable,
+        -- bg = c.code.Variable,
+        fg = c.text.Note,
+        -- bg = c.text.Note,
         bold = true,
     },
     Title = {
