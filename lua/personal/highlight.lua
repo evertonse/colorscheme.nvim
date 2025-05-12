@@ -519,7 +519,6 @@ local M = {
     -- Trouble
     ['TroubleNormal'] = { link = 'Normal' },
     ['TroubleNormalNC'] = { link = 'Normal' },
-
     -- COC.nvim
     ['CocHighlightText'] = {
         fg = 'NONE',
@@ -692,6 +691,8 @@ local M = {
     -- white fg and lualine blue bg
     ['FocusedSymbol'] = { fg = '#ffffff', bg = vscode.vscUiBlue },
     ['SymbolsOutlineConnector'] = { fg = vscode.vscLineNumber, bg = 'NONE' },
+
+    ['LualineNormal'] = { link = 'Normal' },
 
     ------------------------------------------------
     -----------------LEGACY-------------------------
