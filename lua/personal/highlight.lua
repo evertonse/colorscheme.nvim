@@ -31,8 +31,9 @@ local M = {
     Folder = { link = 'Directory' },
 
     ['DiffChange'] = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffRedDark },
-    ['WinBar'] = { fg = vscode.vscFront, bg = vscode.vscBack, bold = true },
-    ['WinBarNc'] = { fg = vscode.vscFront, bg = vscode.vscBack },
+    -- ['WinBar'] = { fg = vscode.vscFront, bg = vscode.vscBack, bold = true },
+    ['WinBar'] = { fg = vscode.vscFront, bg = c.None, bold = true },
+    ['WinBarNc'] = { fg = vscode.vscFront, bg = c.None },
     ['QuickFixLine'] = { bold = true },
 
     -- Treesitter
