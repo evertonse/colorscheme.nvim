@@ -876,7 +876,7 @@ local M = {
     Boolean = { fg = c.code.BuiltInConstant, bg = 'NONE' },
     Float = { fg = c.code.Constant, bg = 'NONE' },
     Identifier = { fg = c.code.Variable, bg = 'NONE' },
-    Function = { fg = c.editor.Yellow, bg = 'NONE' },
+    Function = { fg = c.code.Function, bg = 'NONE' },
     Statement = { fg = c.code.Preprocessor, bg = c.None },
     Conditional = { fg = c.code.ControlFlow, bold = true, bg = 'NONE' },
     Repeat = { fg = c.code.ControlFlow, bold = true, bg = 'NONE' },
@@ -1233,6 +1233,8 @@ local M = {
     DiffAdd = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffGreenLight },
     DiffDelete = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffRedDark },
     DiffText = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffRedLight },
+
+    zshFunction = { link = 'Function' },
 
     ['cDefine'] = { fg = c.code.Preprocessor, bg = 'NONE' },
     ['cppModifier'] = { fg = c.code.Keyword, bg = 'NONE' },
