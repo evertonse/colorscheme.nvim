@@ -59,7 +59,6 @@ M.code = {
     VariableBuiltin = palette.c11, -- Light palette blue
     -- ControlFlow          = "#F09683",
     -- ControlFlow          = "#6E92B8",
-    ControlFlow = palette.c1,
     -- ControlFlow          = "#E9BBB5",
     -- ControlFlow          = "#FFDBCC", -- palette orange
     -- ControlFlow          = "#9B9B9B", -- palette pink
@@ -214,6 +213,7 @@ M.editor = {
     YellowOrange = '#D7BA7D',
     Pink = '#C586C0',
 }
+
 M.editor.Background = palette.Background:str()
 M.code.Keyword = palette.Keyword:str()
 

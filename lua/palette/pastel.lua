@@ -114,7 +114,7 @@ blow.Background = Color.hex('#181818')
 -- Keyword              = "#8FCACA", -- palette orange
 -- Keyword              = "#FFDBCC", -- palette orange
 blow.Keyword = Color.hex('#FeFeFe') -- palette orange
--- Keyword              = "#F09683", -- palette orange
+-- blow.Keyword = Color.hex("#F09683") -- palette orange
 -- Keyword              = "#E9BBB5", -- palette orange
 -- Keyword              = "#9B9B9B", -- palette orange
 

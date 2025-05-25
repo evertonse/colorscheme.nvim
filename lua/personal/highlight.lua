@@ -29,6 +29,7 @@ local M = {
         fg = c.code.Method, --[[ bg = c.editor.Background ]]
     },
     Folder = { link = 'Directory' },
+    Comment = { fg = c.code.Comment, bg = 'NONE' },
 
     ['DiffChange'] = { fg = 'NONE', sp = c.code.None, bg = c.editor.DiffRedDark },
     -- ['WinBar'] = { fg = vscode.vscFront, bg = vscode.vscBack, bold = true },
@@ -106,7 +107,6 @@ local M = {
 
     ['@lsp.type.member'] = { link = '@function' },
     ['@lsp.type.keyword'] = { link = '@keyword' },
-    ['@lsp.typemod.keyword.controlFlow'] = { fg = vscode.vscPink, bg = 'NONE' },
     ['@event'] = { link = 'Identifier' },
     ['@interface'] = { link = 'Identifier' },
     ['@modifier'] = { link = 'Identifier' },
@@ -857,7 +857,8 @@ local M = {
     VisualNOS = { fg = c.editor.None, bg = c.editor.Selection },
     WarningMsg = { fg = c.text.Warn, bg = c.editor.Background, bold = true },
     WildMenu = { fg = c.editor.None, bg = c.editor.Selection },
-    ['@spell'] = { fg = c.code.Comment, bg = c.code.None, italic = false },
+    -- ['@spell'] = { fg = c.code.Comment, bg = c.code.None, italic = false },
+    ['@spell'] = { link = 'Comment' },
     ['@spell.latex'] = { fg = c.code.Variable, bg = c.code.None, italic = false },
     -- ['@spell.markdown'] = { fg = c.text.Normal, bg = c.code.None, italic = false, bold = true },
     ['@spell.markdown'] = { fg = c.None, bg = c.code.None, italic = false, bold = true },
@@ -925,10 +926,10 @@ local M = {
     ['@lsp.type.namespace'] = { link = 'Namespace' },
     --['@variable#globalScope']  ={ fg = c.code.Global,italic = true,  bold = true},
 
-    ['@comment'] = { fg = c.code.Comment, bg = 'NONE' },
+    ['@comment'] = { link = 'Comment' },
     ['@keyword'] = { fg = c.code.Keyword, bold = false, bg = 'NONE' },
-    ['@keyword.repeat'] = { fg = c.code.ControlFlow, bold = false, bg = 'NONE' },
-    ['@keyword.conditional'] = { fg = c.code.ControlFlow, bold = false, bg = 'NONE' },
+    ['@keyword.repeat'] = { fg = c.code.ControlFlow, bold = true, bg = 'NONE' },
+    ['@keyword.conditional'] = { fg = c.code.ControlFlow, bold = true, bg = 'NONE' },
     ['@keyword.exception'] = { link = 'Conditional' },
     ['@keyword.enum'] = { fg = c.code.Keyword, bold = false, bg = 'NONE' },
     ['@keyword.function'] = { fg = c.code.Keyword, bold = false, bg = 'NONE' },
@@ -960,7 +961,6 @@ local M = {
     ['@variable.builtin'] = { fg = c.code.VariableBuiltin, bold = true, italic = false, bg = 'NONE' },
     ['@variable.member'] = { link = '@property' },
     ['@property'] = { fg = c.code.Property, bg = 'NONE' },
-    ['@lsp.type.property.lua'] = { fg = c.code.Property, bg = 'NONE' },
     ['@reference'] = { link = '@property' },
     -- Preprocessores
     ['@preproc'] = { fg = c.code.Preprocessor, bg = 'NONE' },
@@ -971,6 +971,7 @@ local M = {
     ['@variable.parameter'] = { fg = c.code.Parameter, bg = 'NONE' },
     ['@parameter.reference'] = { link = '@parameter' },
     ['@lsp.type.parameter'] = { link = '@variable.parameter' },
+    ['@lsp.type.property.lua'] = { fg = c.code.Property, bg = 'NONE' },
 
     -- @Types
     ['@type'] = { fg = c.code.Type, bg = 'NONE' },
@@ -1014,12 +1015,21 @@ local M = {
     ['@lsp.typemod.variable.globalScope'] = { fg = c.code.Global },
     ['@lsp.typemod.variable.fileScope'] = { fg = c.code.FileScope },
     ['@lsp.typemod.variable.defaultLibrary'] = { fg = c.code.DefaultLibrary },
-    ['@lsp.typemod.variable.definition'] = { fg = c.code.VariableBuiltin },
-    ['@lsp.typemod.variable.definition.c'] = { link = '@lsp.type.variable' },
-    ['@lsp.typemod.variable.definition.cpp'] = { link = '@lsp.type.variable' },
+    -- ['@lsp.typemod.variable.definition'] = { fg = c.code.VariableBuiltin },
+    ['@lsp.typemod.variable.definition'] = {
+        fg = c.code.Variable,
+        italic = false,
+        underdotted = false,
+        undercurl = false,
+    },
+    -- ['@lsp.typemod.variable.definition.c'] = { link = '@lsp.type.variable', bold = true },
+    -- ['@lsp.typemod.variable.definition.cpp'] = { link = '@lsp.type.variable', bold = true },
     ['@lsp.typemod.class.defaultLibrary'] = { link = '@type.builtin' },
     ['@lsp.mode.defaultLibrary'] = { fg = c.code.Native },
     ['@defaultLibrary.python'] = { fg = c.code.Native },
+    -- ['@lsp.typemod.keyword.controlFlow'] = { fg = vscode.vscPink, bg = 'NONE' },
+    ['@lsp.typemod.keyword.controlFlow'] = { link = 'Conditional' },
+
     ['@defaultLibrary.lua'] = { fg = c.code.Native },
 
     ['@lsp.mod.constructorOrDestructor'] = { fg = c.code.ConstrutorOnClass },
