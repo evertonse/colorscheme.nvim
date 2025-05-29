@@ -849,6 +849,10 @@ local M = {
         -- bg = c.text.Note,
         bold = true,
     },
+
+    Variable = {
+        fg = c.code.Variable,
+    },
     Title = {
         --[[ fg = c.editor.None, bg = c.editor.None, ]]
         bold = true,
@@ -969,6 +973,8 @@ local M = {
 
     -- Parameteres:
     ['@variable.parameter'] = { fg = c.code.Parameter, bg = 'NONE' },
+    ['@variable.bash'] = { fg = c.code.Variable, bold = true },
+    ['@variable.parameter.bash'] = { link = 'Variable' },
     ['@parameter.reference'] = { link = '@parameter' },
     ['@lsp.type.parameter'] = { link = '@variable.parameter' },
     ['@lsp.type.property.lua'] = { fg = c.code.Property, bg = 'NONE' },
