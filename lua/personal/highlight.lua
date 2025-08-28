@@ -1256,6 +1256,8 @@ local M = {
     ['cppModifier'] = { fg = c.code.Keyword, bg = 'NONE' },
 
     ['@keyword.python'] = { fg = c.code.Keyword, sp = c.code.None, bg = 'NONE' },
+    ['MultipleCursorsCursor'] = { bg = '#FFFFFF', fg = '#000000' },
+    ['MultipleCursorsVisual'] = { bg = '#CCCCCC', fg = '#000000' },
 }
 
 return M
