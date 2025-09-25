@@ -75,11 +75,12 @@ M.code = {
 
 M.code.String = palette.String:str()
 
-M.code.Type = palette.Type:copy():darken(0.018, METHOD.additive):str()
+-- M.code.Type = palette.Type:copy():darken(0.028, METHOD.additive):str() -- original
+M.code.Type = palette.Type:copy():str()
 M.code.EnumType = M.code.Type
 M.code.Construtor = M.code.Type
--- M.code.BuiltInType = palette.Type:copy():darken(0.118, METHOD.additive):str()
-M.code.BuiltInType = palette.Type:copy():darken(0.12, METHOD.additive):str()
+M.code.BuiltInType = palette.Type:copy():darken(0.12, METHOD.additive):str() -- Original
+M.code.BuiltInType = palette.Type:copy():darken(0.09, METHOD.additive):str()
 M.code.InterfaceType = (palette.InterfaceType and palette.InterfaceType:str())
     or palette.Type:copy():saturate(0.51):lighten(0.33, METHOD.percentage):str()
 -- Inspect({ palette.Type:copy():hsl() })
@@ -140,7 +141,13 @@ M.editor = {
     -- Front = '#8d8278',
     -- #aea7a0
     -- "#a79f97
-    Front = '#c4b6a8',
+
+    -- Front = '#c4b6a8',
+    Front = '#bea492', -- Cephon Normal Text (middle)
+    Front = Color.rgb(190, 164, 146):str(),
+    -- Front = "#8b786a", -- Cephon Normal Text (top)
+    -- Front = "#a58e7e",
+
     FrontNC = '#a79f97',
 
     TabCurrent = palette.c17,
