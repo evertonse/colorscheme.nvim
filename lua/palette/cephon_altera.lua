@@ -48,7 +48,7 @@ palette.Type = Color.rgb(75, 92, 100) -- Cephon UPPER_CASE
 palette.Type = Color.rgb(100, 124, 148):lighten(0.178):saturate(0.18)
 palette.Type = Color.rgb(100, 124, 148):saturate(0.18)
 palette.Type = Color.rgb(108, 126, 138):lighten(0.178)
-palette.Type = Color.rgb(108, 126, 138):lighten(0.160)
+palette.Type = Color.rgb(108, 126, 138):lighten(0.160):darken(0.09, METHOD.additive)
 palette.InterfaceType = palette.Type:copy():lighten(0.24, METHOD.percentage)
 
 palette.Keyword = Color.rgb(123, 67, 67):lighten(0.35)
