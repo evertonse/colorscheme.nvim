@@ -38,6 +38,7 @@ local M = {
     ['QuickFixLine'] = { bold = true },
 
     -- Treesitter
+
     ['@error'] = { fg = vscode.vscRed, bg = 'NONE' }, -- Legac,
     ['@punctuation.delimiter'] = { fg = vscode.vscFront, bg = 'NONE' },
     ['@comment.note'] = { fg = vscode.vscBlueGreen, bg = 'NONE', bold = true },
@@ -703,7 +704,10 @@ local M = {
     ['diffChanged'] = { link = 'DiffChange' },
     ['diffRemoved'] = { link = 'DiffDelete' },
     -- Legacy groups for treesitter
+    ['@_parent'] = { link = '@variable.parameter' },
+    ['@_parent.c'] = { link = '@variable.parameter' },
     ['@parameter'] = { link = '@variable.parameter' },
+
     ['@field'] = { fg = c.code.Field, bg = 'NONE' },
     ['@string.regex'] = { link = '@string.regexp' },
     ['@float'] = { link = '@number.float' },

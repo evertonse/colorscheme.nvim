@@ -90,7 +90,7 @@ M.code.DefaultLibraryType = palette.Type:copy():darken(0.061, METHOD.additive):s
 M.code.Function = palette.Function:copy():darken(0.0095, METHOD.additive):str()
 
 M.code.Field =
-    palette.Variable:copy():saturate(palette.Variable:saturation() + 0.11):lighten(0.184, METHOD.additive):str()
+    palette.Variable:copy():saturate(palette.Variable:saturation() + 0.11):lighten(0.138, METHOD.additive):str()
 
 M.code.Property = M.code.Field
 
@@ -106,7 +106,7 @@ M.code.Construtor = palette.Type:copy():lighten(0.06):str()
 M.code.ConstrutorOnClass = palette.Type:copy():lighten(0.1):str()
 
 -- '#767676',
-M.code.Args = palette.Variable:copy():saturate(0.009):darken(0.34):str()
+M.code.Args = palette.Variable:copy():saturate(0.065):darken(0.25):str()
 M.code.Parameter = M.code.Args
 
 M.text = {
