@@ -106,7 +106,7 @@ M.code.Construtor = palette.Type:copy():lighten(0.06):str()
 M.code.ConstrutorOnClass = palette.Type:copy():lighten(0.1):str()
 
 -- '#767676',
-M.code.Args = palette.Variable:copy():saturate(0.065):darken(0.25):str()
+M.code.Args = palette.Variable:copy():saturate(0.075):darken(0.24):str()
 M.code.Parameter = M.code.Args
 
 M.text = {
