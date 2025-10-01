@@ -73,7 +73,7 @@ local M = {
     ['@markup.heading.1.markdown'] = { fg = c.editor.YellowOrange or c.code.Normal, bold = true },
     ['@markup.heading.2.markdown'] = { fg = c.editor.DefaultLibraryFunction or c.code.Normal, bold = true },
     ['@markup.heading'] = { fg = c.code.Method or c.code.Normal, bold = true },
-    ['@markup.raw'] = { fg = vscode.vscFront, bg = 'NONE' },
+    ['@markup.raw'] = { fg = c.code.Field, bold = true },
     ['@markup.raw.markdown'] = { fg = vscode.vscOrange, bg = 'NONE' },
     ['@markup.raw.markdown_inline'] = { fg = vscode.vscOrange, bg = 'NONE' },
     ['@markup.link'] = { link = 'Conceal' },
@@ -1047,6 +1047,7 @@ local M = {
     ['@lsp.type.comment.c'] = { fg = c.code.DeadCode },
     ['@lsp.type.comment.cpp'] = { fg = c.code.DeadCode },
 
+    ['markdown@text.literal'] = { fg = c.editor.Orange, bg = 'NONE' },
     -- ['@variable.builtin']= { fg = c.code.VariableBuiltin, bg = 'NONE' },
     -- ['@text']= { fg = c.editor.Front, bg = 'NONE' },
     -- ['@text.underline']= { fg = c.editor.YellowOrange, bg = 'NONE' },
