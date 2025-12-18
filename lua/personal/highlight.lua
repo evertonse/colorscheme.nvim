@@ -315,7 +315,7 @@ local M = {
     ['goBoolean'] = { fg = vscode.vscBlue, bg = 'NONE' },
     ['goPredefinedIdentifiers'] = { fg = vscode.vscBlue, bg = 'NONE' },
     ['goTodo'] = { fg = vscode.vscGreen, bg = 'NONE' },
-    ['goDeclaration'] = { fg = vscode.vscBlue, bg = 'NONE' },
+    ['goDeclaration'] = { link = 'Keyword' },
     ['goDeclType'] = { fg = vscode.vscBlue, bg = 'NONE' },
     ['goTypeDecl'] = { fg = vscode.vscBlue, bg = 'NONE' },
     ['goTypeName'] = { fg = vscode.vscBlueGreen, bg = 'NONE' },
