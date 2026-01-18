@@ -304,6 +304,7 @@ local M = {
     ['goDeclaration'] = { link = 'Keyword' },
     ['goPackage'] = { link = 'Keyword' },
     ['goImport'] = { link = 'Keyword' },
+    ['goDeclType'] = { link = 'Keyword' },
     ['goStatement'] = { link = 'Keyword' },
     ['goVar'] = { link = 'Keyword' },
     ['goConst'] = { link = 'Keyword' },
@@ -314,11 +315,11 @@ local M = {
 
     ['goFloats'] = { link = 'Type' },
     ['goComplexes'] = { link = 'Type' },
+    ['goBoolean'] = { link = '@constant.builtin' },
 
     ['goBuiltins'] = { fg = vscode.vscYellow, bg = 'NONE' },
-    ['goBoolean'] = { fg = vscode.vscBlue, bg = 'NONE' },
+
     ['goTodo'] = { fg = vscode.vscGreen, bg = 'NONE' },
-    ['goDeclType'] = { fg = vscode.vscBlue, bg = 'NONE' },
     ['goTypeDecl'] = { fg = vscode.vscBlue, bg = 'NONE' },
     ['goTypeName'] = { fg = vscode.vscBlueGreen, bg = 'NONE' },
     ['goVarAssign'] = { fg = vscode.vscLightBlue, bg = 'NONE' },
