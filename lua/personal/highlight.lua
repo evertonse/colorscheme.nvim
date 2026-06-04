@@ -1266,6 +1266,10 @@ local M = {
     ['@keyword.python'] = { fg = c.code.Keyword, sp = c.code.None, bg = 'NONE' },
     ['MultipleCursorsCursor'] = { bg = '#FFFFFF', fg = '#000000' },
     ['MultipleCursorsVisual'] = { bg = '#CCCCCC', fg = '#000000' },
+
+    ['makeCommands'] = { link = 'Normal' },
+    ['makeIdent'] = { link = '@property' },
+    ['makeSpecTarget'] = { link = 'Statement' },
 }
 
 return M
