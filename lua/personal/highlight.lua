@@ -331,13 +331,13 @@ local M = {
     ['goSingleDecl'] = { fg = vscode.vscLightBlue, bg = 'NONE' },
 
     -- Python
-    ['pythonStatement'] = { fg = vscode.vscBlue, bg = 'NONE' },
-    ['pythonOperator'] = { fg = vscode.vscBlue, bg = 'NONE' },
+    ['pythonStatement'] = { link = '@keyword' },
+    ['pythonOperator'] = { link = '@keyword' },
+    ['pythonBoolean'] = { link = '@number' },
     ['pythonException'] = { fg = vscode.vscPink, bg = 'NONE' },
     ['pythonExClass'] = { fg = vscode.vscBlueGreen, bg = 'NONE' },
     ['pythonBuiltinObj'] = { fg = vscode.vscLightBlue, bg = 'NONE' },
     ['pythonBuiltinType'] = { fg = vscode.vscBlueGreen, bg = 'NONE' },
-    ['pythonBoolean'] = { fg = vscode.vscBlue, bg = 'NONE' },
     ['pythonNone'] = { fg = vscode.vscBlue, bg = 'NONE' },
     ['pythonTodo'] = { fg = vscode.vscBlue, bg = 'NONE' },
     ['pythonClassVar'] = { fg = vscode.vscBlue, bg = 'NONE' },
